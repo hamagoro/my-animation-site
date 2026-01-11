@@ -1,0 +1,70 @@
+/* --- 共通：ネオンヘッダーの定義 --- */
+body {
+    background-color: #000 !important;
+    color: #ffffff !important;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    margin: 0;
+}
+
+/* ヘッダー全体の共通スタイル */
+.main-header {
+    padding: 80px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #333;
+}
+
+/* ロゴ背後のネオン光 */
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 150px;
+    background: rgba(255, 0, 255, 0.7);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.header-logo {
+    position: relative; z-index: 1;
+    max-width: 320px;
+    filter: drop-shadow(0 0 20px rgba(255, 0, 255, 1));
+    margin-bottom: 20px;
+}
+
+.header-title {
+    position: relative; z-index: 1;
+    font-size: 2.5rem; font-weight: 900;
+    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    margin: 0;
+}
+
+.header-subtitle {
+    position: relative; z-index: 1;
+    color: #00f2ff; font-weight: bold;
+    text-shadow: 0 0 10px #00f2ff;
+    letter-spacing: 0.15em; margin-top: 15px;
+}
+
+/* フッターのネオン共通スタイル */
+.main-footer {
+    padding: 80px 20px;
+    text-align: center;
+    background: #000;
+    border-top: 4px solid #ff00ff;
+    margin-top: 50px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.7));
+}
+
+.footer-credit {
+    color: #00f2ff; font-weight: 900;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+    margin-top: 15px;
+}
