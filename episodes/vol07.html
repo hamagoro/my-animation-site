@@ -85,6 +85,122 @@
 
         </section>
 
+        <style>
+            .stamp-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 10px;
+                justify-items: center;
+            }
+            .stamp-grid img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                border-radius: 5px;
+                background: #222;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .stamp-grid img:hover {
+                transform: scale(1.1);
+                border: 1px solid #ff00ff;
+            }
+
+            /* モーダル（拡大表示）の背景 */
+            #stampModal {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background-color: rgba(0,0,0,0.9);
+                justify-content: center;
+                align-items: center;
+                cursor: zoom-out;
+            }
+            /* 拡大された画像 */
+            #modalImg {
+                max-width: 80%;
+                max-height: 80%;
+                border: 3px solid #00f2ff;
+                border-radius: 20px;
+                box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+            }
+        </style>
+
+        <section class="stamp-gallery" style="margin-bottom: 60px; padding: 25px; background: #111; border: 2px solid #ff00ff; border-radius: 15px;">
+            <h3 style="color: #ff00ff; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem;">
+                📸 Stamp Gallery: 全48種類（タップで拡大）
+            </h3>
+            
+            <div class="stamp-grid">
+                <img src="../images/vol07/01ohayo.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/02oyasumi.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/03arigato.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/04gomen.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/05otsukaresama.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/06yoroshiku.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/07mada.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/08baibai.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/09matane.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/10ok.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/11no.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/12ryokai.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/13iine.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/14sugoi.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/15yatta.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/16omedeto.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/17ganbare .png" onclick="openModal(this.src)">
+                <img src="../images/vol07/18zanen.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/19simatta2.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/20kaeirimasu.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/21mousugu3.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/22nochihodo.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/23nanikairu.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/24seisyun.png" onclick="openModal(this.src)">
+
+                <img src="../images/vol07/g01ohayo.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g02oyasumi.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g03arigato.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g04gomen.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g05otsukaresama.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g06yoroshiku.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g07mada.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g08baibai.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g09matane.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g10ok.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g11no.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g12ryokai.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g13iine.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g14sugoi.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g15yatta.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g16omedeto.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g17ganbare .png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g18zanen.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g19simatta2.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g20kaeirimasu.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g21mousugu3.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g22nochihodo.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g23nanikairu.png" onclick="openModal(this.src)">
+                <img src="../images/vol07/g24seisyun.png" onclick="openModal(this.src)">
+            </div>
+        </section>
+
+        <div id="stampModal" onclick="closeModal()">
+            <img id="modalImg" src="">
+        </div>
+
+        <script>
+            function openModal(src) {
+                const modal = document.getElementById('stampModal');
+                const modalImg = document.getElementById('modalImg');
+                modal.style.display = 'flex';
+                modalImg.src = src;
+            }
+            function closeModal() {
+                document.getElementById('stampModal').style.display = 'none';
+            }
+        </script>
+
     </article>
 
 <nav style="padding: 20px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto;">
