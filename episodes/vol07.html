@@ -42,6 +42,21 @@
             .modal-btn { font-size: 2.5rem; width: 50px; height: 50px; }
             .prev-btn { left: 5px; } .next-btn { right: 5px; }
         }
+
+        /* --- 追加: プロセス画像グリッド（2x2） --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .process-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -113,6 +128,13 @@
                     ✅ <strong>個数：</strong> 8個から申請可能（最初は8個で練習がおすすめ）<br>
                     ✅ <strong>プライベート設定：</strong> 友達だけに教えたいなら「非公開」設定も可能
                 </p>
+            </div>
+
+            <div class="process-grid">
+                <img src="../images/vol07/z7-1.webp" alt="制作プロセス画像1">
+                <img src="../images/vol07/z7-2.webp" alt="制作プロセス画像2">
+                <img src="../images/vol07/z7-3.webp" alt="制作プロセス画像3">
+                <img src="../images/vol07/z7-4.webp" alt="制作プロセス画像4">
             </div>
         </section>
 

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vol.07 LINEスタンプ制作完全ガイド - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- ギャラリーの見た目設定 --- */
+        .stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(65px, 1fr)); gap: 12px; margin-top: 30px; }
+        .stamp-grid img { width: 100%; aspect-ratio: 1/1; border-radius: 8px; background: #222; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+        .stamp-grid img:hover { transform: scale(1.1); border: 1px solid #ff00ff; box-shadow: 0 0 10px #ff00ff; }
+
+        /* --- 拡大画面（モーダル） --- */
+        #stampModal {
+            display: none; position: fixed; z-index: 10000; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            justify-content: center; align-items: center; user-select: none;
+        }
+        #modalImg { 
+            max-width: 85%; max-height: 75%; 
+            border: 4px solid #00f2ff; border-radius: 20px; 
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.6); 
+        }
+
+        /* --- ナビゲーションボタン --- */
+        .modal-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: #ffffff; font-size: 4rem; font-weight: bold;
+            cursor: pointer; padding: 20px; z-index: 10001;
+            text-shadow: 0 0 15px #ff00ff; transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1); border-radius: 50%;
+            width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;
+        }
+        .modal-btn:hover { color: #00f2ff; background: rgba(0, 242, 255, 0.2); }
+        .prev-btn { left: 20px; } .next-btn { right: 20px; }
+        .close-btn { top: 30px; right: 30px; font-size: 3rem; transform: none; width: auto; height: auto; background: none; }
+        
+        @media (max-width: 600px) {
+            .modal-btn { font-size: 2.5rem; width: 50px; height: 50px; }
+            .prev-btn { left: 5px; } .next-btn { right: 5px; }
+        }
+
+        /* --- 追加: プロセス画像グリッド（2x2） --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .process-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fpsのアーカイブ</p>
+    </header>
+
+    <nav style="padding: 20px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol06.html" style="color: #ff00ff; text-decoration: none; margin-right: 20px;">← 前のVol.6へ</a>
+            <a href="vol08.html" style="color: #ff00ff; text-decoration: none;">次のVol.8へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.07 / Digital Craft Special</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                AI×GIMPで作る！<br>LINEスタンプ制作完全ガイド
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2025.12.24 UP</p>
+        </header>
+
+        <section class="store-link-section" style="display: flex; align-items: center; background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 50px; gap: 25px;">
+            <div style="flex-shrink: 0;">
+                <img src="../images/vol07/thumb.png" alt="LINEスタンプ" style="width: 120px; height: 120px; border-radius: 10px; border: 1px solid #333;">
+            </div>
+            <div>
+                <h3 style="margin: 0 0 10px 0; color: #ff00ff; font-size: 1.3rem;">📢 Animeda! LINEスタンプ発売中</h3>
+                <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #ccc;">実際に制作したスタンプはこちらからチェックできます！</p>
+                <p style="margin: 0 0 15px 0; font-size: 0.85rem; color: #888;">自分の収益0円ですが、管理費120円は発生してしまします。すみません。</p>
+                <a href="https://store.line.me/stickershop/author/5846339/ja" target="_blank" style="display: inline-block; background: #00f2ff; color: #000; padding: 8px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+                    ストアを見る
+                </a>
+            </div>
+        </section>
+
+        <section class="analysis-overview" style="line-height: 1.8;">
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ STEP 1：AIでキャラクターを生成する</h3>
+                <p>まずは、スタンプの核となるキャラクターをAIで作成します。一貫性を持たせるのがコツです。</p>
+                <ul style="list-style-type: none; padding-left: 10px;">
+                    <li><strong>・プロンプトの工夫：</strong> 同じキャラが出るよう詳細に設定。</li>
+                    <li><strong>・背景はシンプルに：</strong> 後で消しやすいよう白や単色がベスト。</li>
+                    <li><strong>・バリエーション：</strong> 喜怒哀楽を一度に生成させると楽です。</li>
+                </ul>
+                </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px;">◎ STEP 2：画像編集ソフト（GIMPなど）での加工作業</h3>
+                <p>生成した画像をスタンプ形式に整えます。ここが職人の見せ所！</p>
+                <ul style="list-style-type: none; padding-left: 10px;">
+                    <li><strong>・サイズ：</strong> 横縦比(37:32） 最終的に最大370×320pxになります。上下左右に10px程度の余白を。</li>
+                    <li><strong>・透過処理：</strong> 「アルファチャンネルを追加」して背景を削除。</li>
+                    <li><strong>・文字入れ：</strong> 視認性の高い太めのフォントに縁取りを。</li>
+                    <li><strong>・書き出し：</strong> 拡張子は必ず「.png」で保存！</li>
+                </ul>
+                </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ STEP 3：審査通過のための設定</h3>
+                <p>LINEスタンプメーカー（アプリ）で作るのが一番楽です。LINE Creators Marketで申請する際、ここを間違えると審査が長引きます。</p>
+                <p>
+                    ✅ <strong>販売エリア：</strong> 「日本のみ」を選択（海外を含むと審査が厳しくなります）<br>
+                    ✅ <strong>個数：</strong> 8個から申請可能（最初は8個で練習がおすすめ）<br>
+                    ✅ <strong>プライベート設定：</strong> 友達だけに教えたいなら「非公開」設定も可能
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <img src="../images/vol07/z7-1.webp" alt="制作プロセス画像1">
+                <img src="../images/vol07/z7-2.webp" alt="制作プロセス画像2">
+                <img src="../images/vol07/z7-3.webp" alt="制作プロセス画像3">
+                <img src="../images/vol07/z7-4.webp" alt="制作プロセス画像4">
+            </div>
+        </section>
+
+        <section class="stamp-gallery" style="margin: 60px 0; padding: 30px; background: #111; border: 2px solid #ff00ff; border-radius: 20px;">
+            <h3 style="color: #ff00ff; margin-top: 0;">📸 Stamp Gallery (左右ボタンでめくれます)</h3>
+            <div class="stamp-grid" id="mainGallery">
+                <img src="../images/vol07/01ohayo.png" onclick="openModal(0)">
+                <img src="../images/vol07/02oyasumi.png" onclick="openModal(1)">
+                <img src="../images/vol07/03arigato.png" onclick="openModal(2)">
+                <img src="../images/vol07/04gomen.png" onclick="openModal(3)">
+                <img src="../images/vol07/05otsukaresama.png" onclick="openModal(4)">
+                <img src="../images/vol07/06yoroshiku.png" onclick="openModal(5)">
+                <img src="../images/vol07/07mada.png" onclick="openModal(6)">
+                <img src="../images/vol07/08baibai.png" onclick="openModal(7)">
+                <img src="../images/vol07/09matane.png" onclick="openModal(8)">
+                <img src="../images/vol07/10ok.png" onclick="openModal(9)">
+                <img src="../images/vol07/11no.png" onclick="openModal(10)">
+                <img src="../images/vol07/12ryokai.png" onclick="openModal(11)">
+                <img src="../images/vol07/13iine.png" onclick="openModal(12)">
+                <img src="../images/vol07/14sugoi.png" onclick="openModal(13)">
+                <img src="../images/vol07/15yatta.png" onclick="openModal(14)">
+                <img src="../images/vol07/16omedeto.png" onclick="openModal(15)">
+                <img src="../images/vol07/17ganbare .png" onclick="openModal(16)">
+                <img src="../images/vol07/18zanen.png" onclick="openModal(17)">
+                <img src="../images/vol07/19simatta2.png" onclick="openModal(18)">
+                <img src="../images/vol07/20kaeirimasu.png" onclick="openModal(19)">
+                <img src="../images/vol07/21mousugu3.png" onclick="openModal(20)">
+                <img src="../images/vol07/22nochihodo.png" onclick="openModal(21)">
+                <img src="../images/vol07/23nanikairu.png" onclick="openModal(22)">
+                <img src="../images/vol07/24seisyun.png" onclick="openModal(23)">
+                <img src="../images/vol07/g01ohayo.png" onclick="openModal(24)">
+                <img src="../images/vol07/g02oyasumi.png" onclick="openModal(25)">
+                <img src="../images/vol07/g03arigato.png" onclick="openModal(26)">
+                <img src="../images/vol07/g04gomen.png" onclick="openModal(27)">
+                <img src="../images/vol07/g05otsukaresama.png" onclick="openModal(28)">
+                <img src="../images/vol07/g06yoroshiku.png" onclick="openModal(29)">
+                <img src="../images/vol07/g07mada.png" onclick="openModal(30)">
+                <img src="../images/vol07/g08baibai.png" onclick="openModal(31)">
+                <img src="../images/vol07/g09matane.png" onclick="openModal(32)">
+                <img src="../images/vol07/g10ok.png" onclick="openModal(33)">
+                <img src="../images/vol07/g11no.png" onclick="openModal(34)">
+                <img src="../images/vol07/g12ryokai.png" onclick="openModal(35)">
+                <img src="../images/vol07/g13iine.png" onclick="openModal(36)">
+                <img src="../images/vol07/g14sugoi.png" onclick="openModal(37)">
+                <img src="../images/vol07/g15yatta.png" onclick="openModal(38)">
+                <img src="../images/vol07/g16omedeto.png" onclick="openModal(39)">
+                <img src="../images/vol07/g17ganbare .png" onclick="openModal(40)">
+                <img src="../images/vol07/g18zanen.png" onclick="openModal(41)">
+                <img src="../images/vol07/g19simatta2.png" onclick="openModal(42)">
+                <img src="../images/vol07/g20kaeirimasu.png" onclick="openModal(43)">
+                <img src="../images/vol07/g21mousugu3.png" onclick="openModal(44)">
+                <img src="../images/vol07/g22nochihodo.png" onclick="openModal(45)">
+                <img src="../images/vol07/g23nanikairu.png" onclick="openModal(46)">
+                <img src="../images/vol07/g24seisyun.png" onclick="openModal(47)">
+            </div>
+        </section>
+
+        <section class="links" style="background-color: #000; padding: 25px; border-radius: 15px; border: 1px solid #00f2ff; margin-bottom: 60px;">
+            <h4 style="margin-top: 0; color: #00f2ff;">📘 公式ガイドライン</h4>
+            <p style="margin-bottom: 15px;">作成前に必ず一度は目を通しておきましょう。</p>
+            <p><a href="https://creator.line.me/ja/guideline/" target="_blank" style="color: #ff00ff; text-decoration: underline;">●LINE Creators Market 制作ガイドライン</a></p>
+            <p><a href="https://apps.apple.com/jp/app/lineスタンプメーカー/id1239684967" target="_blank" style="color: #ff00ff; text-decoration: underline;">●LINEスタンプメーカー　App Store</a></p>
+            <p><a href="https://play.google.com/store/apps/details?id=com.linecorp.usersticker&pcampaignid=web_share" target="_blank" style="color: #ff00ff; text-decoration: underline;">●LINEスタンプメーカー - Google Play のアプリ</a></p>
+        </section>
+
+    </article>
+
+    <div id="stampModal">
+        <span class="modal-btn close-btn" onclick="closeModal()">&times;</span>
+        <span class="modal-btn prev-btn" onclick="prevImage()">&#10094;</span>
+        <img id="modalImg" src="">
+        <span class="modal-btn next-btn" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#mainGallery img');
+        const modal = document.getElementById('stampModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            modal.style.display = 'flex';
+        }
+        function closeModal() { modal.style.display = 'none'; }
+        function nextImage() { currentIndex = (currentIndex + 1) % images.length; updateModal(); }
+        function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; updateModal(); }
+        function updateModal() { modalImg.src = images[currentIndex].src; }
+
+        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+    </script>
+
+   <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000;">
+        
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol06.html" style="color: #ff00ff; text-decoration: none; margin-right: 20px;">← 前のVol.6へ</a>
+                <a href="vol08.html" style="color: #ff00ff; text-decoration: none;">次のVol.8へ →</a>
+            </div>
+        </nav>
+
+        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+    </footer>
+</body>
+</html>

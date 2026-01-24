@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+      <meta property="og:title" content="ストップモーションアニメ通信 - The Animeda! Project">
+      <meta property="og:description" content="ストップモーションアニメの魅力をマニアックに解説。Vol.11 ウエス・アンダーソン特集公開中。">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/index.html">
+      <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/logo.png">
+      <meta property="og:site_name" content="ストップモーションアニメ通信">
+      <meta name="twitter:card" content="summary_large_image">
+      <link rel="icon" href="images/logo2.webp" type="image/webp">
+      <title>ストップモーションアニメ通信 - The Animeda! Project</title>
+    <style>
+      /* 1. 基本設定（アーカイブ用：漆黒×ネオン） */
+      body {
+        background-color: #000 !important;
+        color: #ffffff !important;
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          Meiryo, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. ヘッダー */
+      header.main-header {
+        padding: 100px 20px;
+        text-align: center;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 3px solid #333;
+      }
+      header.main-header::before {
+        content: "";
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 180px;
+        background: rgba(255, 0, 255, 0.8);
+        filter: blur(80px);
+        z-index: 0;
+      }
+      .header-logo {
+        position: relative;
+        z-index: 1;
+        max-width: 320px;
+        filter: drop-shadow(0 0 25px rgba(255, 0, 255, 1));
+        margin-bottom: 20px;
+      }
+      .header-title {
+        position: relative;
+        z-index: 1;
+        font-size: 2.8rem;
+        font-weight: 900;
+        text-shadow:
+          0 0 15px #ff00ff,
+          0 0 30px #ff00ff;
+        margin: 0;
+      }
+
+      /* ★自作ポートフォリオへのリンクボタン★ */
+      .portfolio-link-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .portfolio-button {
+        display: flex;
+        align-items: center;
+        background: #111;
+        border: 2px solid #ff00ff;
+        border-radius: 15px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.4s;
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+      }
+      .portfolio-button:hover {
+        border-color: #00f2ff;
+        box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+        transform: translateY(-5px);
+      }
+      .portfolio-button-image {
+        width: 200px;
+        height: 120px;
+        object-fit: cover;
+        border-right: 2px solid #ff00ff;
+      }
+      .portfolio-button-text {
+        padding: 0 30px;
+      }
+      .portfolio-button-text h2 {
+        margin: 0;
+        color: #ff00ff;
+        font-size: 1.5rem;
+        text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      }
+      .portfolio-button-text p {
+        margin: 5px 0 0;
+        color: #ccc;
+        font-size: 0.9rem;
+      }
+
+      /* 3. カードグリッド */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+        padding: 20px 20px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #111;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid #333;
+        transition: 0.4s;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        border-color: #00f2ff;
+        box-shadow: 0 0 35px rgba(0, 242, 255, 0.6);
+      }
+      .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        filter: brightness(1.4) contrast(1.2);
+      }
+
+      /* 4. 【復元】Vol. のスタイル */
+      .card-content {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .vol-num {
+        color: #ff00ff;
+        font-weight: 900;
+        font-size: 1.1rem;
+        text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        margin: 0 0 10px 0;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1.5;
+        color: #fff;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+      .card-date {
+        color: #00f2ff;
+        text-align: right;
+        border-top: 1px solid #333;
+        padding-top: 10px;
+        margin-top: auto;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      footer.main-footer {
+        padding: 100px 20px;
+        text-align: center;
+        border-top: 4px solid #ff00ff;
+        margin-top: 50px;
+      }
+      .footer-logo {
+        max-width: 180px;
+        filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.8));
+        margin-bottom: 20px;
+      }
+      .footer-credit {
+        color: #00f2ff;
+        font-weight: 900;
+        text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <img
+        src="images/logo.png"
+        alt="The Animeda! Project"
+        class="header-logo"
+      />
+      <h1 class="header-title">ストップモーションアニメ通信</h1>
+    </header>
+
+    <div class="portfolio-link-container">
+      <a href="original.html" class="portfolio-button">
+        <img
+          src="images_portfolio/logo2.jpg"
+          alt="Studio Animeda!"
+          class="portfolio-button-image"
+        />
+        <div class="portfolio-button-text">
+          <h2>→ Studio Animeda! (自作作品集)</h2>
+          <p>No.カウント & カテゴリー分類によるオリジナル作品集はこちら</p>
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <div class="grid-container">
+        <a href="episodes/vol11.html" class="card">
+            <img src="images/vol11/wes-main.webp" alt="Vol.11 ウエス・アンダーソン" style="width: 100%; height: 200px; object-fit: cover" />
+            <div class="card-content">
+                <p class="vol-num">Vol.11</p>
+                <div class="card-title">
+                    ウエス・アンダーソン：<br />完璧なる「箱庭」の職人技
+                </div>
+                <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5">
+                    徹底した左右対称と12fpsの美学。実写を超越する「完全統治」の世界を解剖。
+                </p>
+                <p class="card-date">2026.01.29 UP</p>
+            </div>
+        </a>
+
+        <a
+          href="episodes/vol10.html"
+          class="card"
+          style="text-decoration: none"
+        >
+          <img
+            src="images/vol10/main.webp"
+            alt="Vol.10 オオカミの家"
+            style="width: 100%; height: 200px; object-fit: cover"
+          />
+          <div class="card-content">
+            <p class="vol-num">Vol.10</p>
+            <div class="card-title">
+              オオカミの家：<br />変容する悪夢の迷宮
+            </div>
+            <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5">
+              チリが生んだ等身大ストップモーションの衝撃作。壁が動き、物質が溶ける悪夢の空間を解剖。
+            </p>
+            <p class="card-date">2026.01.21 UP</p>
+          </div>
+        </a>
+
+        <a href="episodes/vol09.html" class="card">
+          <img src="images/vol09/main.png" alt="ヤン・シュヴァンクマイエル" />
+          <div class="card-content">
+            <p class="vol-num">Vol.09</p>
+            <div class="card-title">
+              触覚の迷宮：<br />ヤン・シュヴァンクマイエル
+            </div>
+            <p class="card-date">2026.01.15 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol08.html" class="card">
+          <img src="images/vol08/thumb.png" alt="JUNK HEAD" />
+          <div class="card-content">
+            <p class="vol-num">Vol.08</p>
+            <div class="card-title">
+              JUNK HEAD：<br />7年の歳月をかけた孤高の金字塔
+            </div>
+            <p class="card-date">2026.01.08 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol07.html" class="card">
+          <img src="images/vol07/thumb.png" alt="LINEスタンプ制作" />
+          <div class="card-content">
+            <p class="vol-num">Vol.07</p>
+            <div class="card-title">
+              AI×GIMPで作る！<br />LINEスタンプ制作完全ガイド
+            </div>
+            <p class="card-date">2025.12.24 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol06.html" class="card">
+          <img src="images/vol06/main.png" alt="長崎スペシャル" />
+          <div class="card-content">
+            <p class="vol-num">Vol.06</p>
+            <div class="card-title">長崎スペシャル：<br />祈りと機械の夢</div>
+            <p class="card-date">2025.12.25 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol05.html" class="card">
+          <img src="images/vol05/main.png" alt="自作新作" />
+          <div class="card-content">
+            <p class="vol-num">Vol.05</p>
+            <div class="card-title">新作：旅路とAIが<br />交差する実存</div>
+            <p class="card-date">2025.12.24 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol04.html" class="card">
+          <img src="images/vol04/hidari_main.png" alt="HIDARI" />
+          <div class="card-content">
+            <p class="vol-num">Vol.04</p>
+            <div class="card-title">
+              『HIDARI』徹底解析：<br />木彫に宿る狂気と職人魂
+            </div>
+            <p class="card-date">2025.12.18 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol03.html" class="card">
+          <img src="images/vol03/domo.png" alt="スタジオ・ドワーフ" />
+          <div class="card-content">
+            <p class="vol-num">Vol.03</p>
+            <div class="card-title">
+              スタジオ・ドワーフ：<br />素材の温もりに命を宿す
+            </div>
+            <p class="card-date">2025.12.11 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol02.html" class="card">
+          <img src="images/vol02/thumb.png" alt="JUNK WORLD" />
+          <div class="card-content">
+            <p class="vol-num">Vol.02</p>
+            <div class="card-title">
+              JUNK WORLD：<br />「一人」から進化した狂気のSF
+            </div>
+            <p class="card-date">2025.12.04 UP</p>
+          </div>
+        </a>
+        <a href="episodes/vol01.html" class="card">
+          <img src="images/vol01/thumb.png" alt="羊のショーン" />
+          <div class="card-content">
+            <p class="vol-num">Vol.01</p>
+            <div class="card-title">
+              羊のショーン：<br />不朽のサイレント・コメディ
+            </div>
+            <p class="card-date">2025.11.27 UP</p>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <img
+        src="images/logo.png"
+        alt="The Animeda! Project Logo"
+        class="footer-logo"
+      />
+      <p class="footer-credit">© 2026 The Animeda! Project</p>
+    </footer>
+  </body>
+</html>
+
