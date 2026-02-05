@@ -3,279 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vol13.html - PUI PUI MOLCAR STRUCTURE ARCHIVE</title>
+    <title>Vol.13 PUI PUI モルカー - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
-
-        :root {
-            --neon-cyan: #00f2ff;
-            --neon-magenta: #ff00ff;
-            --bg-black: #0a0a0a;
-            --panel-bg: rgba(20, 20, 20, 0.9);
-            --border-color: #333;
-        }
-
-        body {
-            background-color: var(--bg-black);
-            color: #ccc;
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .container header {
-            border-left: 8px solid var(--neon-magenta);
-            padding-left: 20px;
-            margin-bottom: 60px;
-        }
-
-        .container h1 {
-            color: var(--neon-cyan);
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
-            letter-spacing: 0.1em;
-        }
-
-        .container h2 {
-            color: var(--neon-magenta);
-            font-size: 1.6rem;
-            border-bottom: 1px solid var(--neon-magenta);
-            padding-bottom: 10px;
-            margin-top: 60px;
-            text-transform: uppercase;
-        }
-
-        .container h3 {
-            color: var(--neon-cyan);
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
             margin-top: 30px;
         }
-
-        .container p { margin-bottom: 20px; }
-
-        .archive-table {
+        .process-grid img {
             width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: var(--panel-bg);
-            border: 1px solid var(--border-color);
-        }
-
-        .archive-table th {
-            background: #1a1a1a;
-            color: var(--neon-cyan);
-            padding: 15px;
-            text-align: left;
-            border-bottom: 2px solid var(--neon-magenta);
-            font-size: 0.9rem;
-        }
-
-        .archive-table td {
-            padding: 15px;
-            border-bottom: 1px solid #222;
-            vertical-align: top;
-        }
-
-        .gif-frame {
-            border: 2px solid var(--neon-cyan);
-            padding: 10px;
-            background: #000;
-            display: inline-block;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-            margin: 20px 0;
-        }
-
-        .gif-frame img {
-            max-width: 100%;
             height: auto;
-            display: block;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
         }
 
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+        /* --- ギャラリー設定 (Vol.7参考) --- */
+        .stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; margin-top: 30px; }
+        .stamp-grid img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; background: #222; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+        .stamp-grid img:hover { transform: scale(1.1); border: 1px solid #ff00ff; box-shadow: 0 0 10px #ff00ff; z-index: 10; }
+
+        /* --- 拡大画面（モーダル） --- */
+        #stampModal {
+            display: none; position: fixed; z-index: 10000; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            justify-content: center; align-items: center; user-select: none;
+        }
+        #modalImg { 
+            max-width: 90%; max-height: 80%; 
+            border: 3px solid #00f2ff; border-radius: 10px; 
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); 
         }
 
-        .link-item {
-            background: #151515;
-            padding: 15px;
-            border: 1px solid var(--neon-cyan);
-            color: var(--neon-cyan);
-            text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            transition: 0.3s;
+        /* --- ナビゲーションボタン --- */
+        .modal-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: #ffffff; font-size: 4rem; font-weight: bold;
+            cursor: pointer; padding: 20px; z-index: 10001;
+            text-shadow: 0 0 15px #ff00ff; transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1); border-radius: 50%;
+            width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;
         }
-
-        .link-item:hover {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 0 15px var(--neon-cyan);
+        .modal-btn:hover { color: #00f2ff; background: rgba(0, 242, 255, 0.2); }
+        .prev-btn { left: 20px; } .next-btn { right: 20px; }
+        .close-btn { top: 30px; right: 30px; font-size: 3rem; transform: none; width: auto; height: auto; background: none; }
+        
+        @media (max-width: 600px) {
+            .modal-btn { font-size: 2.5rem; width: 50px; height: 50px; }
+            .prev-btn { left: 5px; } .next-btn { right: 5px; }
         }
-
-        .exam-note {
-            margin-top: 80px;
-            padding: 30px;
-            border: 1px solid var(--neon-magenta);
-            background: rgba(255, 0, 255, 0.03);
-            border-radius: 4px;
-        }
-
-        .exam-note h4 {
-            color: var(--neon-magenta);
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #555;
-            border-top: 1px solid #333;
-            padding-top: 20px;
-        }
-
-        strong { color: #fff; }
     </style>
-    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<header class="main-header">
-    <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
-    <h1 class="header-title">ストップモーションアニメ通信</h1>
-    <p class="header-subtitle">物質と魂が交差する、1fpsのアーカイブ</p>
-</header>
-
-<nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
-    <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
-    <div>
-        <a href="vol12.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.12へ</a>
-        <a href="vol14.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.14へ →</a>
-    </div>
-</nav>
-
-<div class="container">
-    <header>
-        <h1>PUI PUI MOLCAR</h1>
-        <p>SYSTEM ANALYSIS: STOP-MOTION ANIMATION ARCHIVE // VOL.13</p>
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fpsのアーカイブ</p>
     </header>
 
-    <section>
-        <h2>・作者経歴：見里朝希（Tomoki Misato）</h2>
-        <p>
-            1992年、東京都生まれ。武蔵野美術大学造形学部を卒業後、東京藝術大学大学院にてストップモーション・アニメーション界の巨匠、<strong>伊藤有壱</strong>教授に師事しました。
-        </p>
-        <p>
-            大学院の修了制作として発表した<strong>『マイリトルゴート』</strong>が国内外で多数の映画賞を総なめにし、若くしてストップモーション界のフロントランナーとなりました。
-            彼のスタイルは、羊毛フェルトの「温かみ」を、ブラックユーモアや鋭い社会風刺という「冷徹な視点」で裏切る点にあり、そのギャップが中毒性を生んでいます。
-        </p>
-    </section>
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol12.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.12へ</a>
+            <a href="vol14.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.14へ →</a>
+        </div>
+    </nav>
 
-    <section>
-        <h2>・代表作紹介（STRUCTURAL DATA）</h2>
-        <table class="archive-table">
-            <thead>
-                <tr>
-                    <th style="width: 250px;">作品タイトル</th>
-                    <th style="width: 80px;">発表年</th>
-                    <th>作品構造とマニアック分析</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <strong>PUI PUI モルカー</strong><br>
-                        <img src="../images/vol13/molcar.webp" alt="PUI PUI モルカー" style="width: 100%; max-width: 220px; margin-top: 10px; border: 1px solid #333; border-radius: 4px;">
-                    </td>
-                    <td>2021</td>
-                    <td>
-                        モルモットが車になった世界の日常を描く。最大の特徴は、実写の人間をコマ撮りする「ピクセレーション」と、羊毛フェルトを組み合わせたハイブリッド構造。
-                        一見子供向けだが、内容は「渋滞のイライラ」「強盗」「環境問題」など、<strong>人間の愚かさ</strong>をドライに描く大人向けの寓話。
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>マイリトルゴート</strong><br>
-                        <img src="../images/vol13/goat.webp" alt="マイリトルゴート" style="width: 100%; max-width: 220px; margin-top: 10px; border: 1px solid #333; border-radius: 4px;">
-                    </td>
-                    <td>2018</td>
-                    <td>
-                        グリム童話『オオカミと七匹の子ヤギ』のその後を描いたダークファンタジー。羊毛フェルトの質感が、かえって「肉体」や「痛み」を生々しく強調。
-                        <strong>児童虐待</strong>という重いテーマをメタフォリカルに表現した、見里監督の「作家性」が最も濃縮された傑作。
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Candy.zip（Gemini推薦）</strong><br>
-                        <img src="../images/vol13/candy.webp" alt="Candy.zip" style="width: 100%; max-width: 220px; margin-top: 10px; border: 1px solid #333; border-radius: 4px;">
-                    </td>
-                    <td>2017</td>
-                    <td>
-                        大学時代の作品。オフィスを舞台に、女性が食べた飴が引き起こす身体変容をコミカルに描く。
-                        「飴（無機物）」を「圧縮（zip）」するというタイトル通り、<strong>限られた空間でのメタモルフォーゼ演出</strong>が見事。モルカーに至る生命感の原点。
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.13 / System Analysis</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2; text-shadow: 0 0 10px rgba(0,242,255,0.5);">
+                PUI PUI モルカー：<br>羊毛フェルトが織りなす社会派寓話
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.02.12 UP</p>
+        </header>
 
-    <section>
-        <h2>・視覚的解析：MOTION STUDY</h2>
-        <p>
-            モルカーの魅力は、その「揺れ」にあります。以下のGIFは、キャラクターの感情が物理的な震えとして表現される重要なプロセスです。
-        </p>
-        <div class="gif-container" style="text-align:center;">
-            <div class="gif-frame">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGY2bjR6Mnh6eXhzZ3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vS7z88O9S5Y7K9o9qG/giphy.gif" alt="PUI PUI Molcar Motion">
+        <section class="top-link-area" style="margin-bottom: 50px; padding: 25px; background: #1a1a1a; border-radius: 15px; border: 2px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.2); display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <img src="../images/vol13/molcar0.webp" alt="PUI PUI モルカー" style="width: 100%; border-radius: 10px; border: 1px solid #333;">
             </div>
-            <p style="font-size: 0.8rem; color: var(--neon-cyan);">[Search Keyword: PUI PUI Molcar GIF]</p>
+            <div style="flex: 1.5; min-width: 250px;">
+                <p style="margin-bottom: 10px; font-weight: bold; color: #ff00ff; font-size: 1.1rem;">🔗 Featured Links</p>
+                <a href="https://molcar-anime.com/" target="_blank" style="color: #00f2ff; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: block; line-height: 1.4; margin-bottom: 12px;">
+                    ▶ 公式サイト
+                </a>
+                <a href="https://www.youtube.com/@molcar_anime" target="_blank" style="color: #00f2ff; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: block; line-height: 1.4; margin-bottom: 12px;">
+                    ▶ 公式YouTube
+                </a>
+                <a href="https://www.amazon.co.jp/gp/video/detail/B0B8SL53K9/ref=atv_dp_share_cu_r" target="_blank" style="color: #00f2ff; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: block; line-height: 1.4;">
+                    ▶ Amazon Prime Video
+                </a>
+            </div>
+        </section>
+
+        <section class="analysis-overview" style="line-height: 1.8;">
+            
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">・作者経歴：見里朝希（Tomoki Misato）</h3>
+                <p>
+                    1992年、東京都生まれ。武蔵野美術大学造形学部を卒業後、東京藝術大学大学院にてストップモーション・アニメーション界の巨匠、<strong>伊藤有壱</strong>教授に師事しました。
+                </p>
+                <p>
+                    大学院の修了制作として発表した<strong>『マイリトルゴート』</strong>が国内外で多数の映画賞を総なめにし、若くしてストップモーション界のフロントランナーとなりました。
+                    彼のスタイルは、羊毛フェルトの「温かみ」を、ブラックユーモアや鋭い社会風刺という「冷徹な視点」で裏切る点にあり、そのギャップが中毒性を生んでいます。
+                </p>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px;">・代表作紹介（STRUCTURAL DATA）</h3>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #00f2ff;">PUI PUI モルカー (2021)</h4>
+                    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                        <img src="../images/vol13/molcar.webp" alt="PUI PUI モルカー" style="width: 200px; border-radius: 5px; border: 1px solid #333;">
+                        <div style="flex: 1;">
+                            <p>
+                                モルモットが車になった世界の日常を描く。最大の特徴は、実写の人間をコマ撮りする「ピクセレーション」と、羊毛フェルトを組み合わせたハイブリッド構造。
+                                一見子供向けだが、内容は「渋滞のイライラ」「強盗」「環境問題」など、<strong>人間の愚かさ</strong>をドライに描く大人向けの寓話。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #00f2ff;">マイリトルゴート (2018)</h4>
+                    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                        <img src="../images/vol13/goat.webp" alt="マイリトルゴート" style="width: 200px; border-radius: 5px; border: 1px solid #333;">
+                        <div style="flex: 1;">
+                            <p>
+                                グリム童話『オオカミと七匹の子ヤギ』のその後を描いたダークファンタジー。羊毛フェルトの質感が、かえって「肉体」や「痛み」を生々しく強調。
+                                <strong>児童虐待</strong>という重いテーマをメタフォリカルに表現した、見里監督の「作家性」が最も濃縮された傑作。
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=c8DLl05iM4w" target="_blank" style="color: #ff00ff; text-decoration: none; font-weight: bold;">▶ YouTube: マイリトルゴート</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #00f2ff;">Candy.zip (2017)</h4>
+                    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                        <img src="../images/vol13/candy.webp" alt="Candy.zip" style="width: 200px; border-radius: 5px; border: 1px solid #333;">
+                        <div style="flex: 1;">
+                            <p>
+                                大学時代の作品。オフィスを舞台に、女性が食べた飴が引き起こす身体変容をコミカルに描く。
+                                「飴（無機物）」を「圧縮（zip）」するというタイトル通り、<strong>限られた空間でのメタモルフォーゼ演出</strong>が見事。モルカーに至る生命感の原点。
+                            </p>
+                            <a href="https://youtu.be/SLemmIBVqwo?si=OaP9jSoe8f9VXMEy" target="_blank" style="color: #ff00ff; text-decoration: none; font-weight: bold;">▶ YouTube: Candy.zip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">・技術や特徴：ENGINEERING ASPECTS</h3>
+                <p>
+                    ストップモーションは、1秒間に24枚（または12枚）の静止画を撮影し、それを連続させることで「命」を吹き込む工程です。
+                </p>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li>🔹 <strong>置換（Replacement）:</strong> 口のパーツや表情をコマごとに「取り替える」ことで、有機的な表情変化を生み出す。</li>
+                    <li>🔹 <strong>サウンド設計:</strong> 声優を起用せず、<strong>本物のモルモットの声</strong>をサンプリング。この「非言語的な可愛さ」が言語の壁を越えた。</li>
+                    <li>🔹 <strong>ピクセレーション:</strong> 背景のドライバー（人間）を一コマずつ動かして撮ることで、独特の不気味さとユーモアを演出。</li>
+                </ul>
+                <div class="process-grid">
+                    <img src="../images/vol13/pui11.webp" alt="PUI PUI Molcar Scene 1">
+                    <img src="../images/vol13/pui12.webp" alt="PUI PUI Molcar Scene 2">
+                    <img src="../images/vol13/pui13.webp" alt="PUI PUI Molcar Scene 3">
+                    <img src="../images/vol13/pui14.webp" alt="PUI PUI Molcar Scene 4">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px;">・今後の予定：FUTURE PIPELINE</h3>
+                <p>
+                    見里監督は現在、<strong>WIT STUDIO</strong>にてストップモーション・アニメーション部門の統括として後進の育成にも関わっています。
+                    2024年11月には、CGとのハイブリッドではない「完全新作」の長編映画（『PUI PUI モルカー ザ・ムービー MOLMAX』）が公開されるなど、その制作工程はさらに高度化・大規模化しており、世界的なスタジオ（AardmanやLAIKA）に肩を並べる存在になりつつあります。
+                </p>
+            </div>
+
+            <section class="stamp-gallery" style="margin: 60px 0; padding: 30px; background: #111; border: 2px solid #ff00ff; border-radius: 20px;">
+                <h3 style="color: #ff00ff; margin-top: 0;">📸 PUI PUI Gallery (全118枚 / 左右キーで操作可)</h3>
+                <div class="stamp-grid" id="molcarGallery"></div>
+            </section>
+
+        </section>
+
+    </article>
+
+    <nav style="padding: 40px 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-top: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol12.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.12へ</a>
+            <a href="vol14.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.14へ →</a>
         </div>
-    </section>
+    </nav>
 
-    <section>
-        <h2>・技術や特徴：ENGINEERING ASPECTS</h2>
-        <p>
-            ストップモーションは、1秒間に24枚（または12枚）の静止画を撮影し、それを連続させることで「命」を吹き込む工程です。
-        </p>
-        <ul style="list-style: none; padding: 0;">
-            <li>🔹 <strong>置換（Replacement）:</strong> 口のパーツや表情をコマごとに「取り替える」ことで、有機的な表情変化を生み出す。</li>
-            <li>🔹 <strong>サウンド設計:</strong> 声優を起用せず、<strong>本物のモルモットの声</strong>をサンプリング。この「非言語的な可愛さ」が言語の壁を越えた。</li>
-            <li>🔹 <strong>ピクセレーション:</strong> 背景のドライバー（人間）を一コマずつ動かして撮ることで、独特の不気味さとユーモアを演出。</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>・関連サイト（OFFICIAL / STREAMING）</h2>
-        <div class="link-grid">
-            <a href="https://molcar-anime.com/" class="link-item" target="_blank">公式サイト</a>
-            <a href="https://www.youtube.com/@BANDAINAMCOArts" class="link-item" target="_blank">公式YouTube</a>
-            <a href="https://www.amazon.co.jp/gp/video/detail/B08S5MVB7N" class="link-item" target="_blank">Amazon Prime Video</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>・今後の予定：FUTURE PIPELINE</h2>
-        <p>
-            見里監督は現在、<strong>WIT STUDIO</strong>にてストップモーション・アニメーション部門の統括として後進の育成にも関わっています。
-            2024年11月には、CGとのハイブリッドではない「完全新作」の長編映画（『PUI PUI モルカー ザ・ムービー MOLMAX』）が公開されるなど、その制作工程はさらに高度化・大規模化しており、世界的なスタジオ（AardmanやLAIKA）に肩を並べる存在になりつつあります。
-        </p>
-    </section>
-
-    <footer>
-        &copy; 2026 FACTORY MANAGER'S ARCHIVE // DATA UPDATED: 2026-02-02
+    <footer class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000;">
+        <img src="../images/logo.webp" alt="Logo" class="footer-logo" style="max-width: 180px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900;">© 2026 The Animeda! Project</p>
     </footer>
-</div>
+
+    <div id="stampModal">
+        <span class="modal-btn close-btn" onclick="closeModal()">&times;</span>
+        <span class="modal-btn prev-btn" onclick="prevImage()">&#10094;</span>
+        <img id="modalImg" src="">
+        <span class="modal-btn next-btn" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        // 画像生成
+        const galleryContainer = document.getElementById('molcarGallery');
+        for (let i = 1; i <= 118; i++) {
+            const num = String(i).padStart(3, '0');
+            const img = document.createElement('img');
+            img.src = `../images/vol13/puipui${num}.webp`;
+            img.alt = `PUI PUI Molcar ${num}`;
+            img.loading = 'lazy';
+            img.onclick = () => openModal(i - 1);
+            galleryContainer.appendChild(img);
+        }
+
+        // モーダル制御
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#molcarGallery img');
+        const modal = document.getElementById('stampModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(index) { currentIndex = index; updateModal(); modal.style.display = 'flex'; }
+        function closeModal() { modal.style.display = 'none'; }
+        function nextImage() { currentIndex = (currentIndex + 1) % images.length; updateModal(); }
+        function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; updateModal(); }
+        function updateModal() { modalImg.src = images[currentIndex].src; }
+
+        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
