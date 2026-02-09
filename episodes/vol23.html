@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vol.23 番外編 ビフォア・トリロジー解析 - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- ボックス・装飾設定 --- */
+        .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
+        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
+        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
+        .data-table tr:nth-child(even) { background: #0a0a0a; }
+        .highlight-magenta { color: #ff00ff; font-weight: bold; }
+        .highlight-cyan { color: #00f2ff; font-weight: bold; }
 
+        /* グラフィック・フレーム */
+        .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+        .graphic-frame img { max-width: 100%; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fps of Dialogue Archive</p>
+    </header>
+
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol22.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.22へ</a>
+            <a href="vol24.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.24へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.23 / Extra Edition: Before Trilogy</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                9年ごとの再会：<br>『ビフォア・トリロジー』が刻んだ愛の経年変化
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.04.25 UP</p>
+        </header>
+
+        <section class="gif-section" style="text-align: center;">
+            <div class="graphic-frame">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1cHFmZDVxMGF6eGtjbnR3Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vS7z88O9S5Y7K9o9qG/giphy.gif" alt="Before Sunrise GIF">
+            </div>
+            <p style="font-size: 0.8rem; color: #00f2ff;">[Search Keyword: Before Sunrise GIF]</p>
+        </section>
+
+        <section class="analysis-overview" style="line-height: 1.8;">
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 作者経歴：リチャード・リンクレイター（Richard Linklater）</h3>
+            <p>
+                1960年テキサス州生まれ。独学で映画を学び、低予算映画『スラッカー』で注目を浴びました。彼の最大の特徴は、**「時間の流れを映画の構造そのものにする」**という極めて実験的な姿勢です。12年かけて同じ子役の成長を撮り続けた『6才のボクが、大人になるまで。』など、忍耐と継続を武器とする「時間の建築家」です。
+            </p>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：対話の三部作</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 250px;">作品名</th>
+                        <th style="width: 80px;">発表年</th>
+                        <th>マニアック分析ポイント</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ビフォア・サンライズ 恋人までの距離</strong></td>
+                        <td>1995</td>
+                        <td>ウィーンの街を歩きながら喋り続ける。若さゆえの万能感と「一晩」という極限のタイムリミット設定。ストップモーションならぬ「歩行の連続性」の美学。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ビフォア・サンセット</strong></td>
+                        <td>2004</td>
+                        <td>パリ。実時間とほぼ同じ85分間をリアルタイムで描く。脚本段階から俳優二人が深く関与し、会話の「間」や「温度差」を極限まで構造化した。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ビフォア・ミッドナイト</strong></td>
+                        <td>2013</td>
+                        <td>ギリシャ。ロマンスが生活へと変わった「重み」を描く。三部作の中で最も長回しのテイクが多く、会話の「アッセンブリー（組み立て）」が神業。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="highlight-magenta">6才のボクが、大人になるまで。</span> (Gemini推薦)</td>
+                        <td>2014</td>
+                        <td>監督の執念の極致。CGを使わず、俳優の実際の加齢を12年間記録。この「待つ」という工程は、まさにコマ撮り職人の魂と同質。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 評価：リアリズムを超えた「共感の設計」</h3>
+            <p>
+                このシリーズがカルト的な人気を誇るのは、単なるラブストーリーではなく、観客自身も俳優と共に9年ずつ歳を重ねてきたという「共有体験」にあります。フィクションでありながら、ドキュメンタリーのような質感を持ち、人生の段階ごとに見え方が変わる「多層的な構造」が絶賛されています。
+            </p>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 技術と特徴：長回しとコラボレーティブ・スクリプト</h3>
+            <div class="analysis-box">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>🔹 <strong>ロングテイク（長回し）：</strong> 10分以上に及ぶ会話シーン。ミスが許されない緊張感の中で「自然さ」を維持する工程は、一コマのミスが全体を台無しにするストップモーションの撮影現場と通じます。</li>
+                    <li>🔹 <strong>共同脚本の構造：</strong> 監督だけでなくイーサン・ホークとジュリー・デルピーが自ら台詞を書くことで、キャラクターの「内面的な一貫性」を維持。これはITでいうところの「ドメイン知識の共有」に近い手法です。</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連サイト</h3>
+            <div class="analysis-box">
+                <p><a href="https://warnerbros.co.jp/home_entertainment/detail.php?title_id=2334" target="_blank" style="color: #00f2ff;">▶ ワーナー公式：ビフォア三部作</a></p>
+                <p><a href="https://www.criterion.com/boxsets/1237-the-before-trilogy" target="_blank" style="color: #00f2ff;">▶ Criterion Collection（高画質アーカイブ）</a></p>
+                <p><a href="https://www.amazon.co.jp/dp/B00S9Y2K7A" target="_blank" style="color: #00f2ff;">▶ Amazon Prime Video：ビフォア・サンライズ</a></p>
+            </div>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連作：時を刻む映画たち</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">作品名</th>
+                        <th style="width: 120px;">作家/監督</th>
+                        <th>構造的共通点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ウェイキング・ライフ</strong></td>
+                        <td>リチャード・リンクレイター</td>
+                        <td>実写をトレースしてアニメ化する「ロトスコープ」作品。本作の二人がゲスト出演しており、夢の中のような質感が特徴。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>パスト ライブス／再会</strong></td>
+                        <td>セリーヌ・ソン</td>
+                        <td>「縁」と「時間の経過」を描いた現代の傑作。リンクレイターへの強いオマージュを感じさせる静かな対話劇。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="highlight-cyan">落下の解剖学</span> (Gemini推薦)</td>
+                        <td>ジュスティーヌ・トリエ</td>
+                        <td>夫婦の激しい会話劇が物語の核。会話の「構造」が事件を解き明かす鍵となる。ビフォア三部作の「対話の解体」をサスペンスに転じたような一篇。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 今後の予定：2030年代の再会はあるか？</h3>
+            <p>
+                ファンが最も期待しているのは、前作から数えて再び9年が経過した後の「第4作」です。監督は否定も肯定もしていませんが、もし実現すれば、老境に差し掛かる二人の「終着点」を描くことになります。時間の蓄積そのものを資産とする、世界で唯一の映画プロジェクトです。
+            </p>
+        </section>
+
+        <section class="exam-note" style="margin-top: 60px; padding: 25px; border-radius: 15px; border: 1px solid #00f2ff; background: #050505;">
+            <h4 style="margin-top: 0; color: #00f2ff;">🎓 工場長の資格試験対策ノート</h4>
+            <div style="font-size: 0.9rem; color: #aaa; line-height: 1.6;">
+                <p><strong>ITパスポート（長期プロジェクト管理）：</strong> 
+                    9年スパンでのリリース管理は、IT業界における **「超長期的なライフサイクル管理」** と同じです。技術や環境が変わっても、共通のコア資産（俳優・監督）を維持し続け、一貫した価値を提供し続ける **「サステナビリティ（持続可能性）」** の重要性を示しています。
+                </p>
+                <p style="margin-top: 10px;"><strong>G検定（自然言語処理とコンテキスト）：</strong> 
+                    二人の会話の応酬は、AIが最も苦手とする **「文脈（コンテキスト）の長距離依存」** の塊です。数年前の発言が現在の感情に影響を与える構造は、Transformerなどの最新モデルがいかに「過去の情報を保持して現在に反映させるか」という課題を、人間が映画というメディアで解決している例と言えます。
+                </p>
+            </div>
+        </section>
+
+    </article>
+
+    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol22.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.22へ</a>
+                <a href="vol24.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.24へ →</a>
+            </div>
+        </nav>
+
+        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+    </footer>
+</body>
+</html>
