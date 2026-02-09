@@ -1,173 +1,37 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vol.16 ギレルモ・デル・トロのピノッキオ解析 - ストップモーションアニメ通信</title>
-    <link rel="icon" href="../images/logo2.webp" type="image/webp">
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        /* --- ボックス・装飾設定 --- */
-        .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
-        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
-        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
-        .data-table tr:nth-child(even) { background: #0a0a0a; }
-        .highlight-magenta { color: #ff00ff; font-weight: bold; }
-        .highlight-cyan { color: #00f2ff; font-weight: bold; }
-
-        /* グラフィック・フレーム */
-        .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
-        .graphic-frame img { max-width: 100%; border-radius: 4px; }
-    </style>
-</head>
-<body>
-    <header class="main-header">
-        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
-        <h1 class="header-title">ストップモーションアニメ通信</h1>
-        <p class="header-subtitle">物質と魂が交差する、1fpsのアーカイブ</p>
-    </header>
-
-    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
-        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
-        <div>
-            <a href="vol15.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.15へ</a>
-            <a href="vol17.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.17へ →</a>
-        </div>
-    </nav>
-
-    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
-        
-        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
-            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.16 / Dark Fantasy Stop-Motion</p>
-            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
-                魂を宿す木屑：<br>デル・トロ版『ピノッキオ』解体新書
-            </h2>
-            <p class="date" style="margin-top: 15px; color: #888;">2026.02.24 UP</p>
-        </header>
-
-        <section class="gif-section" style="text-align: center;">
-            <div class="graphic-frame">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1cHFmZDVxMGF6eGtjbnR3Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/M9geMmslB6S0F7v87J/giphy.gif" alt="Pinocchio GIF">
-            </div>
-            <p style="font-size: 0.8rem; color: #00f2ff;">[Search Keyword: Guillermo del Toro Pinocchio GIF]</p>
-        </section>
-
-        <section class="analysis-overview" style="line-height: 1.8;">
-            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 作者経歴：怪物の代弁者 ギレルモ・デル・トロ</h3>
-            <p>
-                メキシコ出身。幼少期より怪物や時計仕掛けに魅了され、特殊メイクの世界から監督へ。代表作『パンズ・ラビリンス』『シェイプ・オブ・ウォーター』で知られる、<strong>現代最高のファンタジー作家</strong>の一人です。本作では、彼が10代から抱き続けてきた「ピノッキオをいつか撮る」という執念を、最高峰のストップモーション技術で具現化しました。
-            </p>
-
-            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：デル・トロの系譜</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th style="width: 80px;">発表年</th>
-                        <th>構造とマニアック分析</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ギレルモ・デル・トロのピノッキオ</strong></td>
-                        <td>2022</td>
-                        <td>パペットの顔面に機械仕掛けを埋め込み、微細な表情筋の動きを再現。ストップモーションの常識を塗り替えた。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>パンズ・ラビリンス</strong></td>
-                        <td>2006</td>
-                        <td>残酷な現実と幻想が交錯する二重構造。本作のファシズム描写の原点ともいえる。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-magenta">ナイトメア・アリー</span> (Gemini推薦)</td>
-                        <td>2021</td>
-                        <td>ストップモーションではないが、デル・トロの「見世物小屋」的で冷徹な人間観が最も色濃く出た一篇。</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 脚本の深堀：従順さへの反旗</h3>
-            <p>本作の脚本構造は、オリジナルの「良い子になれば人間になれる」という教訓を真っ向から否定しています。</p>
+<section class="detailed-analysis">
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 60px;">◎ 徹底解剖：パンズ・ラビリンス (2006)</h3>
             <div class="analysis-box">
-                <ul style="list-style: none; padding-left: 0;">
-                    <li>🔹 <strong>歴史的背景の挿入：</strong> 舞台を1930年代、ムッソリーニ統治下の<strong>ファシスト・イタリア</strong>に設定。「マニュアル通りに動く兵士」こそが本当の人形ではないか、という強烈な皮肉。</li>
-                    <li>🔹 <strong>不完全さの肯定：</strong> 「本物の人間」とは、死を受け入れ、不完全なまま愛し合うこと。脚本の終盤、ピノッキオが不死を捨て、大切な人のために死を選ぶ構成は、物語に圧倒的な奥行きを与えている。</li>
+                <p><strong>【現実の地獄と幻想の試練】</strong></p>
+                <p>
+                    1944年のスペイン内戦後を舞台にした、デル・トロ監督の「ダークファンタジーの最高峰」です。独裁政権下の残酷な現実と、主人公オフェリアが迷い込む不気味な迷宮が同時進行する二重構造を持っています。
+                </p>
+                <ul style="list-style: none; padding-left: 10px;">
+                    <li>🔹 <strong>ペイルマンの造形：</strong> 掌に眼球を持つ「ペイルマン」は、子供を喰らう権威主義の象徴。ストップモーション的な造形美と実写メイクが融合した、映画史に残るクリーチャー。</li>
+                    <li>🔹 <strong>ピノッキオとの共通点：</strong> 「規律に従うこと（ファシズム）」への拒絶と、「自らの意志で道を選ぶこと」という、本作のテーマは最新作『ピノッキオ』にダイレクトに引き継がれています。</li>
                 </ul>
             </div>
 
-            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 技術と特徴：メカニカル・エモーション</h3>
-            <div class="analysis-box">
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 徹底解剖：パシフィック・リム (2013)</h3>
+            <div class="analysis-box" style="border-color: #00f2ff;">
+                <p><strong>【鋼鉄の重量感と工学的ロマン】</strong></p>
                 <p>
-                    通常のストップモーションが「顔のパーツを差し替える（リプレイスメント）」のに対し、本作ではパペットの頭蓋骨内に<strong>数mm単位の極小ギア</strong>を仕込み、皮膚の下から筋肉を動かすような滑らかなアニメーションを実現しました。これにより、人形特有の「無機質さ」と、人間以上の「エモさ」の共存に成功しています。
+                    日本の特撮・アニメへの究極のラブレター。巨大兵器「イェーガー」と怪獣（KAIJU）の激突を描きます。他のSF映画と一線を画すのは、その「圧倒的な重量感」の描写です。
                 </p>
+                <ul style="list-style: none; padding-left: 10px;">
+                    <li>🔹 <strong>産業遺産としてのロボット：</strong> イェーガー（特にジプシー・デンジャー）は、磨かれた最新技術というよりは、<strong>鋼鉄と油の匂いがする巨大な産業機械</strong>として描写されています。装甲の質感や、内部の巨大なピストン、駆動音に宿る「質量」は、工場の大型設備に通じる美学があります。</li>
+                    <li>🔹 <strong>ドリフト（神経接続）：</strong> 2人のパイロットが脳を同期させるシステムは、人間同士の「対話」を極限まで構造化したもの。孤独な怪物が他者と繋がろうとするデル・トロ的な「愛」の形が、鉄塊の中で表現されています。</li>
+                </ul>
             </div>
-
-            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連サイト / 視聴リンク</h3>
-            <div class="analysis-box">
-                <p><a href="https://www.netflix.com/jp/title/80218451" target="_blank" style="color: #00f2ff;">▶ Netflix公式サイト：ギレルモ・デル・トロのピノッキオ</a></p>
-                <p><a href="https://www.youtube.com/watch?v=7M71y8298zQ" target="_blank" style="color: #00f2ff;">▶ YouTube：メイキング映像（Netflix公式）</a></p>
-            </div>
-
-            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連作：ストップモーションの可能性</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th style="width: 120px;">作家/スタジオ</th>
-                        <th>構造的共通点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>JUNK HEAD</strong></td>
-                        <td>堀貴秀</td>
-                        <td>デル・トロが絶賛。執念のディテールと、ディストピア的世界観が共鳴。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>アリス</strong></td>
-                        <td>ヤン・シュヴァンクマイエル</td>
-                        <td>「物」が意志を持つ不気味さ。デル・トロが影響を受けたチェコ・アニメーションの巨匠。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-cyan">マーセル 靴をはいた小さな貝</span> (Gemini推薦)</td>
-                        <td>ディーン・フライシャー・キャンプ</td>
-                        <td>「小さな存在」が世界をどう見るか。最新のストップモーション技術と哲学的な脚本の融合という点で本作に近い。</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 今後の予定</h3>
-            <p>
-                デル・トロ監督は、カズオ・イシグロの小説<strong>『忘れられた巨人』</strong>を次なるストップモーション作品として発表予定。本作で培った「大人のためのアニメーション」という領域をさらに拡張し、記憶と愛の物語を構築しようとしています。
-            </p>
         </section>
 
         <section class="exam-note" style="margin-top: 60px; padding: 25px; border-radius: 15px; border: 1px solid #00f2ff; background: #050505;">
             <h4 style="margin-top: 0; color: #00f2ff;">🎓 工場長の資格試験対策ノート</h4>
             <div style="font-size: 0.9rem; color: #aaa; line-height: 1.6;">
-                <p><strong>ITパスポート（構成管理）：</strong> 
-                    本作では、数千に及ぶ3Dプリントされた顔のパーツが使用されました。これらを一つずつ識別し、シーンごとに間違えなく配置するためには、厳密な **「構成管理（バージョン管理）」** が不可欠です。工場の在庫管理と同じく、ID管理の徹底がプロジェクトを支えています。
+                <p><strong>ITパスポート（非機能要件）：</strong> 
+                    『パシフィック・リム』のロボット描写は、単に「動く」だけでなく「重厚感がある（質感）」という **非機能要件** が作品の価値を決定づけています。システム開発でも、機能の正しさだけでなく、操作感や安定性という「質感」の設計が重要です。
                 </p>
-                <p style="margin-top: 10px;"><strong>G検定（生成AIとCG）：</strong> 
-                    ストップモーションの世界でも、背景のレンダリングや不要な機材の消去にAI（ディープラーニング）が活用されています。アナログな質感（教師データ）を保護しつつ、デジタル処理を効率化する **「AIによるコンテンツ制作の加速」** の最前線といえます。
+                <p style="margin-top: 10px;"><strong>G検定（物理シミュレーション）：</strong> 
+                    巨大な水しぶきや鋼鉄の破壊描写には、高度な物理演算（シミュレーション）が使われています。AI分野でも、デジタルツイン上で工場のラインを再現し、物理的な衝突や負荷を予測する **「物理ベースの深層学習」** が注目されています。
                 </p>
             </div>
         </section>
-
-    </article>
-
-    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
-        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
-            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
-            <div>
-                <a href="vol15.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.15へ</a>
-                <a href="vol17.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.17へ →</a>
-            </div>
-        </nav>
-
-        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
-        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
-    </footer>
-</body>
-</html>
