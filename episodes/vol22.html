@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vol.22 番外編 ショーン・ベイカー解析 - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- ボックス・装飾設定 --- */
+        .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
+        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
+        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
+        .data-table tr:nth-child(even) { background: #0a0a0a; }
+        .highlight-magenta { color: #ff00ff; font-weight: bold; }
+        .highlight-cyan { color: #00f2ff; font-weight: bold; }
+
+        /* グラフィック・フレーム */
+        .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+        .graphic-frame img { max-width: 100%; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fps of Cinematic Archive</p>
+    </header>
+
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
+            <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.22 / Extra Edition: Sean Baker</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                路上のネオンとiPhone：<br>ショーン・ベイカーが描く「世界の質感」
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.04.18 UP</p>
+        </header>
+
+        <section class="gif-section" style="text-align: center;">
+            <div class="graphic-frame">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1cHFmZDVxMGF6eGtjbnR3Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/M9geMmslB6S0F7v87J/giphy.gif" alt="The Florida Project GIF">
+            </div>
+            <p style="font-size: 0.8rem; color: #00f2ff;">[Search Keyword: The Florida Project Sean Baker GIF]</p>
+        </section>
+
+        <section class="analysis-overview" style="line-height: 1.8;">
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 作者経歴：インディペンデント映画の旗手</h3>
+            <p>
+                1971年ニュージャージー州生まれ。ニューヨーク大学で映画を学び、初期の頃から社会の周辺に生きる人々を温かく、かつ鋭い視線で描き続けてきました。予算がない中でiPhone 5Sを使って撮影した『タンジェリン』で世界を驚かせ、その後、カンヌ国際映画祭のパルム・ドールを受賞するなど、現代で最も重要な監督の一人となりました。
+            </p>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：極彩色のリアリズム</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 250px;">作品名</th>
+                        <th style="width: 80px;">発表年</th>
+                        <th>マニアック分析ポイント</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>タンジェリン</strong></td>
+                        <td>2015</td>
+                        <td>全編iPhone 5Sで撮影。アナモルフィック・レンズとアプリ「FiLMiC Pro」を駆使。デジタル特有のザラついた質感を、ロサンゼルスの夕景の美しさへと昇華させた。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>フロリダ・プロジェクト 中高年（？）の夢の国</strong></td>
+                        <td>2017</td>
+                        <td>ディズニーワールドのすぐ隣にある安モーテルが舞台。35mmフィルムを使用し、子供の目線から見た世界の「魔法のような鮮やかさ」と、大人の「過酷な現実」を色の対比で構造化。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="highlight-magenta">Anora (アノーラ)</span> (Gemini推薦)</td>
+                        <td>2024</td>
+                        <td>カンヌ国際映画祭パルム・ドール受賞作。ストリップダンサーとロシア富豪の息子の逃避行。ベイカー史上最もスピーディーでエネルギッシュなカット割りは、もはや「実写によるストップモーション」のような躍動感。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 評価：周辺への愛とパステルカラーの暴力</h3>
+            <p>
+                「見捨てられた場所」を、映画史に残る「美しい場所」に変えてしまう魔法使い。彼の作品は、社会の不条理を告発するだけでなく、そこに生きる人々の「生」のエネルギーを爆発させます。特に色彩設計においては、パステルカラーの建物をあえて残酷なシーンの背景に置くなど、色のコントラストで観客の感情を揺さぶる手法が高く評価されています。
+            </p>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 技術と特徴：コンピュテーショナル・フォトグラフィの先駆</h3>
+            <div class="analysis-box">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>🔹 <strong>iPhoneでのシネマティック撮影：</strong> 『タンジェリン』では、あえて解像度の低いスマホを使用しつつ、光学レンズで歪み（アナモルフィック）を加えることで、フィルムに近い質感を再現。これは「制限を創造力で上書きする」ストップモーションの精神そのものです。</li>
+                    <li>🔹 <strong>現実の色を「超える」色彩：</strong> 彼の映画の色は、現実に存在しながらも、脳内で彩度を上げたような記憶の色に近い。一コマ一コマの「絵作り」にかける執念は、アニメーターのレイアウト作業に近い厳密さを持っています。</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連サイト</h3>
+            <div class="analysis-box">
+                <p><a href="https://floridaproject.jp/" target="_blank" style="color: #00f2ff;">▶ 日本公式サイト：フロリダ・プロジェクト</a></p>
+                <p><a href="https://www.youtube.com/watch?v=ALwS7U7fWls" target="_blank" style="color: #00f2ff;">▶ YouTube：ショーン・ベイカー インタビュー映像</a></p>
+                <p><a href="https://www.amazon.co.jp/dp/B07GPC9H72" target="_blank" style="color: #00f2ff;">▶ Amazon Prime Video：タンジェリン 視聴ページ</a></p>
+            </div>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連作：インディペンデントの魂</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">作品名</th>
+                        <th style="width: 120px;">作家/監督</th>
+                        <th>構造的共通点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ムーンライト</strong></td>
+                        <td>バリー・ジェンキンス</td>
+                        <td>フロリダを舞台にした色彩の叙情詩。光の捉え方や周辺社会への眼差しがベイカーと響き合う。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WANDA/ワンダ</strong></td>
+                        <td>バーバラ・ローデン</td>
+                        <td>ベイカーが愛してやまない70年代のインディーズ映画。路上のざらついたリアリズムの原点。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="highlight-cyan">ストップ・メイキング・センス</span> (Gemini推薦)</td>
+                        <td>ジョナサン・デミ</td>
+                        <td>実写ライブ映画だが、ライティングや空間構成が非常にグラフィカル。ベイカー的な「場」の設計に通じる視覚的傑作。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 今後の予定：パルム・ドール後の世界へ</h3>
+            <p>
+                最新作『Anora』の世界的な成功により、彼は今やハリウッドで最も「自由に」映画を撮れる監督になりました。しかし、彼は今もなお、小さなコミュニティや路上の声に耳を傾けるスタイルを変えていません。次作ではどのような「質感」を私たちに見せてくれるのか、期待が高まります。
+            </p>
+        </section>
+
+        <section class="exam-note" style="margin-top: 60px; padding: 25px; border-radius: 15px; border: 1px solid #00f2ff; background: #050505;">
+            <h4 style="margin-top: 0; color: #00f2ff;">🎓 工場長の資格試験対策ノート</h4>
+            <div style="font-size: 0.9rem; color: #aaa; line-height: 1.6;">
+                <p><strong>ITパスポート（コストパフォーマンスと代替技術）：</strong> 
+                    高価なシネマカメラではなくiPhoneを採用した『タンジェリン』は、限られたリソースで最大の結果を出す **「投資対効果（ROI）」** の極めて高い意思決定です。既存技術（スマホ）に外部リソース（レンズやアプリ）を組み合わせることで、高価な専用機を代替する **「技術革新」** の一例と言えます。
+                </p>
+                <p style="margin-top: 10px;"><strong>G検定（計算写真学と画像処理）：</strong> 
+                    スマホでの撮影は、レンズの物理特性をソフトで補完する **「コンピュテーショナル・フォトグラフィ」** の領域です。歪みやノイズを逆手に取り、畳み込みニューラルネットワーク（CNN）的な処理に近い感覚で「画質をデザイン」する工程は、AIによる画像生成・加工技術と非常に高い親和性があります。
+                </p>
+            </div>
+        </section>
+
+    </article>
+
+    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
+                <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
+            </div>
+        </nav>
+
+        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+    </footer>
+</body>
+</html>
