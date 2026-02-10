@@ -19,6 +19,45 @@
         /* 画像エリア設定 */
         .psd-preview { text-align: center; margin: 30px 0; }
         .psd-preview img { max-width: 100%; border-radius: 12px; border: 1px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+
+        /* --- ギャラリー設定 (Vol.13参考) --- */
+        .stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; margin-top: 30px; }
+        .stamp-grid img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; background: #222; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+        .stamp-grid img:hover { transform: scale(1.1); border: 1px solid #ff00ff; box-shadow: 0 0 10px #ff00ff; z-index: 10; }
+
+        /* --- 拡大画面（モーダル） --- */
+        #stampModal {
+            display: none; position: fixed; z-index: 10000; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            justify-content: center; align-items: center; user-select: none;
+        }
+        #modalImg { 
+            max-width: 90%; max-height: 80%; 
+            border: 3px solid #00f2ff; border-radius: 10px; 
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); 
+        }
+
+        /* --- ナビゲーションボタン --- */
+        .modal-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: #ffffff; font-size: 4rem; font-weight: bold;
+            cursor: pointer; padding: 20px; z-index: 10001;
+            text-shadow: 0 0 15px #ff00ff; transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1); border-radius: 50%;
+            width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;
+        }
+        .modal-btn:hover { color: #00f2ff; background: rgba(0, 242, 255, 0.2); }
+        .prev-btn { left: 20px; } .next-btn { right: 20px; }
+        .close-btn { top: 30px; right: 30px; font-size: 3rem; transform: none; width: auto; height: auto; background: none; }
+        
+        @media (max-width: 600px) {
+            .modal-btn { font-size: 2.5rem; width: 50px; height: 50px; }
+            .prev-btn { left: 5px; } .next-btn { right: 5px; }
+        }
+        /* グラフィック・フレーム */
+        .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+        .graphic-frame img { max-width: 100%; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -45,6 +84,13 @@
             </h2>
             <p class="date" style="margin-top: 15px; color: #888;">2026.02.12 UP</p>
         </header>
+
+        <section class="product-photo" style="text-align: center; margin-bottom: 50px;">
+            <div class="graphic-frame">
+                <img src="../images/vol14/magnet_real.webp" alt="オリジナルマグネット実物" style="max-width: 500px; width: 100%;">
+            </div>
+            <p style="font-size: 0.8rem; color: #00f2ff;">完成したオリジナルマグネット（40mm角）</p>
+        </section>
 
         <section class="intro-section">
             <p>アニメ制作で生まれたキャラクターを現実の形にする「マーチャンダイジング」の実験です。今回は、屋内用のマグネットシート制作の全工程を、具体的なコストと共に記録します。</p>
@@ -77,46 +123,46 @@
                     <tr>
                         <td>30mm × 30mm</td>
                         <td>50個</td>
-                        <td>¥110</td>
-                        <td>¥5,500</td>
+                        <td>¥251</td>
+                        <td>¥12,550</td>
                     </tr>
                     <tr style="background: rgba(0, 242, 255, 0.1);">
                         <td><span class="highlight-cyan">40mm × 40mm (今回採用)</span></td>
                         <td>50個</td>
-                        <td>¥132</td>
-                        <td>¥6,600</td>
+                        <td>¥278</td>
+                        <td>¥13,900</td>
                     </tr>
                     <tr>
                         <td>50mm × 50mm</td>
                         <td>50個</td>
-                        <td>¥165</td>
-                        <td>¥8,250</td>
+                        <td>¥364</td>
+                        <td>¥18,190</td>
                     </tr>
-                    <tr>
-                        <td>60mm × 60mm</td>
-                        <td>50個</td>
-                        <td>¥198</td>
-                        <td>¥9,900</td>
-                    </tr>
-                    <tr>
-                        <td>80mm × 80mm</td>
-                        <td>50個</td>
-                        <td>¥242</td>
-                        <td>¥12,100</td>
-                    </tr>
+                    
                 </tbody>
             </table>
             <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">※送料等は別途。2026年現在の目安価格です。</p>
         </section>
 
-        <section class="exam-note" style="margin-top: 60px; padding: 25px; border-radius: 15px; border: 1px solid #00f2ff; background: #050505;">
-            <h4 style="margin-top: 0; color: #00f2ff;">🎓 ITパスポート・G検定 関連コメント</h4>
-            <div style="font-size: 0.9rem; color: #aaa; line-height: 1.6;">
-                <p><strong>ITパスポート（外部委託管理）：</strong> 
-                    自社で設備を持たず、専門業者に製造を依頼することを「アウトソーシング」と呼びます。発注から納品までのリードタイム（10日間）や、JPGによる中間確認（検収プロセス）を管理することがプロジェクトの品質保証に直結します。
+        <section class="stamp-gallery" style="margin: 60px 0; padding: 30px; background: #111; border: 2px solid #ff00ff; border-radius: 20px;">
+            <h3 style="color: #ff00ff; margin-top: 0;">📸 マグネット使用例ギャラリー (全20枚 / 左右キーで操作可)<br><span style="font-size: 0.8rem; color: #00f2ff;">テーマ：町中の「鉄（Iron）」を探す</span></h3>
+            <div class="stamp-grid" id="magnetGallery"></div>
+        </section>
+
+        <section class="material-science" style="margin-top: 60px;">
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ 鉄（Iron）とは</h3>
+            <div class="process-box">
+                <p>
+                    原子番号26の元素（Fe）。宇宙で最も安定した元素の一つであり、地球の重量の約30%を占める主要構成物質です。<br>
+                    人類文明の骨格（インフラ）を支える最も重要な金属であり、強磁性体として「磁石にくっつく」性質を持ちます。街中にある手すり、扉、柱など、塗装されていてもマグネットを近づければ、その内側に眠る「鉄の魂」を検知することができます。
                 </p>
-                <p style="margin-top: 10px;"><strong>G検定（データフォーマットと前処理）：</strong> 
-                    編集用の <strong>PSD（ロスレス）</strong> から、確認用の <strong>JPG（非可逆圧縮）</strong> へ変換する作業は、データの目的に応じた「最適化」です。AI学習においても、入力データの解像度やフォーマットを揃える「前処理」の質が、最終的な出力結果の精度を左右します。
+            </div>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 磁石（Magnet）とは</h3>
+            <div class="process-box">
+                <p>
+                    磁場を発生させ、鉄などの強磁性体を引き寄せる物体です。<br>
+                    今回制作したマグネットシートは、ゴムや樹脂にフェライト磁石の粉末を練り込んだ「ボンド磁石」の一種です。特に「異方性」と呼ばれるタイプは、磁性粒子の向きが揃えられているため、薄くても強力な吸着力を発揮します。冷蔵庫やホワイトボードだけでなく、都市のあらゆる鉄部がキャンバスとなります。
                 </p>
             </div>
         </section>
@@ -135,5 +181,48 @@
         <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
         <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
     </footer>
+
+    <div id="stampModal">
+        <span class="modal-btn close-btn" onclick="closeModal()">&times;</span>
+        <span class="modal-btn prev-btn" onclick="prevImage()">&#10094;</span>
+        <img id="modalImg" src="">
+        <span class="modal-btn next-btn" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        // 画像生成
+        const galleryContainer = document.getElementById('magnetGallery');
+        const imageCount = 20;
+        for (let i = 1; i <= imageCount; i++) {
+            const num = String(i).padStart(2, '0');
+            const img = document.createElement('img');
+            img.src = `../images/vol14/usage/magnet_usage_${num}.webp`;
+            img.alt = `マグネット使用例 ${num}`;
+            img.loading = 'lazy';
+            img.onclick = () => openModal(i - 1);
+            galleryContainer.appendChild(img);
+        }
+
+        // モーダル制御
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#magnetGallery img');
+        const modal = document.getElementById('stampModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(index) { currentIndex = index; updateModal(); modal.style.display = 'flex'; }
+        function closeModal() { modal.style.display = 'none'; }
+        function nextImage() { currentIndex = (currentIndex + 1) % images.length; updateModal(); }
+        function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; updateModal(); }
+        function updateModal() { modalImg.src = images[currentIndex].src; }
+
+        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
