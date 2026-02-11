@@ -11,6 +11,42 @@
         .process-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
         .highlight-magenta { color: #ff00ff; font-weight: bold; }
         .highlight-cyan { color: #00f2ff; font-weight: bold; }
+
+        /* --- ギャラリー設定 (Vol.14参考) --- */
+        .stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; margin-top: 30px; }
+        .stamp-grid img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; background: #222; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+        .stamp-grid img:hover { transform: scale(1.1); border: 1px solid #ff00ff; box-shadow: 0 0 10px #ff00ff; z-index: 10; }
+
+        /* --- 拡大画面（モーダル） --- */
+        #stampModal {
+            display: none; position: fixed; z-index: 10000; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            justify-content: center; align-items: center; user-select: none;
+        }
+        #modalImg { 
+            max-width: 90%; max-height: 80%; 
+            border: 3px solid #00f2ff; border-radius: 10px; 
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); 
+        }
+
+        /* --- ナビゲーションボタン --- */
+        .modal-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: #ffffff; font-size: 4rem; font-weight: bold;
+            cursor: pointer; padding: 20px; z-index: 10001;
+            text-shadow: 0 0 15px #ff00ff; transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1); border-radius: 50%;
+            width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;
+        }
+        .modal-btn:hover { color: #00f2ff; background: rgba(0, 242, 255, 0.2); }
+        .prev-btn { left: 20px; } .next-btn { right: 20px; }
+        .close-btn { top: 30px; right: 30px; font-size: 3rem; transform: none; width: auto; height: auto; background: none; }
+        
+        @media (max-width: 600px) {
+            .modal-btn { font-size: 2.5rem; width: 50px; height: 50px; }
+            .prev-btn { left: 5px; } .next-btn { right: 5px; }
+        }
     </style>
 </head>
 <body>
@@ -58,7 +94,9 @@
                 <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ 制作スタジオ：Animal Logicによる「デジタルの職人芸」</h3>
                 <p>本作を手掛けたのは、オーストラリアの Animal Logic。彼らは本作において「CGで何でもできる」という特権を自ら放棄しました。 特筆すべきは、映画に登場するすべての要素（炎、煙、水、爆発にいたるまで）が、既存のLEGOパーツの組み合わせだけで表現されている点です。これはVol.10のレオン＆コシーニャが「部屋にあるものだけで世界を再構築した」手法のデジタル版と言えるでしょう。</p>
                 <div style="margin: 30px 0; text-align: center;">
-                    <img src="../images/vol15/15-1.webp" alt="Animal Logic Studio" style="width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #333;">
+                    <div style="position: relative; width: 100%; max-width: 600px; margin: 0 auto; aspect-ratio: 16/9;">
+                        <iframe src="https://www.youtube.com/embed/IDYsjMqMH-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; border: 1px solid #333;"></iframe>
+                    </div>
                     <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">【Studio】Animal Logicが構築したデジタルのレゴ世界</p>
                 </div>
             </div>
@@ -72,8 +110,10 @@
                     <li>🔹 <strong>モーションブラー（ブレ）の排除：</strong> 通常のCGで使われる滑らかなブレをあえて使わず、ストップモーション特有の「カクつき」を計算してレンダリングしています。</li>
                 </ul>
                 <div style="margin: 30px 0; text-align: center;">
-                    <img src="../images/vol15/15-2.webp" alt="Digital Twin Technology" style="width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #333;">
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">【Technology】指紋や傷まで再現されたデジタルツイン</p>
+                    <a href="https://www.youtube.com/@AnimalLogicStudios" target="_blank" style="display: block; max-width: 600px; margin: 0 auto; border: 2px solid #00f2ff; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 0 25px rgba(0, 242, 255, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(0, 242, 255, 0.3)';">
+                        <img src="../images/vol15/15-2.webp" alt="Animal Logic Studios" style="width: 100%; display: block;">
+                    </a>
+                    <p style="font-size: 0.9rem; color: #00f2ff; margin-top: 10px; font-weight: bold;">▶ Animal Logic StudiosのYouTubeチャンネルへのリンク</p>
                 </div>
             </div>
 
@@ -81,7 +121,9 @@
                 <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ 背景：マニュアル（秩序）と想像力（混沌）の対立</h3>
                 <p>Vol.10が「教団の閉鎖性」をテーマにしたように、<strong>本作もまた「地下室」という閉鎖空間を巡る物語です。 「おしごと大王」が象徴する、接着剤（クレイグル）で世界を固定しようとする「大人の収集家＝完成された秩序」。それに対し、エメットたちが体現する、既存のルールを壊して新しい形を作る「子供の遊び＝絶え間ない変容」</strong>。 この二重構造が明かされる瞬間、本作は単なる販促映画を超え、表現の本質を問うメタ・フィロソフィーへと変貌します。</p>
                 <div style="margin: 30px 0; text-align: center;">
-                    <img src="../images/vol15/15-3.webp" alt="Order vs Chaos" style="width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #333;">
+                    <div style="position: relative; width: 100%; max-width: 600px; margin: 0 auto; aspect-ratio: 16/9;">
+                        <iframe src="https://www.youtube.com/embed/9UJ1syXaNoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; border: 1px solid #333;"></iframe>
+                    </div>
                     <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">【Theme】秩序と混沌の対立構造</p>
                 </div>
             </div>
@@ -113,11 +155,6 @@
                     </div>
                     <p>ファレル・ウィリアムスの自伝を、全編レゴ・アニメーションで描くという実験作です。ドキュメンタリーという現実の素材を、あえて「ブロックという抽象」で再構成する手法は、Vol.10が歴史的悲劇を「壁画の変容」として描いたアプローチと通底するものがあります。</p>
                 </div>
-
-                <div style="margin: 30px 0; text-align: center;">
-                    <img src="../images/vol15/related.webp" alt="関連作品のビジュアル" style="width: 100%; max-width: 700px; border-radius: 15px; border: 1px solid #333;">
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">【Related】質感の継承：『スパイダーバース』で見せたデジタルの不完全美</p>
-                </div>
             </div>
 
             <div style="margin-bottom: 40px;">
@@ -138,6 +175,15 @@
                 </div>
             </div>
 
+            <section class="stamp-gallery" style="margin: 60px 0; padding: 30px; background: #111; border: 2px solid #ff00ff; border-radius: 20px;">
+                <h3 style="color: #ff00ff; margin-top: 0;">📸 LEGO World Heritage Gallery (全92枚 / 左右キーで操作可)<br><span style="font-size: 0.8rem; color: #00f2ff;">テーマ：レゴで巡る世界遺産</span></h3>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="../images/vol15/legoslide01.webp" alt="LEGO Slide 1" style="width: 100%; max-width: 300px; border-radius: 10px; border: 1px solid #333; margin: 5px;">
+                    <img src="../images/vol15/legoslide02.webp" alt="LEGO Slide 2" style="width: 100%; max-width: 300px; border-radius: 10px; border: 1px solid #333; margin: 5px;">
+                </div>
+                <div class="stamp-grid" id="legoGallery"></div>
+            </section>
+
             <section style="margin: 60px 0; padding: 30px; background: #1a1a1a; border-radius: 20px; border: 1px dashed #ff00ff;">
                 <h4 style="margin: 0; color: #ff00ff; font-size: 1.4rem;">🔍 Animeda! 視点：プラスチックの魂</h4>
                 <p style="font-size: 1rem; margin-top: 15px; line-height: 2; color: #ccc;">Vol.10が「壁の塗り替え」という物理的破壊を通じて精神の崩壊を描いたのに対し、本作は「デジタルによる物質の完全模倣」を通じて、失われた手触りを取り戻そうとしています。 「完璧に美しいCG」ではなく「指紋がついたプラスチックの不完全さ」をあえて描くこと。そこには、効率化を極めた現代のデジタル制作に対する、Animal Logicからの皮肉と愛が込められています。</p>
@@ -157,5 +203,48 @@
         <img src="../images/logo.webp" alt="Logo" class="footer-logo" style="max-width: 180px; margin-bottom: 20px;">
         <p class="footer-credit" style="color: #00f2ff; font-weight: 900;">© 2026 The Animeda! Project</p>
     </footer>
+
+    <div id="stampModal">
+        <span class="modal-btn close-btn" onclick="closeModal()">&times;</span>
+        <span class="modal-btn prev-btn" onclick="prevImage()">&#10094;</span>
+        <img id="modalImg" src="">
+        <span class="modal-btn next-btn" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <script>
+        // 画像生成
+        const galleryContainer = document.getElementById('legoGallery');
+        const imageCount = 92;
+        for (let i = 1; i <= imageCount; i++) {
+            const num = String(i).padStart(2, '0');
+            const img = document.createElement('img');
+            img.src = `../images/vol15/gallery/logo${num}.webp`;
+            img.alt = `LEGO World Heritage ${num}`;
+            img.loading = 'lazy';
+            img.onclick = () => openModal(i - 1);
+            galleryContainer.appendChild(img);
+        }
+
+        // モーダル制御
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#legoGallery img');
+        const modal = document.getElementById('stampModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(index) { currentIndex = index; updateModal(); modal.style.display = 'flex'; }
+        function closeModal() { modal.style.display = 'none'; }
+        function nextImage() { currentIndex = (currentIndex + 1) % images.length; updateModal(); }
+        function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; updateModal(); }
+        function updateModal() { modalImg.src = images[currentIndex].src; }
+
+        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
