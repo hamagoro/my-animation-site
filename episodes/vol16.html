@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.16 ピクセレーションの深奥 - ストップモーションアニメ通信">
+    <meta property="og:description" content="人間をパペットとして扱う「ピクセレーション」。重力や物理的限界を無視した様々なバリエーションを解体します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol16.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol16/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Vol.16 ピクセレーションの深奥 - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
@@ -16,6 +25,33 @@
         .highlight-magenta { color: #ff00ff; font-weight: bold; }
         .highlight-cyan { color: #00f2ff; font-weight: bold; }
         .work-card { border-left: 4px solid #ff00ff; background: #151515; padding: 15px; margin-bottom: 20px; }
+
+        /* --- 追加: スマホ対応カードレイアウト --- */
+        .method-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .method-image {
+            width: 100%;
+            height: 200px;
+            background-color: #000;
+            position: relative;
+        }
+        .method-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .method-content { padding: 20px; }
+        .method-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .method-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+        .factory-view { background: #111; padding: 10px; border-radius: 6px; border-left: 3px solid #ff00ff; font-size: 0.85rem; color: #ccc; }
+
     </style>
 </head>
 <body>
@@ -47,48 +83,70 @@
             <p>人間をパペット（人形）として扱う「ピクセレーション」。前回の空中浮遊に加え、重力や物理的限界を無視した様々なバリエーションを解体します。これは、実写とアニメーションの境界線を曖昧にする、最もマニアックな表現手法の一つです。</p>
         </section>
 
-        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px; margin-top: 40px;">
-            <iframe src="https://www.youtube.com/embed/LBnOVaH5xCA" title="YouTube video player" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px;">
+            <img src="../images/vol16/main2.webp" alt="ピクセレーション メインビジュアル" style="width: 100%; border-radius: 12px; border: 1px solid #333;">
+        </section>
 
         <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ ピクセレーション手法：比較マトリックス</h3>
-        <div class="process-box">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 150px;">手法名</th>
-                        <th>主な効果</th>
-                        <th>工場長視点：製造現場との共通点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>空中浮遊</strong></td>
-                        <td>魔法、浮遊感、重力無視。</td>
-                        <td>「不要データ（着地）」のクレンジングによる最適化。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>スケーティング</strong></td>
-                        <td>足を動かさずに滑走する。</td>
-                        <td>AGV（無人搬送車）のようなスムーズな軌道制御。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>瞬間着替え</strong></td>
-                        <td>歩きながら服が次々変わる。</td>
-                        <td>多品種少量生産における「シングル段取り替え」。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>空気椅子</strong></td>
-                        <td>見えない椅子に座って移動。</td>
-                        <td>空間構造（レイアウト）の概念を歪める演出。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>人間ヘビ</strong></td>
-                        <td>複数が連結し、同期して動く。</td>
-                        <td>タクトタイムの完全同期による流動的なライン形成。</td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <!-- スマホで見やすいカード型リストに変更 -->
+        <div class="method-list">
+            
+            <!-- 1. 空中浮遊 -->
+            <div class="method-card">
+                <div class="method-image">
+                    <iframe src="https://www.youtube.com/embed/LBnOVaH5xCA" title="Levitation Video" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+                <div class="method-content">
+                    <h4 class="method-title">1. 空中浮遊 (Levitation)</h4>
+                    <p class="method-desc"><strong>効果：</strong>魔法のような浮遊感を演出し、重力を無視した動きを作り出す。</p>
+                </div>
+            </div>
+
+            <!-- 2. スケーティング -->
+            <div class="method-card">
+                <div class="method-image">
+                    <iframe src="https://www.youtube.com/embed/TeuxgVZMn8I" title="Skating Video" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+                <div class="method-content">
+                    <h4 class="method-title">2. スケーティング (Skating)</h4>
+                    <p class="method-desc"><strong>効果：</strong>足を動かさずに地面を滑走するように移動する。</p>
+                </div>
+            </div>
+
+            <!-- 3. 瞬間着替え -->
+            <div class="method-card">
+                <div class="method-image">
+                    <img src="../images/vol16/method_change.webp" alt="瞬間着替えのイメージ">
+                </div>
+                <div class="method-content">
+                    <h4 class="method-title">3. 瞬間着替え (Instant Change)</h4>
+                    <p class="method-desc"><strong>効果：</strong>歩きながら服が次々と変わっていく。</p>
+                </div>
+            </div>
+
+            <!-- 4. 空気椅子 -->
+            <div class="method-card">
+                <div class="method-image">
+                    <img src="../images/vol16/method_airchair.webp" alt="空気椅子のイメージ">
+                </div>
+                <div class="method-content">
+                    <h4 class="method-title">4. 空気椅子 (Air Chair)</h4>
+                    <p class="method-desc"><strong>効果：</strong>見えない椅子に座ったまま移動する。</p>
+                </div>
+            </div>
+
+            <!-- 5. 人間ヘビ -->
+            <div class="method-card">
+                <div class="method-image">
+                    <img src="../images/vol16/method_snake.webp" alt="人間ヘビのイメージ">
+                </div>
+                <div class="method-content">
+                    <h4 class="method-title">5. 人間ヘビ (Human Snake)</h4>
+                    <p class="method-desc"><strong>効果：</strong>複数の人間が連結し、同期して動く。</p>
+                </div>
+            </div>
+
         </div>
 
         <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 名作アーカイブ：ピクセレーションの系譜</h3>
@@ -97,21 +155,34 @@
         <div class="work-card">
             <h4 class="highlight-cyan">■ Music Video: Peter Gabriel - "Sledgehammer" (1986)</h4>
             <p>ピクセレーションの「教科書」と言える一作。ピーター・ガブリエル本人が数日間横たわり続け、1コマずつ顔の表情や周囲の物体を動かして撮影されました。クレイアニメと実写の融合という点で、アードマン・アニメーションズの技術の極致が見られます。</p>
+            <div style="margin-top: 15px; position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333;">
+                <iframe src="https://www.youtube.com/embed/OJWJE0x7T4Q" title="Sledgehammer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
         </div>
 
         <div class="work-card">
             <h4 class="highlight-cyan">■ Short Film: Norman McLaren - "Neighbours" (1952)</h4>
             <p>ピクセレーションという言葉を広めたカナダの名作。役者が地面を滑る「スケーティング」を多用し、戦争の虚しさをシュールに描きました。アカデミー賞短編ドキュメンタリー賞を受賞した、歴史的資料としても価値の高い一本です。</p>
+            <div style="margin-top: 15px; position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333;">
+                <iframe src="https://www.youtube.com/embed/4Yd9taPuGOQ" title="Neighbours" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
         </div>
 
         <div class="work-card">
             <h4 class="highlight-cyan">■ Commercial: Target "Everyday Collection"</h4>
             <p>日用品が音楽に合わせて踊り、モデルが瞬間移動するような演出。CM業界では「テンポの良さ」と「商品への注目」を両立させるため、今でもピクセレーションの手法が頻繁に使われています。</p>
+            <div style="margin-top: 15px; position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333;">
+                <!-- 適切な動画IDに差し替えてください -->
+                <iframe src="https://www.youtube.com/embed/1ZU4DzosTdE" title="Target Commercial Placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
         </div>
 
         <div class="work-card">
             <h4 class="highlight-cyan">■ MV: Oren Lavie - "Her Morning Elegance"</h4>
             <p>ベッドの上をキャンバスに見立て、寝たままの姿勢でピクセレーションを行う「水平ピクセレーション」の代表例。重力の向きを90度変えることで、まるで水中や宇宙を泳いでいるような質感を生んでいます。</p>
+            <div style="margin-top: 15px; position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333;">
+                <iframe src="https://www.youtube.com/embed/2_HXUhShhmY" title="Her Morning Elegance" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
         </div>
 
     </article>
