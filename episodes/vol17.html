@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.17 イジー・トルンカ：語らぬ唇、震える陰影 - ストップモーションアニメ通信">
+    <meta property="og:description" content="人形の「口」を動かさないことで、観客に内面を想像させる「引き算の美学」。チェコアニメの巨匠が遺した静謐な革命。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol17.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol17/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Vol.17 イジー・トルンカ 解析アーカイブ - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
@@ -19,6 +28,32 @@
         /* グラフィック・フレーム */
         .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
         .graphic-frame img { max-width: 100%; border-radius: 4px; }
+
+        /* --- 追加: スマホ対応カードレイアウト (vol16 style) --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image iframe, .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-meta { font-size: 0.85rem; color: #888; margin-bottom: 10px; display: block; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -43,14 +78,17 @@
             <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
                 語らぬ唇、震える陰影：<br>イジー・トルンカの静かなる革命
             </h2>
-            <p class="date" style="margin-top: 15px; color: #888;">2026.03.02 UP</p>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.03.12 UP</p>
         </header>
+
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <img src="../images/vol17/main.webp" alt="イジー・トルンカ メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
+        </section>
 
         <section class="gif-section" style="text-align: center;">
             <div class="graphic-frame">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnR6dzZ6Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKp6mI6E6I7G7YQ/giphy.gif" alt="Jiří Trnka The Hand">
+                <img src="../images/vol17/gif.webp" alt="Jiří Trnka GIF">
             </div>
-            <p style="font-size: 0.8rem; color: #00f2ff;">[Search Keyword: Jiří Trnka The Hand GIF]</p>
         </section>
 
         <section class="analysis-overview" style="line-height: 1.8;">
@@ -60,32 +98,37 @@
             </p>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：木製パペットの交響曲</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th style="width: 80px;">発表年</th>
-                        <th>マニアック分析ポイント</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>皇帝のうぐいす</strong></td>
-                        <td>1948</td>
-                        <td>アンデルセン童話をベースに、豪華絢爛なセットと「孤独な皇帝」を対比。人形が持つ気品を最大限に引き出した初期の名作。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>チェコの古代伝説</strong></td>
-                        <td>1952</td>
-                        <td>国家的な叙事詩を全編パペットで描くという無謀な挑戦。群衆シーンの動かし方や、光と影による重厚なドラマ性が圧巻。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-magenta">手（The Hand）</span> (Gemini推薦)</td>
-                        <td>1965</td>
-                        <td>トルンカの遺作。強制的に「手」の像を作らされる彫刻家の悲劇。当時の全体主義への猛烈な批判を込めた、映画史に残る最重要短編。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/fGNR1UUJSGY" title="The Emperor's Nightingale" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">皇帝のうぐいす (1948)</h4>
+                    <p class="work-desc">アンデルセン童話をベースに、豪華絢爛なセットと「孤独な皇帝」を対比。人形が持つ気品を最大限に引き出した初期の名作。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/m5u09h2eaRw" title="A Midsummer Night's Dream" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">真夏の夜の夢 (1959)</h4>
+                    <p class="work-desc">シェイクスピアの戯曲を原作とした、トルンカ最後の長編作品。シネマスコープ画面いっぱいに広がる幻想的な森と、精緻なパペットたちが織りなす映像美の極致。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <!-- The Hand (Ruka) is widely available, using a common ID or placeholder if unavailable -->
+                    <iframe src="https://www.youtube.com/embed/79Ce_f-3Fac" title="The Hand (Ruka)" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title"><span class="highlight-magenta">手（The Hand）</span> (1965)</h4>
+                    <p class="work-desc">トルンカの遺作。強制的に「手」の像を作らされる彫刻家の悲劇。当時の全体主義への猛烈な批判を込めた、映画史に残る最重要短編。</p>
+                </div>
+            </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 評価：東のディズニー、西のトルンカ</h3>
             <p>
@@ -105,35 +148,43 @@
                 <p><a href="https://www.youtube.com/results?search_query=Ji%C5%99%C3%AD+Trnka+Animation" target="_blank" style="color: #00f2ff;">▶ YouTube：イジー・トルンカ作品検索</a></p>
                 <p><a href="http://www.czech-anime.jp/" target="_blank" style="color: #00f2ff;">▶ チェコ・アニメ公式サイト（日本）</a></p>
                 <p style="font-size: 0.85rem;">※Amazon Prime Videoでは「チェコ・アニメ傑作選」として不定期に配信。DVDアーカイブが最も確実です。</p>
+                <div style="margin-top: 20px; position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333;">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLmxfgBfhgBcn2aQp0LM2PW3FS3yUgyzNs" title="Czech Animation Playlist" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 5px;">▶ おすすめチェコアニメ・プレイリスト</p>
             </div>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連作：師弟と継承</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th style="width: 120px;">作家</th>
-                        <th>構造的共通点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>道成寺 / 火宅</strong></td>
-                        <td>川本喜八郎</td>
-                        <td>日本を代表する人形アニメ作家。トルンカに直接弟子入りし、「首の角度で語る」技術を日本へと持ち帰った正当な後継者。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>不思議の国のアリス</strong></td>
-                        <td>ヤン・シュヴァンクマイエル</td>
-                        <td>トルンカが築いたチェコ・アニメの基盤を、よりシュールで破壊的な方向へと拡張した鬼才。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-cyan">話の話</span> (Gemini推薦)</td>
-                        <td>ユーリ・ノルシュテイン</td>
-                        <td>手法は切り紙アニメーションだが、詩的な静寂と光の使い方は、トルンカが目指した「動く詩」の精神を色濃く継承している。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/4LYbvU-4yyc" title="Dojoji" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">道成寺 / 火宅 (川本喜八郎)</h4>
+                    <p class="work-desc">日本を代表する人形アニメ作家。トルンカに直接弟子入りし、「首の角度で語る」技術を日本へと持ち帰った正当な後継者。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/VBoCgQ3scww" title="Alice (Něco z Alenky)" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">不思議の国のアリス (ヤン・シュヴァンクマイエル)</h4>
+                    <p class="work-desc">トルンカが築いたチェコ・アニメの基盤を、よりシュールで破壊的な方向へと拡張した鬼才。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/xB7H1wrcFjc" title="Tale of Tales" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title"><span class="highlight-cyan">話の話</span> (ユーリ・ノルシュテイン)</h4>
+                    <p class="work-desc">手法は切り紙アニメーションだが、詩的な静寂と光の使い方は、トルンカが目指した「動く詩」の精神を色濃く継承している。</p>
+                </div>
+            </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 今後の予定：失われない巨匠の息吹</h3>
             <p>
