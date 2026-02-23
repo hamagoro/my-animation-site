@@ -3,22 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.18 フィル・ティペット：手作業の地獄と神業 - ストップモーションアニメ通信">
+    <meta property="og:description" content="巨神と地獄の設計者。フィル・ティペットの不滅の造形とVFXの歴史。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol18.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol18/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Vol.18 フィル・ティペット：手作業の地獄と神業 - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
     <style>
         /* --- ボックス・装飾設定 --- */
         .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
-        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
-        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
-        .data-table tr:nth-child(even) { background: #0a0a0a; }
         .highlight-magenta { color: #ff00ff; font-weight: bold; }
         .highlight-cyan { color: #00f2ff; font-weight: bold; }
 
         /* GIF・画像エリア設定 */
         .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 10px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
         .graphic-frame img { max-width: 100%; border-radius: 4px; }
+
+        /* --- 追加: スマホ対応カードレイアウト (vol17 style) --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image iframe, .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- スマホ用調整 --- */
+        @media (max-width: 600px) {
+            .episode-container {
+                padding: 0 20px !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -46,6 +86,10 @@
             <p class="date" style="margin-top: 15px; color: #888;">2026.02.09 UP</p>
         </header>
 
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <img src="../images/vol18/main.webp" alt="フィル・ティペット メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
+        </section>
+
         <section class="gif-section" style="text-align: center;">
             <div class="graphic-frame">
                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGY2bjR6Mnh6eXhzZ3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/M9geMmslB6S0F7v87J/giphy.gif" alt="Mad God GIF">
@@ -60,52 +104,66 @@
             </p>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 徹底解剖：ホロチェス（デジャリック）の誕生</h3>
-            <div class="analysis-box">
-                <p><strong>【週末の即興が生んだ銀河の娯楽】</strong></p>
-                <p>
-                    『スター・ウォーズ エピソード4』に登場するホロチェスは、ティペットが週末に廃材や粘土で即興制作したクリーチャーから始まりました。40年後の『フォースの覚醒』でも、当時の型を復元し、同じコマ撮り手法で撮影。最新デジタルとアナログの完璧なシンクロが実現しました。
-                </p>
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/vJkL9Yx7qMI" title="Star Wars Holochess" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">週末の即興が生んだ銀河の娯楽</h4>
+                    <p class="work-desc">
+                        『スター・ウォーズ エピソード4』に登場するホロチェスは、ティペットが週末に廃材や粘土で即興制作したクリーチャーから始まりました。40年後の『フォースの覚醒』でも、当時の型を復元し、同じコマ撮り手法で撮影。最新デジタルとアナログの完璧なシンクロが実現しました。
+                    </p>
+                </div>
             </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 徹底解剖：ジュラシック・パーク (1993)</h3>
-            <div class="analysis-box" style="border-color: #00f2ff;">
-                <p><strong>【「絶滅」から始まったデジタルの命】</strong></p>
-                <p>
-                    当初はゴー・モーションで制作予定でしたが、CGの台頭に彼は「僕は絶滅だ」と語りました。しかし、彼は絶滅せず、パペットの動きをデジタル入力するデバイス**「DID」**を開発。CG恐竜に「生物としての重み」を教え込んだのは、彼の指先でした。
-                </p>
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/Rc_i5TKdmhs" title="Jurassic Park T-Rex" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">「絶滅」から始まったデジタルの命</h4>
+                    <p class="work-desc">
+                        当初はゴー・モーションで制作予定でしたが、CGの台頭に彼は「僕は絶滅だ」と語りました。しかし、彼は絶滅せず、パペットの動きをデジタル入力するデバイス**「DID」**を開発。CG恐竜に「生物としての重み」を教え込んだのは、彼の指先でした。
+                    </p>
+                </div>
             </div>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 徹底解剖：スターシップ・トゥルーパーズ (1997)</h3>
-            <div class="analysis-box">
-                <p><strong>【物量と肉感のハイブリッド・ウォー】</strong></p>
-                <p>
-                    数千体の巨大虫（バグズ）が襲来する戦場。ティペット・スタジオはアナログ造形の知見を活かし、甲殻の質感や体液のヌメリを徹底的にシミュレート。一匹一匹が「触れそうなほどリアル」なのは、パペットとしての設計図が根底にあるからです。
-                </p>
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/Y07I_KER5fE" title="Starship Troopers" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">物量と肉感のハイブリッド・ウォー</h4>
+                    <p class="work-desc">
+                        数千体の巨大虫（バグズ）が襲来する戦場。ティペット・スタジオはアナログ造形の知見を活かし、甲殻の質感や体液のヌメリを徹底的にシミュレート。一匹一匹が「触れそうなほどリアル」なのは、パペットとしての設計図が根底にあるからです。
+                    </p>
+                </div>
             </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作・技術まとめ</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名/技術</th>
-                        <th>マニアック分析ポイント</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>帝国の逆襲 (AT-AT)</strong></td>
-                        <td>巨大歩行兵器の重厚な足音を「動きの溜め」だけで表現。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ロボコップ (ED-209)</strong></td>
-                        <td>あえて「ぎこちない動き」をさせ、機械の冷酷さと恐怖を演出。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ゴー・モーション</strong></td>
-                        <td>シャッター中にパペットを動かし、物理的な「被写体ブレ」を作る技術。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/4z-50MaX6lU" title="AT-AT Walker" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">帝国の逆襲 (AT-AT)</h4>
+                    <p class="work-desc">巨大歩行兵器の重厚な足音を「動きの溜め」だけで表現。ストップモーションが巨大感を出せることを証明した金字塔。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/A9l9wxGFl4k" title="RoboCop ED-209" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ロボコップ (ED-209)</h4>
+                    <p class="work-desc">あえて「ぎこちない動き」をさせ、機械の冷酷さと恐怖を演出。ストップモーションの不気味さを逆手に取った名演出。</p>
+                </div>
+            </div>
+
         </section>
 
     </article>

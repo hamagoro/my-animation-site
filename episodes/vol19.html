@@ -3,22 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.19 ティム・バートン：影と孤独の造形美 - ストップモーションアニメ通信">
+    <meta property="og:description" content="ひょろ長い影の住人たち。ティム・バートンが愛した「不完全な魂」とストップモーションの系譜。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol19.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol19/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Vol.19 ティム・バートン：影と孤独の造形美 - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
     <style>
         /* --- ボックス・装飾設定 --- */
         .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
-        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
-        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
-        .data-table tr:nth-child(even) { background: #0a0a0a; }
         .highlight-magenta { color: #ff00ff; font-weight: bold; }
         .highlight-cyan { color: #00f2ff; font-weight: bold; }
 
         /* グラフィック・フレーム */
         .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
         .graphic-frame img { max-width: 100%; border-radius: 4px; }
+
+        /* --- 追加: スマホ対応カードレイアウト (vol17/18 style) --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image iframe, .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- スマホ用調整 --- */
+        @media (max-width: 600px) {
+            .episode-container {
+                padding: 0 20px !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -46,6 +86,10 @@
             <p class="date" style="margin-top: 15px; color: #888;">2026.03.10 UP</p>
         </header>
 
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <img src="../images/vol19/main.webp" alt="ティム・バートン メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
+        </section>
+
         <section class="gif-section" style="text-align: center;">
             <div class="graphic-frame">
                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1cHFmZDVxMGF6eGtjbnR3Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/M9geMmslB6S0F7v87J/giphy.gif" alt="Jack Skellington GIF">
@@ -60,37 +104,46 @@
             </p>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：バートン・エステティクスの系譜</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 250px;">作品名</th>
-                        <th style="width: 80px;">役割</th>
-                        <th>マニアック分析ポイント</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ナイトメアー・ビフォア・クリスマス</strong></td>
-                        <td>1993</td>
-                        <td>原案・製作。ヘンリー・セリック監督と共に、ハロウィンの住人がクリスマスを乗っ取るという、バートン独自の「価値観の逆転」を映像化。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ティム・バートンのコープスブライド</strong></td>
-                        <td>2005</td>
-                        <td>監督。死者の世界がカラフルで陽気、生者の世界がグレーで退屈という対比構造。パペットの皮膚にシリコンを使用し質感が一気に向上。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>フランケンウィニー</strong></td>
-                        <td>2012</td>
-                        <td>監督。1984年の自作短編（実写）をストップモーションでセルフリメイク。白黒映像による光と影の表現が、クラシックホラーへの愛を物語る。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-magenta">ヴィンセント (Vincent)</span> (Gemini推薦)</td>
-                        <td>1982</td>
-                        <td>監督。わずか6分のデビュー短編。バートンの原点であり、ドイツ表現主義の影響を強く受けた鋭利なデザインがすでに完成されている。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/wr6N_hZyq7k" title="The Nightmare Before Christmas" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ナイトメアー・ビフォア・クリスマス (1993)</h4>
+                    <p class="work-desc">原案・製作。ヘンリー・セリック監督と共に、ハロウィンの住人がクリスマスを乗っ取るという、バートン独自の「価値観の逆転」を映像化。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/AGACeBV1810" title="Corpse Bride" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ティム・バートンのコープスブライド (2005)</h4>
+                    <p class="work-desc">監督。死者の世界がカラフルで陽気、生者の世界がグレーで退屈という対比構造。パペットの皮膚にシリコンを使用し質感が一気に向上。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/XBfcGLqM7yQ" title="Frankenweenie" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">フランケンウィニー (2012)</h4>
+                    <p class="work-desc">監督。1984年の自作短編（実写）をストップモーションでセルフリメイク。白黒映像による光と影の表現が、クラシックホラーへの愛を物語る。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/fxQcBKUPm8o" title="Vincent" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title"><span class="highlight-magenta">ヴィンセント (Vincent)</span> (1982)</h4>
+                    <p class="work-desc">監督。わずか6分のデビュー短編。バートンの原点であり、ドイツ表現主義の影響を強く受けた鋭利なデザインがすでに完成されている。</p>
+                </div>
+            </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 技術と特徴：ドイツ表現主義と細長い四肢</h3>
             <div class="analysis-box">
@@ -107,32 +160,36 @@
             </div>
 
             <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 関連作：バートン・スピリットの共鳴</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th style="width: 120px;">作家/監督</th>
-                        <th>構造的共通点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>コララインとボタンの魔女</strong></td>
-                        <td>ヘンリー・セリック</td>
-                        <td>『ナイトメアー〜』の監督。バートンのダークさを継承しつつ、よりシュールで緻密な世界観を構築したライカ・スタジオの傑作。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ギレルモ・デル・トロのピノッキオ</strong></td>
-                        <td>G・デル・トロ</td>
-                        <td>「異形の存在への愛」という点でバートンと深く共鳴。大人のためのダークファンタジーとしての到達点。</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-cyan">家をめぐる3つの物語</span> (Gemini推薦)</td>
-                        <td>Netflix</td>
-                        <td>各エピソードで作家が異なるが、第1話の「不安を煽る人形の質感」は、バートンが切り拓いたダークストップモーションの現代的進化形。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/m9EnTp-Oeq0" title="Coraline" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">コララインとボタンの魔女 (ヘンリー・セリック)</h4>
+                    <p class="work-desc">『ナイトメアー〜』の監督。バートンのダークさを継承しつつ、よりシュールで緻密な世界観を構築したライカ・スタジオの傑作。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/Od2NW1SFRkc" title="Guillermo del Toro's Pinocchio" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ギレルモ・デル・トロのピノッキオ</h4>
+                    <p class="work-desc">「異形の存在への愛」という点でバートンと深く共鳴。大人のためのダークファンタジーとしての到達点。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/wqbZSlxsaOY" title="The House" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title"><span class="highlight-cyan">家をめぐる3つの物語</span> (Netflix)</h4>
+                    <p class="work-desc">各エピソードで作家が異なるが、第1話の「不安を煽る人形の質感」は、バートンが切り拓いたダークストップモーションの現代的進化形。</p>
+                </div>
+            </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 今後の予定：Netflix『ウェンズデー』の成功を経て</h3>
             <p>

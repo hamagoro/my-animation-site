@@ -3,22 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.21 ウォレスとグルミット 完全解析 - ストップモーションアニメ通信">
+    <meta property="og:description" content="指紋が宿す職人魂。アードマン・アニメーションズが誇る名コンビの技術と歴史を解剖。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol21.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol21/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>Vol.21 ウォレスとグルミット 完全解析 - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
     <style>
         /* --- ボックス・装飾設定 --- */
         .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
-        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; }
-        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
-        .data-table tr:nth-child(even) { background: #0a0a0a; }
         .highlight-magenta { color: #ff00ff; font-weight: bold; }
         .highlight-cyan { color: #00f2ff; font-weight: bold; }
 
         /* グラフィック・フレーム */
         .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 15px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
         .graphic-frame img { max-width: 100%; border-radius: 4px; }
+
+        /* --- 追加: スマホ対応カードレイアウト --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image iframe, .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- スマホ用調整 --- */
+        @media (max-width: 600px) {
+            .episode-container {
+                padding: 0 20px !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -45,6 +85,10 @@
             </h2>
             <p class="date" style="margin-top: 15px; color: #888;">2026.04.10 UP</p>
         </header>
+
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <img src="../images/vol21/main.webp" alt="ウォレスとグルミット メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
+        </section>
 
         <section class="gif-section" style="text-align: center;">
             <div class="graphic-frame">
@@ -77,28 +121,37 @@
             </div>
 
             <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作・関連作まとめ</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">作品名</th>
-                        <th>マニアック分析ポイント</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ペンギンに気をつけろ！</strong></td>
-                        <td>クライマックスの列車チェイスは、ストップモーション史に残るスピード感の極致。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ひつじのショーン</strong></td>
-                        <td>セリフを排し、純粋な視覚的「動作」だけで感情を伝える高密度なアニメーション。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>快適な生活</strong></td>
-                        <td>実際のインタビュー音声に粘土の動きを同期させる、初期アードマンの革新的ドキュメンタリー。</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/h2JgQ-M5S7s" title="The Wrong Trousers Train Chase" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ペンギンに気をつけろ！ (The Wrong Trousers)</h4>
+                    <p class="work-desc">クライマックスの列車チェイスは、ストップモーション史に残るスピード感の極致。カメラワークと編集の妙技が光る。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/KDqn8REukvM" title="Shaun the Sheep" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ひつじのショーン</h4>
+                    <p class="work-desc">『ウォレスとグルミット』のスピンオフから生まれた大スター。セリフを排し、純粋な視覚的「動作」だけで感情を伝える高密度なアニメーション。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/GLkXh966h4g" title="Creature Comforts" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">快適な生活 (Creature Comforts)</h4>
+                    <p class="work-desc">実際のインタビュー音声に動物の粘土アニメを同期させる、初期アードマンの革新的ドキュメンタリー手法。</p>
+                </div>
+            </div>
+
         </section>
 
     </article>
