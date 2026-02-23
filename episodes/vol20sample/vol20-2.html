@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>② ダーク映画館風</title>
+    <style>
+        body { margin: 0; padding: 0; background-color: #111; color: #eee; font-family: 'Georgia', serif; }
+        .sample-nav { background: #000; padding: 12px 10px; text-align: center; font-size: 0.85rem; line-height: 2; border-bottom: 2px solid #00f2ff; font-family: sans-serif; }
+        .sample-nav.bottom { border-bottom: none; border-top: 2px solid #00f2ff; margin-top: 50px; }
+        .sample-nav a { color: #ccc; text-decoration: none; margin: 0 5px; display: inline-block; }
+        .sample-nav a:hover { color: #fff; text-decoration: underline; }
+        .sample-nav .home { color: #00f2ff; font-weight: bold; }
+        .sample-nav .current { color: #ff00ff; font-weight: bold; pointer-events: none; border-bottom: 1px solid #ff00ff; }
+        .hero { height: 60vh; background: url('https://picsum.photos/1200/600?random=5') center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
+        .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
+        .hero-text { position: relative; z-index: 1; text-align: center; }
+        .hero-text h1 { font-size: 3rem; margin: 0; color: #fff; letter-spacing: 5px; text-transform: uppercase; }
+        .hero-text p { color: #aaa; font-size: 1.2rem; }
+        .content { max-width: 800px; margin: 50px auto; padding: 0 20px; line-height: 1.8; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <nav class="sample-nav">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html" class="current">2.ダーク</a> <a href="vol20-3.html">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html">7.ブルータル</a> <a href="vol20-8.html">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>THE MOVIE TITLE</h1>
+            <p>2026.05.10 IN THEATERS</p>
+        </div>
+    </div>
+    <div class="content">
+        <h2>STORY</h2>
+        <p>暗い背景に白い文字を置くことで、一気にシネマティック（映画のような）な雰囲気が出ます。フォントを明朝体やセリフ体にすると、さらに高級感が増します。</p>
+    </div>
+    <nav class="sample-nav bottom">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html" class="current">2.ダーク</a> <a href="vol20-3.html">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html">7.ブルータル</a> <a href="vol20-8.html">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+</body>
+</html>

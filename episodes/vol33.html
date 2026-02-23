@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.33 クレイトーンの魔力 — 究極のクレイアニメ制作ガイド - ストップモーションアニメ通信">
+    <meta property="og:description" content="「命を吹き込む粘土」として世界中のプロが愛用するVan Aken社の粘土「クレイトーン」の魅力と、失敗しない制作フローを徹底解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol33.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol33/claytoon_main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Vol.33 クレイトーンの魔力 — 究極のクレイアニメ制作ガイド - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- スマホ対応カードレイアウト --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+        
+        .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
+
+        /* --- スマホ用調整 --- */
+        @media (max-width: 600px) {
+            .episode-container {
+                padding: 0 20px !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #000; color: #fff;">
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fps of Clay Animation Guide</p>
+    </header>
+
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol32.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.32へ</a>
+            <a href="#" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.34へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.33 / Claytoon Special Guide</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                クレイトーンの魔力：<br>究極のクレイアニメ制作ガイド
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.06.28 UP</p>
+        </header>
+
+        <section class="top-link-area" style="margin-bottom: 70px; padding: 30px; background: #1a1a1a; border-radius: 15px; border: 2px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);">
+            <h3 style="color: #ff00ff; margin-top: 0;">🎬 Introduction</h3>
+            <p style="line-height: 1.8; color: #ccc;">
+                「命を吹き込む粘土」として世界中のプロが愛用するVan Aken社の粘土「クレイトーン」。その魅力と、失敗しない制作フローを徹底解説します。
+            </p>
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="../images/vol33/claytoon_main.webp" alt="クレイトーン メインビジュアル" style="width: 100%; border-radius: 10px; border: 1px solid #333;">
+            </div>
+        </section>
+
+        <section style="margin-bottom: 80px;">
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">◎ 特集：なぜ「クレイトーン（Claytoon）」なのか？</h3>
+            <div style="background: #111; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <p>プロの現場で選ばれる理由を3つのポイントで解説します。</p>
+                <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;"><strong>① 不乾性と保存性:</strong> 何ヶ月放置しても固まらない特性。長期にわたる撮影でもひび割れず、再利用も可能です。</li>
+                    <li style="margin-bottom: 10px;"><strong>② ワックスベースの粘性:</strong> 手の温度で柔らかくなり、ライティングの熱に耐える絶妙な配合。形を保ちながら滑らかに動かせます。</li>
+                    <li><strong>③ 発色の美しさと混色:</strong> 混ぜても色が濁らず、カメラ越しに映えるテクスチャ。独特の鮮やかさが画面に力を与えます。</li>
+                </ul>
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="../images/vol33/claytoon_palette.webp" alt="クレイトーンのカラーチャート" style="width: 100%; max-width: 600px; border-radius: 8px; border: 1px solid #333;">
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://www.amazon.co.jp/s?k=クレイトーン+粘土" target="_blank" style="display: inline-block; background: #00f2ff; color: #000; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold;">Amazonでクレイトーンを探す</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 80px;">
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px;">◎ 実践：プロの制作ワークフロー</h3>
+            
+            <!-- Step 1 -->
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="../images/vol33/step1_armature.webp" alt="アーマチュアの構築">
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">Step 1: アーマチュア（骨格）の構築</h4>
+                    <p class="work-desc">自重で崩れないためのアルミ線設計と、床に固定する「タイダウン」の重要性。骨組みがしっかりしていないと、撮影中に人形が倒れてしまいます。</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="../images/vol33/step2_bulking.webp" alt="バルキング（肉付け）">
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">Step 2: バルキング（肉付け）</h4>
+                    <p class="work-desc">アルミホイルで芯を作り、クレイの厚みを3〜5mmに抑えてひび割れを防ぐ技法。芯材を使うことで軽量化し、粘土の節約にもなります。</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="../images/vol33/step3_cleaning.webp" alt="表面処理と環境管理">
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">Step 3: 表面処理と環境管理</h4>
+                    <p class="work-desc">指紋や埃を無水エタノールで拭き取る方法と、撮影現場の温度管理。滑らかな表面仕上げがプロのクオリティを生みます。</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section style="margin-bottom: 60px; padding: 20px; background: #1a1a1a; border-radius: 10px; border: 1px dashed #00f2ff;">
+            <h4 style="color: #00f2ff; margin-top: 0;">🚀 今後の予定</h4>
+            <p style="color: #ccc;">この手法を用いた24枚ループアニメーションを現在制作中です。完成次第、本サイトで公開予定です。</p>
+        </section>
+
+    </article>
+
+    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol32.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.32へ</a>
+                <a href="#" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.34へ →</a>
+            </div>
+        </nav>
+        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2025 hamagoro - animeda!</p>
+    </footer>
+</body>
+</html>

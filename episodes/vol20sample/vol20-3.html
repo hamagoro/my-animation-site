@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>③ ステップ形式</title>
+    <style>
+        body { font-family: sans-serif; background: #fff; color: #333; margin: 0; }
+        .sample-nav { background: #111; padding: 12px 10px; text-align: center; font-size: 0.85rem; line-height: 2; border-bottom: 2px solid #00f2ff; }
+        .sample-nav.bottom { border-bottom: none; border-top: 2px solid #00f2ff; margin-top: 40px; }
+        .sample-nav a { color: #ccc; text-decoration: none; margin: 0 5px; display: inline-block; }
+        .sample-nav a:hover { color: #fff; text-decoration: underline; }
+        .sample-nav .home { color: #00f2ff; font-weight: bold; }
+        .sample-nav .current { color: #ff00ff; font-weight: bold; pointer-events: none; border-bottom: 1px solid #ff00ff; }
+        header { text-align: center; padding: 40px 20px; background: #00f2ff; color: #000; }
+        .step-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .step-row { display: flex; align-items: center; margin-bottom: 50px; gap: 30px; }
+        .step-row:nth-child(even) { flex-direction: row-reverse; }
+        .step-img { flex: 1; border-radius: 10px; overflow: hidden; }
+        .step-img img { width: 100%; display: block; }
+        .step-text { flex: 1; }
+        .step-badge { display: inline-block; background: #000; color: #00f2ff; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 10px; }
+        @media (max-width: 600px) { .step-row, .step-row:nth-child(even) { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <nav class="sample-nav">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html">2.ダーク</a> <a href="vol20-3.html" class="current">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html">7.ブルータル</a> <a href="vol20-8.html">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+    <header><h1>作り方ガイド（ジグザグ）</h1></header>
+    <div class="step-container">
+        <div class="step-row">
+            <div class="step-img"><img src="https://picsum.photos/500/300?random=6" alt="Step1"></div>
+            <div class="step-text">
+                <div class="step-badge">STEP 1</div>
+                <h3>まずは準備をしよう</h3>
+                <p>左に画像、右にテキストの配置です。スマホで見ると自動的に縦並びになります。</p>
+            </div>
+        </div>
+        <div class="step-row">
+            <div class="step-img"><img src="https://picsum.photos/500/300?random=7" alt="Step2"></div>
+            <div class="step-text">
+                <div class="step-badge">STEP 2</div>
+                <h3>組み立てよう</h3>
+                <p>2つ目のステップは左右が反転します。視線がジグザグに動くので読者が飽きません。</p>
+            </div>
+        </div>
+    </div>
+    <nav class="sample-nav bottom">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html">2.ダーク</a> <a href="vol20-3.html" class="current">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html">7.ブルータル</a> <a href="vol20-8.html">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+</body>
+</html>

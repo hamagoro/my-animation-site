@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⑧ Bentoレイアウト</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; background-color: #f5f5f7; color: #1d1d1f; }
+        .sample-nav { background: #111; padding: 10px; text-align: center; font-size: 0.8rem; line-height: 2; }
+        .sample-nav a { color: #ccc; text-decoration: none; margin: 0 5px; }
+        .sample-nav .home { color: #00f2ff; }
+        .sample-nav .current { color: #ff00ff; pointer-events: none; border-bottom: 1px solid #ff00ff; }
+
+        .bento-grid { max-width: 1000px; margin: 50px auto; padding: 20px; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 20px; }
+        .bento-item { background: #fff; border-radius: 24px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .box-large { grid-column: span 2; grid-row: span 2; background: #000; color: #fff; }
+        .box-wide { grid-column: span 2; }
+        .box-tall { grid-row: span 2; background: #e0f7fa; }
+        
+        h3 { margin: 0; font-size: 1.5rem; }
+        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; } .box-large, .box-wide, .box-tall { grid-column: span 1; grid-row: span 1; min-height: 200px;} }
+    </style>
+</head>
+<body>
+    <nav class="sample-nav">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html">2.ダーク</a> <a href="vol20-3.html">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html">7.ブルータル</a> <a href="vol20-8.html" class="current">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+
+    <div class="bento-grid">
+        <div class="bento-item box-large">
+            <h3>Bento UI</h3>
+            <p>日本の「お弁当箱」が語源。Appleなどのプレゼンでよく使われる最新のレイアウトです。</p>
+        </div>
+        <div class="bento-item">
+            <h3>Clean</h3><p>角丸が特徴的</p>
+        </div>
+        <div class="bento-item box-tall">
+            <h3>Grid</h3><p>スマホで見ると自動で縦一列に並び直します。</p>
+        </div>
+        <div class="bento-item box-wide">
+            <h3>Beautiful Arrangement</h3><p>パズルのように隙間なく並べることで、情報が多くてもスッキリ見えます。</p>
+        </div>
+    </div>
+</body>
+</html>

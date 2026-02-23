@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⑦ ネオ・ブルータリズム</title>
+    <style>
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f4f0ea; color: #000; }
+        .sample-nav { background: #000; padding: 10px; text-align: center; font-size: 0.8rem; line-height: 2; border-bottom: 4px solid #000; }
+        .sample-nav a { color: #ccc; text-decoration: none; margin: 0 5px; }
+        .sample-nav .home { color: #00f2ff; }
+        .sample-nav .current { color: #ffd900; font-weight: bold; pointer-events: none; }
+
+        .container { max-width: 900px; margin: 50px auto; padding: 20px; display: flex; gap: 30px; flex-wrap: wrap; }
+        /* ネオブルータリズムのキモ */
+        .brutal-card { border: 4px solid #000; box-shadow: 8px 8px 0px #000; border-radius: 0; padding: 30px; flex: 1; min-width: 250px; font-weight: bold; transition: 0.2s; }
+        .brutal-card:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #000; }
+        .bg-yellow { background-color: #ffd900; }
+        .bg-pink { background-color: #ff6b6b; color: #fff; }
+        .bg-teal { background-color: #4ecdc4; }
+        h1 { font-size: 3rem; text-transform: uppercase; border-bottom: 4px solid #000; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="sample-nav">
+        <a href="../vol20.html" class="home">⬆ Vol.20に戻る</a> | 
+        <a href="vol20-1.html">1.ギャラリー</a> <a href="vol20-2.html">2.ダーク</a> <a href="vol20-3.html">3.ステップ</a> <a href="vol20-4.html">4.マガジン</a> <a href="vol20-5.html">5.比較</a> 
+        <a href="vol20-6.html">6.グラス</a> <a href="vol20-7.html" class="current">7.ブルータル</a> <a href="vol20-8.html">8.Bento</a> <a href="vol20-9.html">9.ネオン</a> <a href="vol20-10.html">10.分割</a>
+    </nav>
+
+    <div style="max-width: 900px; margin: 40px auto 0; padding: 0 20px;">
+        <h1>Neo-Brutalism</h1>
+    </div>
+    <div class="container">
+        <div class="brutal-card bg-yellow">
+            <h3>POP & BOLD</h3>
+            <p>海外のZ世代クリエイターに大流行中のデザイン。太い黒枠と、ベタ塗りの黒い影が特徴です。</p>
+        </div>
+        <div class="brutal-card bg-pink">
+            <h3>Click Me!</h3>
+            <p>あえて「少しダサくてカワイイ」を狙うのが今のトレンド。ホバーすると影が動きます。</p>
+        </div>
+        <div class="brutal-card bg-teal">
+            <h3>NO ROUND CORNERS</h3>
+            <p>丸みを持たせず、直線と原色でガツンと見せるスタイルです。</p>
+        </div>
+    </div>
+</body>
+</html>
