@@ -37,7 +37,10 @@
         /* 成功事例のプッシュリンク */
         .featured-link {
             display: block;
-            background: linear-gradient(135deg, #ff00ff 0%, #00f2ff 100%);
+            /* 背景画像を暗く、コントラストを抑えて設定 */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/vol20/kotoback.webp');
+            background-size: cover;
+            background-position: center;
             color: #fff;
             text-decoration: none;
             padding: 30px;
@@ -48,8 +51,12 @@
             margin: 40px 0;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
         }
-        .featured-link:hover { transform: translateY(-5px) scale(1.02); filter: brightness(1.2); }
+        .featured-link:hover { 
+            transform: translateY(-5px) scale(1.02); 
+            filter: brightness(1.1); 
+        }
 
         /* 5ステップ手順カード */
         .step-card {
