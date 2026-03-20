@@ -1,0 +1,277 @@
+/* -----------------------------------------------------------
+   Variables & Base
+----------------------------------------------------------- */
+:root {
+  --main-blue: #0056A3;     /* アニメダ・ディープブルー */
+  --light-blue: #00E5FF;    /* タクティカル・シアン */
+  --bg-white: #F4F7F9;      /* 少し青みのある白背景 */
+  --glass-white: rgba(255, 255, 255, 0.8);
+  --text-dark: #2C3E50;
+  --text-gray: #7F8C8D;
+  --border-color: rgba(0, 86, 163, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  /* 背景に非常に薄いドットグリッド */
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* -----------------------------------------------------------
+   Hero Section (White Future Style)
+----------------------------------------------------------- */
+.hero {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 4px solid var(--main-blue);
+}
+
+.overlay-grid {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: 
+    linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.4)),
+    url('hero-bg.webp') center/cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.team-logo {
+  width: 240px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 15px var(--light-blue)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.main-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--main-blue);
+  letter-spacing: 10px;
+  font-weight: 700;
+}
+
+.sub-title {
+  display: block;
+  font-size: 0.4em;
+  letter-spacing: 20px;
+  color: var(--text-gray);
+  margin-top: -10px;
+}
+
+.slogan {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 15px;
+  color: var(--light-blue);
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.status-indicator {
+  margin-top: 40px;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+.status-indicator .dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* -----------------------------------------------------------
+   Typography
+----------------------------------------------------------- */
+.section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: var(--main-blue);
+  margin-bottom: 40px;
+  padding-left: 15px;
+  border-left: 5px solid var(--light-blue);
+  text-align: left;
+}
+
+/* -----------------------------------------------------------
+   Operations & Cards
+----------------------------------------------------------- */
+.strategy-display {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+.scan-line {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: var(--light-blue);
+  box-shadow: 0 0 10px var(--light-blue);
+  animation: scan 4s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.data-tag {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  color: var(--main-blue);
+  margin-top: 10px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.glass-card {
+  background: var(--glass-white);
+  padding: 30px;
+  border-top: 4px solid var(--main-blue);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  backdrop-filter: blur(5px);
+}
+
+.day-label {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--main-blue);
+  margin-bottom: 10px;
+}
+
+.blue-ver { color: var(--light-blue); }
+
+.time { font-weight: bold; font-size: 1.2rem; }
+
+/* -----------------------------------------------------------
+   Members Flex
+----------------------------------------------------------- */
+.member-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  gap: 25px;
+}
+
+.avatar-box img {
+  width: 100px; height: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 2px solid var(--main-blue);
+}
+
+.member-info h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: var(--main-blue);
+}
+
+.stat-group {
+  margin-top: 10px;
+  width: 280px;
+}
+
+.stat-label { font-size: 0.7rem; font-weight: bold; display: flex; justify-content: space-between; }
+
+.stat-bar { height: 4px; background: #eee; margin-top: 5px; }
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--main-blue), var(--light-blue));
+}
+
+/* -----------------------------------------------------------
+   Results (Match Banner)
+----------------------------------------------------------- */
+.match-banner {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('match-banner.webp') center/cover no-repeat;
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.match-banner::before {
+  content: 'MATCH DATA REPORT';
+  position: absolute;
+  top: 10px; left: 10px;
+  font-size: 0.6rem; color: var(--text-gray); font-family: 'Orbitron';
+}
+
+.score {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--main-blue);
+  margin: 10px 0;
+}
+
+.mission-status {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--light-blue);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .member-card { flex-direction: column; text-align: center; }
+  .stat-group { width: 100%; }
+}
