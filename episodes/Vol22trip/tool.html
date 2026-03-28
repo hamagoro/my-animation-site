@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Blog Master Manager</title>
+    <style>
+        :root { --primary: #3498db; --accent: #e67e22; --success: #27ae60; --dark: #2c3e50; --light: #f8f9fa; --hint: #7f8c8d; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #eaeff2; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--dark); margin-bottom: 20px; }
+        .setup-panel { background: var(--dark); color: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; }
+        
+        /* テキスト編集エリアのスタイル */
+        .text-edit-panel { background: #fdfdfd; border: 1px solid #e0e0e0; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 0.8rem; font-weight: bold; color: var(--hint); margin-bottom: 5px; }
+        .title-input { width: 100%; font-size: 1.2rem; font-weight: bold; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .intro-input { width: 100%; font-size: 1rem; padding: 10px; border: 1px solid #ddd; border-radius: 5px; height: 80px; box-sizing: border-box; font-family: 'Yomogi', sans-serif; }
+
+        .section-header { display: flex; align-items: center; justify-content: space-between; margin: 40px 0 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .section-title { font-size: 1.5rem; border-left: 8px solid var(--primary); padding-left: 15px; color: var(--dark); }
+        .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .slot { border: 2px dashed #ccc; border-radius: 12px; padding: 10px; text-align: center; background: #fff; cursor: pointer; min-height: 200px; display: flex; flex-direction: column; }
+        .slot.has-img { border-style: solid; border-color: var(--primary); }
+        .slot.changed { border-color: var(--accent); background: #fff9f3; }
+        .preview-box { width: 100%; height: 120px; background: #eee; border-radius: 6px; overflow: hidden; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
+        .preview-img { width: 100%; height: 100%; object-fit: cover; }
+        .cap-input { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 5px; font-size: 11px; margin-top: auto; }
+        .btn { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-connect { background: var(--primary); color: white; }
+        .btn-save { background: var(--success); color: white; font-size: 1.3rem; width: 100%; margin-top: 50px; position: sticky; bottom: 20px; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Project Manager (Text & Assets)</h1>
+
+    <div class="setup-panel">
+        <div><strong>Project Folder:</strong> <span id="folder-name">Not Connected</span></div>
+        <button class="btn btn-connect" onclick="connectProject()">📁 フォルダを選択して開始</button>
+    </div>
+
+    <div id="project-content" style="display:none;">
+        <div id="chapters-area"></div>
+        <button class="btn btn-save" onclick="saveAll()">Save All Changes (HTML, Images, JS)</button>
+        <p id="log" style="text-align:center; font-weight:bold; color:var(--success); margin-top:10px;"></p>
+    </div>
+</div>
+
+<script>
+    let rootHandle, imgHandle, htmlHandle;
+    let chapters = [];
+    let pendingFiles = new Map();
+
+    async function connectProject() {
+        try {
+            rootHandle = await window.showDirectoryPicker();
+            imgHandle = await rootHandle.getDirectoryHandle('images', { create: true });
+            htmlHandle = await rootHandle.getFileHandle('index.html');
+            const htmlText = await (await htmlHandle.getFile()).text();
+            
+            document.getElementById('folder-name').innerText = rootHandle.name;
+            document.getElementById('project-content').style.display = 'block';
+            
+            parseHTML(htmlText);
+        } catch (e) { alert("構成エラー: index.htmlが見つかりません。"); }
+    }
+
+    function parseHTML(html) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        chapters = Array.from(doc.querySelectorAll('section.city-section')).map((sec, i) => ({
+            id: sec.id,
+            title: sec.querySelector('h2')?.innerText || "",
+            intro: sec.querySelector('.intro-text')?.innerText || "",
+            num: i
+        }));
+        renderUI();
+    }
+
+    function renderUI() {
+        const area = document.getElementById('chapters-area');
+        area.innerHTML = '';
+
+        chapters.forEach(ch => {
+            const section = document.createElement('div');
+            section.innerHTML = `
+                <div class="section-header">
+                    <div class="section-title">Chapter ${ch.num}: ${ch.id}</div>
+                </div>
+                
+                <div class="text-edit-panel">
+                    <div class="input-group">
+                        <label>章のタイトル (h2)</label>
+                        <input type="text" class="title-input" id="title-${ch.id}" value="${ch.title}">
+                    </div>
+                    <div class="input-group">
+                        <label>紹介テキスト (p.intro-text)</label>
+                        <textarea class="intro-input" id="intro-${ch.id}">${ch.intro}</textarea>
+                    </div>
+                </div>
+
+                <div class="asset-grid" id="grid-${ch.id}"></div>
+            `;
+            area.appendChild(section);
+
+            const grid = document.getElementById(`grid-${ch.id}`);
+            createSlot(grid, `bg-${ch.num}.webp`, "背景タイル", false);
+            createSlot(grid, `land-${ch.num}.webp`, "ランドマーク", false);
+            createSlot(grid, `cara-${ch.num}.webp`, "キャラ", false);
+            createSlot(grid, `best-${ch.num}.webp`, "ベストショット", false);
+            
+            for(let j=1; j<=3; j++) {
+                createSlot(grid, `${ch.num}-${String(j).padStart(2, '0')}.webp`, "写真", true);
+            }
+        });
+    }
+
+    async function createSlot(container, fileName, type, isPhoto) {
+        const slotId = `slot-${fileName.replace(/\./g, '-')}`;
+        const slot = document.createElement('div');
+        slot.className = 'slot';
+        slot.id = slotId;
+        slot.dataset.filename = fileName;
+        slot.dataset.isphoto = isPhoto;
+        
+        slot.innerHTML = `
+            <span class="file-label">${fileName} <span class="tag">${type}</span></span>
+            <div class="preview-box" id="prev-${slotId}">
+                <div style="font-size:10px; color:#ccc;">Click to Upload</div>
+            </div>
+            ${isPhoto ? `<input type="text" class="cap-input" placeholder="キャプション..." id="cap-${slotId}">` : ''}
+            <input type="file" style="display:none" accept="image/*" onchange="fileSelected('${slotId}', '${fileName}', this)">
+        `;
+
+        try {
+            const file = await (await imgHandle.getFileHandle(fileName)).getFile();
+            updatePreview(slotId, file);
+            slot.classList.add('has-img');
+        } catch(e) {}
+
+        slot.onclick = (e) => { if(e.target.tagName !== 'INPUT') slot.querySelector('input[type="file"]').click(); };
+        container.appendChild(slot);
+    }
+
+    function fileSelected(slotId, fileName, input) {
+        if(input.files[0]) {
+            pendingFiles.set(fileName, input.files[0]);
+            updatePreview(slotId, input.files[0]);
+            document.getElementById(slotId).classList.add('changed');
+        }
+    }
+
+    function updatePreview(slotId, file) {
+        document.getElementById(`prev-${slotId}`).innerHTML = `<img src="${URL.createObjectURL(file)}" class="preview-img">`;
+    }
+
+    async function saveAll() {
+        const log = document.getElementById('log');
+        log.innerText = "⏳ Saving...";
+
+        // 1. 画像の保存
+        for (const [name, file] of pendingFiles) {
+            const fh = await imgHandle.getFileHandle(name, { create: true });
+            const wr = await fh.createWritable();
+            await wr.write(file);
+            await wr.close();
+        }
+
+        // 2. index.html の更新 (テキストの書き換え)
+        const currentHtmlText = await (await htmlHandle.getFile()).text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(currentHtmlText, 'text/html');
+
+        chapters.forEach(ch => {
+            const section = doc.getElementById(ch.id);
+            if (section) {
+                const h2 = section.querySelector('h2');
+                const p = section.querySelector('.intro-text');
+                const newTitle = document.getElementById(`title-${ch.id}`).value;
+                const newIntro = document.getElementById(`intro-${ch.id}`).value;
+                if (h2) h2.innerText = newTitle;
+                if (p) p.innerText = newIntro;
+            }
+        });
+
+        const htmlWriter = await htmlHandle.createWritable();
+        await htmlWriter.write("<!DOCTYPE html>\n" + doc.documentElement.outerHTML);
+        await htmlWriter.close();
+
+        // 3. script.js の生成
+        let dataStr = "const travelData = {\n";
+        chapters.forEach(ch => {
+            dataStr += `  "${ch.id}": [\n`;
+            const photoSlots = Array.from(document.getElementById(`grid-${ch.id}`).querySelectorAll('.slot')).filter(s => s.dataset.isphoto === "true");
+            photoSlots.forEach(slot => {
+                if (slot.classList.contains('has-img') || slot.classList.contains('changed')) {
+                    const cap = document.getElementById(`cap-${slot.id}`).value;
+                    dataStr += `    { img: "${slot.dataset.filename}", cap: "${cap}" },\n`;
+                }
+            });
+            dataStr += `  ],\n`;
+        });
+        dataStr += "};\n\n";
+        
+        const jsBase = `document.querySelectorAll('.swiper').forEach(el => { const id = el.closest('section').id; const wrapper = el.querySelector('.swiper-wrapper'); if(travelData[id]) { travelData[id].forEach(item => { wrapper.innerHTML += \`<div class="swiper-slide"><div class="polaroid-frame"><img src="images/\${item.img}"><div class="caption">\${item.cap}</div></div></div>\`; }); } new Swiper(el, { loop: true, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } }); });`;
+
+        const sh = await rootHandle.getFileHandle('script.js', { create: true });
+        const sw = await sh.createWritable();
+        await sw.write(dataStr + jsBase);
+        await sw.close();
+
+        log.innerText = "✅ Saved everything!";
+        pendingFiles.clear();
+    }
+</script>
+</body>
+</html>
