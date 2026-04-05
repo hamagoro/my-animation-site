@@ -1,18 +1,20 @@
-// images フォルダにすべての .webp を入れた前提のリストです
 const travelData = {
+  "prologue": [
+  ],
   "london": [
-    { img: "1-01.webp", cap: "14時間のフライト。赤いバスを見て、実感が湧いてきた。" },
-    { img: "1-02.webp", cap: "パディントン駅。ここから私の22日間が始まる。" },
-    { img: "1-03.webp", cap: "オックスフォードの静寂。ハリーの世界に迷い込んだみたい。" }
   ],
   "dublin": [
-    { img: "2-01.webp", cap: "トリニティ・カレッジ。本に囲まれる幸せ。" },
-    { img: "2-02.webp", cap: "ホウスの潮風。アザラシがひょっこり顔を出してくれた！" },
-    { img: "2-03.webp", cap: "テンプルバーの夜。ギネスビールでひとり乾杯。" }
   ],
   "edinburgh": [
-    { img: "3-01.webp", cap: "エジンバラ城。岩山に立つ姿は圧巻の一言。" },
-    { img: "3-02.webp", cap: "ビクトリア・ストリート。どこを切り取っても絵になる街。" }
-  ]
-  // 4章以降も同様の形式で増やしていけます
+  ],
+  "leeds": [
+  ],
+  "york": [
+  ],
+  "london-end": [
+  ],
+  "epilogue": [
+  ],
 };
+
+document.querySelectorAll('.swiper').forEach(el => { const id = el.closest('section').id; const wrapper = el.querySelector('.swiper-wrapper'); if(travelData[id]) { travelData[id].forEach(item => { wrapper.innerHTML += `<div class="swiper-slide"><div class="polaroid-frame"><img src="images/${item.img}"><div class="caption">${item.cap}</div></div></div>`; }); } new Swiper(el, { loop: true, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } }); });
