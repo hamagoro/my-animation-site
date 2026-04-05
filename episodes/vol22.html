@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>Vol.22 (Moved)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Vol.22 Coming Soon - ストップモーションアニメ通信">
+    <meta property="og:description" content="現在制作中です。公開までしばらくお待ちください。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol22.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/logo.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
+    <meta name="twitter:card" content="main">
+
+    <title>Vol.22 Coming Soon - ストップモーションアニメ通信</title>
+    <link rel="icon" href="../images/logo2.webp" type="image/webp">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .coming-soon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            text-align: center;
+            background: #111;
+            border: 2px solid #00f2ff;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            padding: 50px 20px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 0, 255, 0.05) 20px,
+                rgba(255, 0, 255, 0.05) 40px
+            );
+            z-index: 0;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .coming-soon-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            letter-spacing: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+            50% { opacity: 0.8; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; }
+        }
+
+        .coming-soon-subtitle {
+            font-size: 1.2rem;
+            color: #00f2ff;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .gear-icon {
+            font-size: 4rem;
+            color: #ccc;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .coming-soon-title { font-size: 2.2rem; }
+            .coming-soon-subtitle { font-size: 1rem; }
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #000; color: #fff;">
     <p>This content has been moved to <a href="vol37.html">Vol.37</a>.</p>
+<body style="background-color: #000; color: #fff;">
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">物質と魂が交差する、1fps of Cinematic Archive</p>
+    </header>
+
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
+            <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.22 / Under Construction</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                制作中...
+            </h2>
+            <p class="date" style="margin-top: 15px; color: #888;">2026.XX.XX UP</p>
+        </header>
+
+        <section class="coming-soon-container">
+            <div class="gear-icon">⚙️</div>
+            <h2 class="coming-soon-title">COMING SOON...</h2>
+            <p class="coming-soon-subtitle">絶賛コマ撮り中。公開までしばらくお待ちください。</p>
+        </section>
+
+    </article>
+
+    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
+                <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
+            </div>
+        </nav>
+
+        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+    </footer>
 </body>
 </html>
