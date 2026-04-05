@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "息もできない",
+    "director": "ヤン・イクチュン",
+    "director_note": "主演・監督・脚本・編集を一人でこなした韓国の異才。",
+    "features": "暴力と愛情が入り混じる、魂を削るような人間ドラマ。",
+    "image": "../images/vol24/m01.webp",
+    "category": "韓国"
+  },
+  {
+    "id": 2,
+    "title": "マッドマックス 怒りのデス・ロード",
+    "director": "ジョージ・ミラー",
+    "director_note": "70歳を超えてなお、最もクレイジーなアクションを撮る巨匠。",
+    "features": "アクションだけで物語を語る「純粋映画」の最高峰。",
+    "image": "../images/vol24/m02.webp",
+    "category": "オーストラリア"
+  },
+  {
+    "id": 3,
+    "title": "ワンス・アポン・ア・タイム・イン・ハリウッド",
+    "director": "クエンティン・タランティーノ",
+    "director_note": "映画愛に満ちたオタク監督の集大成。",
+    "features": "1969年のハリウッドへの郷愁と、史実を書き換える映画の魔法。",
+    "image": "../images/vol24/m03.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 4,
+    "title": "偶然と想像",
+    "director": "濱口竜介",
+    "director_note": "三大映画祭を制覇した現代日本の巨匠。",
+    "features": "偶然という奇跡を会話劇だけでスリリングに描く短編集。",
+    "image": "../images/vol24/m04.webp",
+    "category": "日本"
+  },
+  {
+    "id": 5,
+    "title": "別離",
+    "director": "アスガー・ファルハディ",
+    "director_note": "イランの名匠。サスペンスフルな脚本術の達人。",
+    "features": "嘘と秘密が絡み合い、善悪の彼岸へと引きずり込む心理ドラマ。",
+    "image": "../images/vol24/m05.webp",
+    "category": "イラン"
+  },
+  {
+    "id": 6,
+    "title": "ブルータル・ジャスティス",
+    "director": "S・クレイグ・ザラー",
+    "director_note": "暴力と静寂を操るカルト的な人気を誇る監督。",
+    "features": "遅々とした展開から突如訪れる容赦ない暴力。独特の重さ。",
+    "image": "../images/vol24/m06.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 7,
+    "title": "ファニーゲーム U.S.A.",
+    "director": "ミヒャエル・ハネケ",
+    "director_note": "観客を不快にさせることに長けたオーストリアの鬼才。",
+    "features": "暴力の消費を観客に問いかける、メタフィクションなスリラー。",
+    "image": "../images/vol24/m07.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 8,
+    "title": "よこがお",
+    "director": "深田晃司",
+    "director_note": "カンヌ常連。日常に潜む「他者」を描く鋭い視点。",
+    "features": "無実の罪と復讐心。人間の多面性を描いた傑作。",
+    "image": "../images/vol24/m08.webp",
+    "category": "日本"
+  },
+  {
+    "id": 9,
+    "title": "母なる証明",
+    "director": "ポン・ジュノ",
+    "director_note": "『パラサイト』で世界を制した韓国の巨匠。",
+    "features": "母性の狂気とミステリーが融合。予測不能な展開。",
+    "image": "../images/vol24/m09.webp",
+    "category": "韓国"
+  },
+  {
+    "id": 10,
+    "title": "哀しき獣",
+    "director": "ナ_ホンジン",
+    "director_note": "極限状況を描く天才。",
+    "features": "延々と続く逃走劇と、痛みが伝わるような生々しいアクション。",
+    "image": "../images/vol24/m10.webp",
+    "category": "韓国"
+  },
+  {
+    "id": 11,
+    "title": "ファーゴ",
+    "director": "ジョエル＆イーサン・コーエン",
+    "director_note": "ブラックユーモアと不条理劇の達人兄弟。",
+    "features": "雪景色の中で起きる間抜けで残酷な犯罪劇。",
+    "image": "../images/vol24/m11.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 12,
+    "title": "裏切りのサーカス",
+    "director": "トーマス・アルフレッドソン",
+    "director_note": "静謐な空気感と緊張感を作り出すスウェーデンの名匠。",
+    "features": "視線と会話だけで進行する極上のスパイミステリー。",
+    "image": "../images/vol24/m12.webp",
+    "category": "イギリス"
+  },
+  {
+    "id": 13,
+    "title": "ノーカントリー",
+    "director": "ジョエル＆イーサン・コーエン",
+    "director_note": "アカデミー賞作品賞受賞作。",
+    "features": "音楽を排した演出と、殺し屋シガーの圧倒的な存在感。",
+    "image": "../images/vol24/m13.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 14,
+    "title": "アシュラ",
+    "director": "キム・ソンス",
+    "director_note": "男たちの修羅場を描かせたら右に出る者はいない。",
+    "features": "全員悪人。地獄のような状況がさらに悪化していく。",
+    "image": "../images/vol24/m14.webp",
+    "category": "韓国"
+  },
+  {
+    "id": 15,
+    "title": "ヤング≒アダルト",
+    "director": "ジェイソン・ライトマン",
+    "director_note": "痛々しい人間を愛おしく描く。",
+    "features": "大人になりきれない主人公の痛々しさを描くドライな視点。",
+    "image": "../images/vol24/m15.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 16,
+    "title": "ケンとカズ",
+    "director": "小路紘史",
+    "director_note": "圧倒的なリアリズムで評価された日本の新鋭。",
+    "features": "覚醒剤密売に関わる二人の男の破滅をヒリヒリ描く。",
+    "image": "../images/vol24/m16.webp",
+    "category": "日本"
+  },
+  {
+    "id": 17,
+    "title": "永い言い訳",
+    "director": "西川美和",
+    "director_note": "人間の嘘や弱さを文学的な深みで描く名手。",
+    "features": "妻を亡くしても泣けない男の、歪んだ再生の物語。",
+    "image": "../images/vol24/m17.webp",
+    "category": "日本"
+  },
+  {
+    "id": 18,
+    "title": "キッズ・リターン",
+    "director": "北野武",
+    "director_note": "世界のキタノ。暴力と静寂、そして独特の死生観。",
+    "features": "挫折と再生。「まだ始まっちゃいねえよ」というラストの輝き。",
+    "image": "../images/vol24/m18.webp",
+    "category": "日本"
+  },
+  {
+    "id": 19,
+    "title": "極道恐怖大劇場 牛頭",
+    "director": "三池崇史",
+    "director_note": "世界中にカルトファンを持つ暴走機関車。",
+    "features": "ヤクザ映画の皮を被ったシュルレアリスム・ホラー。",
+    "image": "../images/vol24/m19.webp",
+    "category": "日本"
+  },
+  {
+    "id": 20,
+    "title": "もののけ姫",
+    "director": "宮崎駿",
+    "director_note": "日本アニメーションの神様。",
+    "features": "生と死、憎しみと許しを描いた壮大な叙事詩。",
+    "image": "../images/vol24/m20.webp",
+    "category": "日本"
+  },
+  {
+    "id": 21,
+    "title": "王立宇宙軍 オネアミスの翼",
+    "director": "山賀博之",
+    "director_note": "ガイナックスの若き天才たちが作り上げた伝説。",
+    "features": "異世界を構築する圧倒的なディテールと職人魂。",
+    "image": "../images/vol24/m21.webp",
+    "category": "日本"
+  },
+  {
+    "id": 22,
+    "title": "横道世之介",
+    "director": "沖田修一",
+    "director_note": "日常の可笑しみと温かさを描く。",
+    "features": "青春の輝きと、過ぎ去る時間の切なさが同居する。",
+    "image": "../images/vol24/m22.webp",
+    "category": "日本"
+  },
+  {
+    "id": 23,
+    "title": "百円の恋",
+    "director": "武正晴",
+    "director_note": "敗者たちの再起を熱く描く。",
+    "features": "自堕落な生活を送る女がボクシングを通して叫ぶ、魂の傑作。",
+    "image": "../images/vol24/m23.webp",
+    "category": "日本"
+  },
+  {
+    "id": 24,
+    "title": "空白",
+    "director": "吉田恵輔",
+    "director_note": "人間の悪意や噛み合わなさを容赦なく描く。",
+    "features": "娘の死をきっかけに暴走する父。正解のない罪と罰。",
+    "image": "../images/vol24/m24.webp",
+    "category": "日本"
+  },
+  {
+    "id": 25,
+    "title": "ザ・スクエア 思いやりの領域",
+    "director": "リューベン・オストルンド",
+    "director_note": "現代社会の欺瞞を皮肉たっぷりに描く。",
+    "features": "インテリ層の偽善や本能をあぶり出すブラックコメディ。",
+    "image": "../images/vol24/m25.webp",
+    "category": "スウェーデン"
+  },
+  {
+    "id": 26,
+    "title": "歩いても 歩いても",
+    "director": "是枝裕和",
+    "director_note": "家族の形を静かに見つめ続ける世界的な名匠。",
+    "features": "何も起きないようでいて、棘が見え隠れする静謐なドラマ。",
+    "image": "../images/vol24/m26.webp",
+    "category": "日本"
+  },
+  {
+    "id": 27,
+    "title": "パラサイト 半地下の家族",
+    "director": "ポン・ジュノ",
+    "director_note": "韓国映画史上、最も世界を熱狂させた一作。",
+    "features": "完璧な脚本。格差社会をブラックユーモアと恐怖で包む。",
+    "image": "../images/vol24/m27.webp",
+    "category": "韓国"
+  },
+  {
+    "id": 28,
+    "title": "万引き家族",
+    "director": "是枝裕和",
+    "director_note": "パルムドール受賞。血の繋がりを超えた家族の絆と罪。",
+    "features": "社会の底辺で生きる人々を、温かくも残酷に描き出す。",
+    "image": "../images/vol24/m28.webp",
+    "category": "日本"
+  },
+  {
+    "id": 29,
+    "title": "JOKER",
+    "director": "トッド・フィリップス",
+    "director_note": "DCコミックスを極限までリアルな人間ドラマへ昇華。",
+    "features": "一人の男が「悪のカリスマ」へ変貌する実存的悲劇。",
+    "image": "../images/vol24/m29.webp",
+    "category": "アメリカ"
+  },
+  {
+    "id": 30,
+    "title": "千年女優",
+    "director": "今敏",
+    "director_note": "アニメーションでしか不可能な演出を極めた天才。",
+    "features": "虚構と現実が混ざり合い、一人の女優の人生を疾走する。",
+    "image": "../images/vol24/m30.webp",
+    "category": "日本"
+  }
+]
