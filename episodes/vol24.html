@@ -79,8 +79,11 @@
         
         .img-container img { width: 100%; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-        .top-btn { position: fixed; bottom: 30px; right: 30px; background: var(--panel); color: var(--cyan); 
-                   border: 1px solid var(--cyan); padding: 10px 15px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; }
+        .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); 
+                   border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .scroll-btn:hover { background: var(--cyan); color: #000; }
+        .top-btn { bottom: 85px; }
+        .bottom-btn { bottom: 30px; }
     </style>
 </head>
 <body>
@@ -126,9 +129,10 @@
 
     </article>
 
-    <a href="#" class="top-btn">↑</a>
+    <a href="#" class="scroll-btn top-btn">↑</a>
+    <a href="#footer" class="scroll-btn bottom-btn">↓</a>
 
-    <footer class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 100px;">
+    <footer id="footer" class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 100px;">
         <img src="../images/logo.webp" alt="Logo" class="footer-logo" style="max-width: 180px; margin-bottom: 20px;">
         <p class="footer-credit" style="color: #00f2ff; font-weight: 900;">© 2026 The Animeda! Project</p>
     </footer>
@@ -201,10 +205,12 @@ async function init() {
             const isEven = i % 2 !== 0;
             const themeColor = isEven ? 'var(--magenta)' : 'var(--cyan)';
 
+            const displayOrder = m.order === 999 ? "次点" : String(m.order).padStart(2, '0');
+
             // 目次
             const idxLink = document.createElement('a');
             idxLink.href = `#m${m.id}`;
-            idxLink.textContent = `${String(m.order).padStart(2, '0')}. ${m.title}`;
+            idxLink.textContent = `${displayOrder}. ${m.title}`;
             indexNav.appendChild(idxLink);
 
             // カード
@@ -214,7 +220,7 @@ async function init() {
             section.innerHTML = `
                 <div class="card-header ${isEven ? 'alt' : ''}">
                     <h3 style="color: ${themeColor}">
-                        ${String(m.order).padStart(2, '0')}. ${m.title}
+                        ${displayOrder}. ${m.title}
                         <span class="movie-year">${m.year}</span>
                     </h3>
                 </div>
@@ -234,7 +240,7 @@ async function init() {
         });
 
         // タイトルの更新
-        const count = movies.length;
+        const count = movies.filter(m => m.order !== 999).length;
         document.getElementById('dynamic-title').innerHTML = `魂を揺さぶる映画${count}選：<br>暴力、静寂、そして実存`;
         document.title = `vol.24 魂を揺さぶる映画${count}選 - ストップモーションアニメ通信`;
 

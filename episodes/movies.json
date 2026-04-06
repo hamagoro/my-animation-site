@@ -1,5 +1,17 @@
 [
   {
+    "id": 34,
+    "order": 1,
+    "title": "息もできない",
+    "year": 2008,
+    "director": "ヤン・イクチュン",
+    "category": "韓国",
+    "status": "active",
+    "director_note": "監督、脚本、主演を兼任したことで知られる。\n本作が初の長編監督作品であり、世界中で高い評価を受けた。\n粗暴な主人公を演じ、そのリアリティが観客に強い印象を与えた。",
+    "features": "家庭内暴力の連鎖と、それによって傷つけられた人々の再生を描く。\n荒々しくも生々しい描写で、社会の底辺に生きる人々の現実を浮き彫りにする。\n観客に深い問いかけを促す、強烈な人間ドラマとして評価が高い。",
+    "image": "../images/vol24/m34.webp"
+  },
+  {
     "id": 1,
     "title": "ジャッキー・ブラウン",
     "year": 1997,
@@ -8,8 +20,9 @@
     "features": "エルモア・レナードの小説「ラム・パンチ」を原作とし、タランティーノ流の脚色が光る。\n70年代ブラックスプロイテーション映画のスター、パム・グリアを主演に迎えた。\nソウルやR&Bの名曲が彩る、スタイリッシュでメロウな犯罪ドラマ。",
     "image": "../images/vol24/m01.webp",
     "category": "日本",
-    "order": 1,
-    "updated_at": "2026-04-06"
+    "order": 2,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 2,
@@ -19,9 +32,10 @@
     "director_note": "70歳を超えてなお、最もクレイジーなアクションを撮る巨匠。",
     "features": "アクションだけで物語を語る「純粋映画」の最高峰。",
     "image": "../images/vol24/m02.webp",
-    "category": "オーストラリア",
-    "order": 2,
-    "updated_at": "2026-04-06"
+    "category": "アメリカ",
+    "order": 3,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 3,
@@ -32,8 +46,9 @@
     "features": "1969年のハリウッドへの郷愁と、史実を書き換える映画の魔法。",
     "image": "../images/vol24/m03.webp",
     "category": "アメリカ",
-    "order": 3,
-    "updated_at": "2026-04-06"
+    "order": 4,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 4,
@@ -44,8 +59,9 @@
     "features": "偶然という奇跡を会話劇だけでスリリングに描く短編集。",
     "image": "../images/vol24/m04.webp",
     "category": "日本",
-    "order": 4,
-    "updated_at": "2026-04-06"
+    "order": 5,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 5,
@@ -56,8 +72,9 @@
     "features": "嘘と秘密が絡み合い、善悪の彼岸へと引きずり込む心理ドラマ。",
     "image": "../images/vol24/m05.webp",
     "category": "イラン",
-    "order": 5,
-    "updated_at": "2026-04-06"
+    "order": 6,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 6,
@@ -68,8 +85,9 @@
     "features": "遅々とした展開から突如訪れる容赦ない暴力。独特の重さ。",
     "image": "../images/vol24/m06.webp",
     "category": "アメリカ",
-    "order": 6,
-    "updated_at": "2026-04-06"
+    "order": 7,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 7,
@@ -80,8 +98,9 @@
     "features": "暴力の消費を観客に問いかける、メタフィクションなスリラー。",
     "image": "../images/vol24/m07.webp",
     "category": "アメリカ",
-    "order": 7,
-    "updated_at": "2026-04-06"
+    "order": 8,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 8,
@@ -92,8 +111,9 @@
     "features": "無実の罪と復讐心。人間の多面性を描いた傑作。",
     "image": "../images/vol24/m08.webp",
     "category": "日本",
-    "order": 8,
-    "updated_at": "2026-04-06"
+    "order": 9,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 9,
@@ -104,8 +124,9 @@
     "features": "母性の狂気とミステリーが融合。予測不能な展開。",
     "image": "../images/vol24/m09.webp",
     "category": "韓国",
-    "order": 9,
-    "updated_at": "2026-04-06"
+    "order": 10,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 10,
@@ -116,8 +137,9 @@
     "features": "延々と続く逃走劇と、痛みが伝わるような生々しいアクション。",
     "image": "../images/vol24/m10.webp",
     "category": "韓国",
-    "order": 10,
-    "updated_at": "2026-04-06"
+    "order": 11,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 11,
@@ -128,8 +150,9 @@
     "features": "雪景色の中で起きる間抜けで残酷な犯罪劇。",
     "image": "../images/vol24/m11.webp",
     "category": "アメリカ",
-    "order": 11,
-    "updated_at": "2026-04-06"
+    "order": 12,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 12,
@@ -140,8 +163,9 @@
     "features": "視線と会話だけで進行する極上のスパイミステリー。",
     "image": "../images/vol24/m12.webp",
     "category": "イギリス",
-    "order": 12,
-    "updated_at": "2026-04-06"
+    "order": 13,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 13,
@@ -152,8 +176,9 @@
     "features": "音楽を排した演出と、殺し屋シガーの圧倒的な存在感。",
     "image": "../images/vol24/m13.webp",
     "category": "アメリカ",
-    "order": 13,
-    "updated_at": "2026-04-06"
+    "order": 14,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 14,
@@ -164,8 +189,9 @@
     "features": "全員悪人。地獄のような状況がさらに悪化していく。",
     "image": "../images/vol24/m14.webp",
     "category": "韓国",
-    "order": 14,
-    "updated_at": "2026-04-06"
+    "order": 15,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 15,
@@ -176,8 +202,9 @@
     "features": "大人になりきれない主人公の痛々しさを描くドライな視点。",
     "image": "../images/vol24/m15.webp",
     "category": "アメリカ",
-    "order": 15,
-    "updated_at": "2026-04-06"
+    "order": 16,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 16,
@@ -188,8 +215,9 @@
     "features": "覚醒剤密売に関わる二人の男の破滅をヒリヒリ描く。",
     "image": "../images/vol24/m16.webp",
     "category": "日本",
-    "order": 16,
-    "updated_at": "2026-04-06"
+    "order": 17,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 17,
@@ -200,8 +228,9 @@
     "features": "妻を亡くしても泣けない男の、歪んだ再生の物語。",
     "image": "../images/vol24/m17.webp",
     "category": "日本",
-    "order": 17,
-    "updated_at": "2026-04-06"
+    "order": 18,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 18,
@@ -212,8 +241,9 @@
     "features": "挫折と再生。「まだ始まっちゃいねえよ」というラストの輝き。",
     "image": "../images/vol24/m18.webp",
     "category": "日本",
-    "order": 18,
-    "updated_at": "2026-04-06"
+    "order": 19,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 19,
@@ -224,8 +254,9 @@
     "features": "ヤクザ映画の皮を被ったシュルレアリスム・ホラー。",
     "image": "../images/vol24/m19.webp",
     "category": "日本",
-    "order": 19,
-    "updated_at": "2026-04-06"
+    "order": 20,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 20,
@@ -236,8 +267,9 @@
     "features": "生と死、憎しみと許しを描いた壮大な叙事詩。",
     "image": "../images/vol24/m20.webp",
     "category": "日本",
-    "order": 20,
-    "updated_at": "2026-04-06"
+    "order": 21,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 21,
@@ -248,8 +280,9 @@
     "features": "異世界を構築する圧倒的なディテールと職人魂。",
     "image": "../images/vol24/m21.webp",
     "category": "日本",
-    "order": 21,
-    "updated_at": "2026-04-06"
+    "order": 22,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 22,
@@ -260,8 +293,9 @@
     "features": "青春の輝きと、過ぎ去る時間の切なさが同居する。",
     "image": "../images/vol24/m22.webp",
     "category": "日本",
-    "order": 22,
-    "updated_at": "2026-04-06"
+    "order": 23,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 23,
@@ -272,8 +306,9 @@
     "features": "自堕落な生活を送る女がボクシングを通して叫ぶ、魂の傑作。",
     "image": "../images/vol24/m23.webp",
     "category": "日本",
-    "order": 23,
-    "updated_at": "2026-04-06"
+    "order": 24,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 24,
@@ -284,8 +319,9 @@
     "features": "娘の死をきっかけに暴走する父。正解のない罪と罰。",
     "image": "../images/vol24/m24.webp",
     "category": "日本",
-    "order": 24,
-    "updated_at": "2026-04-06"
+    "order": 25,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 25,
@@ -296,8 +332,9 @@
     "features": "インテリ層の偽善や本能をあぶり出すブラックコメディ。",
     "image": "../images/vol24/m25.webp",
     "category": "スウェーデン",
-    "order": 25,
-    "updated_at": "2026-04-06"
+    "order": 26,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 26,
@@ -308,8 +345,9 @@
     "features": "何も起きないようでいて、棘が見え隠れする静謐なドラマ。",
     "image": "../images/vol24/m26.webp",
     "category": "日本",
-    "order": 26,
-    "updated_at": "2026-04-06"
+    "order": 27,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 27,
@@ -320,8 +358,9 @@
     "features": "完璧な脚本。格差社会をブラックユーモアと恐怖で包む。",
     "image": "../images/vol24/m27.webp",
     "category": "韓国",
-    "order": 27,
-    "updated_at": "2026-04-06"
+    "order": 28,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 28,
@@ -332,8 +371,9 @@
     "features": "社会の底辺で生きる人々を、温かくも残酷に描き出す。",
     "image": "../images/vol24/m28.webp",
     "category": "日本",
-    "order": 28,
-    "updated_at": "2026-04-06"
+    "order": 29,
+    "updated_at": "2026-04-06",
+    "status": "active"
   },
   {
     "id": 29,
@@ -344,8 +384,21 @@
     "features": "一人の男が「悪のカリスマ」へ変貌する実存的悲劇。",
     "image": "../images/vol24/m29.webp",
     "category": "アメリカ",
-    "order": 29,
-    "updated_at": "2026-04-06"
+    "order": 30,
+    "updated_at": "2026-04-06",
+    "status": "active"
+  },
+  {
+    "id": 35,
+    "order": 31,
+    "title": "ちょっと思い出しただけ",
+    "year": 2022,
+    "status": "sub",
+    "director": "松居大悟",
+    "category": "日本",
+    "director_note": "松居大悟は、俳優、脚本家、映画監督として多岐にわたり活動。\n自身が監督した映画や舞台作品の脚本も手掛けることが多い。\n独特の世界観と繊細な人間描写が評価されている。",
+    "features": "クリープハイプの楽曲「ナイトオンザプラネット」にインスパイアされた作品。\n毎年の同じ日に起こる出来事を遡って描く構成が特徴。\n濱口竜介監督作品にも出演した森郁月が初の映画プロデュースを務めた。",
+    "image": "../images/vol24/m35.webp"
   },
   {
     "id": 30,
@@ -356,8 +409,9 @@
     "features": "虚構と現実が混ざり合い、一人の女優の人生を疾走する。",
     "image": "../images/vol24/m30.webp",
     "category": "日本",
-    "order": 30,
-    "updated_at": "2026-04-06"
+    "order": 999,
+    "updated_at": "2026-04-06",
+    "status": "sub"
   },
   {
     "id": 31,
@@ -368,12 +422,13 @@
     "features": "最初から最後まで映画を見る喜びにあふれた最新作。ディカプリオの名演とショーン・ペンの存在感が光る実存的ドラマ。",
     "image": "../images/vol24/m31.webp",
     "category": "アメリカ",
-    "order": 31,
-    "updated_at": "2026-04-06"
+    "order": 999,
+    "updated_at": "2026-04-06",
+    "status": "sub"
   },
   {
     "id": 32,
-    "order": 32,
+    "order": 999,
     "title": "ソナチネ",
     "year": 1993,
     "director": "北野武",
@@ -389,11 +444,12 @@
     ],
     "image": "",
     "category": "日本",
-    "updated_at": "-"
+    "updated_at": "-",
+    "status": "sub"
   },
   {
     "id": 33,
-    "order": 33,
+    "order": 999,
     "title": "リンダ リンダ リンダ",
     "year": 2005,
     "director": "山下敦弘",
@@ -401,6 +457,7 @@
     "features": "文化祭でのライブを目指す女子高生バンドの瑞々しい青春群像劇。\n主演のペ・ドゥナ、香椎由宇、前田亜季らによる自然体な演技が光る。\nTHE BLUE HEARTSの名曲群が全編を彩り、感動的なラストライブは必見。",
     "image": "../images/vol24/m33.webp",
     "category": "日本",
-    "updated_at": "2026-04-06"
+    "updated_at": "2026-04-06",
+    "status": "sub"
   }
 ]
