@@ -45,7 +45,7 @@
             padding: 20px;
         }
 
-        canvas { width: 100% !important; height: auto !important; }
+        canvas { max-width: 100%; }
 
         /* 統計テキスト */
         #stat-panel { 
@@ -64,24 +64,27 @@
             display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
             padding: 20px; background: var(--panel); border: 1px dashed var(--magenta); border-radius: 15px; margin-bottom: 50px;
         }
-        #movie-index a { color: #ccc; text-decoration: none; font-size: 0.85rem; transition: 0.2s; }
-        #movie-index a:hover { color: var(--cyan); }
+        #movie-index a { text-decoration: none; font-size: 0.85rem; transition: 0.2s; }
+        #movie-index a:hover { filter: brightness(1.5); text-decoration: underline; }
 
         /* 作品カード */
         .movie-card { margin-bottom: 100px; scroll-margin-top: 50px; }
         .card-header { border-bottom: 2px solid var(--cyan); margin-bottom: 20px; }
-        .card-header.alt { border-bottom: 2px solid var(--magenta); }
         .card-header h3 { font-size: 1.8rem; margin: 10px 0; }
 
         .info-panel { background: var(--panel); padding: 25px; border-radius: 12px; border-left: 5px solid #333; margin-bottom: 25px; }
         .director-info span { color: #888; font-size: 0.9rem; }
         .movie-year { display: inline-block; background: #333; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px; vertical-align: middle; }
         
-        .img-container img { width: 100%; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .img-container { text-align: center; }
+        .img-container img { width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
         .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); 
                    border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
         .scroll-btn:hover { background: var(--cyan); color: #000; }
+        .rank-btn-10 { bottom: 250px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-20 { bottom: 195px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-30 { bottom: 140px; font-size: 0.9rem; font-weight: bold; }
         .top-btn { bottom: 85px; }
         .bottom-btn { bottom: 30px; }
     </style>
@@ -129,6 +132,9 @@
 
     </article>
 
+    <a href="javascript:void(0)" onclick="scrollToRank(10)" class="scroll-btn rank-btn-10">10位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(20)" class="scroll-btn rank-btn-20">20位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(30)" class="scroll-btn rank-btn-30">30位</a>
     <a href="#" class="scroll-btn top-btn">↑</a>
     <a href="#footer" class="scroll-btn bottom-btn">↓</a>
 
@@ -162,13 +168,18 @@ async function init() {
         Chart.defaults.color = '#ccc';
 
         // 国別円グラフ
+        const colors = [
+            '#ff00ff', '#00f2ff', '#00ff70', '#ffaa00', '#7000ff', 
+            '#ff0055', '#aaff00', '#00aaff', '#ff5500', '#5500ff', 
+            '#0055ff', '#ff00aa', '#ffff00', '#00ffff', '#fff', '#888'
+        ];
         new Chart(document.getElementById('countryChart'), {
             type: 'doughnut',
             data: {
                 labels: Object.keys(countryStats),
                 datasets: [{
                     data: Object.values(countryStats),
-                    backgroundColor: ['#00f2ff', '#ff00ff', '#7000ff', '#00ff70', '#fff', '#444'],
+                    backgroundColor: colors.slice(0, Object.keys(countryStats).length),
                     borderWidth: 0
                 }]
             },
@@ -202,8 +213,19 @@ async function init() {
         const listDiv = document.getElementById('movie-list');
 
         movies.forEach((m, i) => {
-            const isEven = i % 2 !== 0;
-            const themeColor = isEven ? 'var(--magenta)' : 'var(--cyan)';
+            // 10位ごとにテーマカラーを設定
+            let themeColor;
+            if (m.order <= 10) {
+                themeColor = '#ff00ff'; // マゼンタ
+            } else if (m.order <= 20) {
+                themeColor = '#00f2ff'; // シアン
+            } else if (m.order <= 30) {
+                themeColor = '#00ff70'; // ネオングリーン
+            } else if (m.order <= 40) {
+                themeColor = '#ffaa00'; // オレンジ
+            } else {
+                themeColor = '#ccc';  // その他・次点
+            }
 
             const displayOrder = m.order === 999 ? "次点" : String(m.order).padStart(2, '0');
 
@@ -211,14 +233,16 @@ async function init() {
             const idxLink = document.createElement('a');
             idxLink.href = `#m${m.id}`;
             idxLink.textContent = `${displayOrder}. ${m.title}`;
+            idxLink.style.color = themeColor;
             indexNav.appendChild(idxLink);
 
             // カード
             const section = document.createElement('section');
             section.className = 'movie-card';
             section.id = `m${m.id}`;
+            section.setAttribute('data-rank', m.order);
             section.innerHTML = `
-                <div class="card-header ${isEven ? 'alt' : ''}">
+                <div class="card-header" style="border-bottom: 2px solid ${themeColor};">
                     <h3 style="color: ${themeColor}">
                         ${displayOrder}. ${m.title}
                         <span class="movie-year">${m.year}</span>
@@ -226,6 +250,7 @@ async function init() {
                 </div>
                 <div class="info-panel">
                     <p class="director-info"><strong>監督:</strong> ${m.director}<br><span>${m.director_note}</span></p>
+                    <p><strong>制作国:</strong> ${m.category}</p>
                     <p><strong>特徴:</strong> ${m.features}</p>
                     <div style="margin-top: 15px; display: flex; gap: 10px;">
                         <a href="https://www.amazon.co.jp/s?k=${encodeURIComponent(m.title)}" target="_blank" style="color: var(--cyan); text-decoration: none; border: 1px solid var(--cyan); padding: 5px 10px; border-radius: 5px; font-size: 0.75rem;">🔗 Prime Video</a>
@@ -250,6 +275,13 @@ async function init() {
     }
 }
 init();
+
+function scrollToRank(rank) {
+    const el = document.querySelector(`[data-rank="${rank}"]`);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 </script>
 
 </body>
