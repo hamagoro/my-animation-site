@@ -68,7 +68,7 @@
         #movie-index a:hover { filter: brightness(1.5); text-decoration: underline; }
 
         /* 作品カード */
-        .movie-card { margin-bottom: 100px; scroll-margin-top: 50px; }
+        .movie-card { margin-bottom: 60px; scroll-margin-top: 50px; }
         .card-header { border-bottom: 2px solid var(--cyan); margin-bottom: 20px; }
         .card-header h3 { font-size: 1.8rem; margin: 10px 0; }
 
@@ -77,7 +77,7 @@
         .movie-year { display: inline-block; background: #333; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px; vertical-align: middle; }
         
         .img-container { text-align: center; }
-        .img-container img { width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .img-container img { width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
         .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); 
                    border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
@@ -87,6 +87,31 @@
         .rank-btn-30 { bottom: 140px; font-size: 0.9rem; font-weight: bold; }
         .top-btn { bottom: 85px; }
         .bottom-btn { bottom: 30px; }
+
+        /* --- 全作品タイル --- */
+        .all-movies-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+            gap: 8px; 
+            margin-top: 30px; 
+        }
+        .all-movies-grid img { 
+            width: 100%; 
+            aspect-ratio: 2/3; 
+            object-fit: cover; 
+            border-radius: 6px; 
+            background: #222; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            border: 1px solid #333; 
+        }
+        .all-movies-grid img:hover { 
+            transform: scale(1.1); 
+            border: 1px solid var(--cyan); 
+            box-shadow: 0 0 10px var(--cyan); 
+            z-index: 10; 
+            position: relative; 
+        }
     </style>
 </head>
 <body>
@@ -130,6 +155,13 @@
 
         <div id="movie-list"></div>
 
+        <section class="all-movies-section" style="margin-top: 80px; padding-top: 40px; border-top: 1px dashed var(--magenta);">
+            <h3 id="total-movies-count" style="color: var(--cyan); font-size: 1.8rem; margin-bottom: 20px;">
+                全 --- 作品アーカイブ
+            </h3>
+            <div id="all-movies-grid" class="all-movies-grid"></div>
+        </section>
+
     </article>
 
     <a href="javascript:void(0)" onclick="scrollToRank(10)" class="scroll-btn rank-btn-10">10位</a>
@@ -139,8 +171,16 @@
     <a href="#footer" class="scroll-btn bottom-btn">↓</a>
 
     <footer id="footer" class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 100px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol23.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.23へ</a>
+                <a href="#" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.25へ →</a>
+            </div>
+        </nav>
+
         <img src="../images/logo.webp" alt="Logo" class="footer-logo" style="max-width: 180px; margin-bottom: 20px;">
-        <p class="footer-credit" style="color: #00f2ff; font-weight: 900;">© 2026 The Animeda! Project</p>
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
     </footer>
 
 <script>
@@ -214,13 +254,14 @@ async function init() {
         // --- 3. リスト生成 ---
         const indexNav = document.getElementById('movie-index');
         const listDiv = document.getElementById('movie-list');
+        const allMoviesGrid = document.getElementById('all-movies-grid');
 
         movies.forEach((m, i) => {
             // 10作ごとにテーマカラーを設定（円グラフ用の colors 配列を再利用）
             // i=0~9は色0, i=10~19は色1...のように自動で割り当て
             const themeColor = colors[Math.floor(i / 10)] || '#ccc';
 
-            const displayOrder = m.order === 999 ? "次点" : String(m.order).padStart(2, '0');
+            const displayOrder = m.order > 30 ? "次点" : String(m.order).padStart(2, '0');
 
             // 目次
             const idxLink = document.createElement('a');
@@ -255,12 +296,24 @@ async function init() {
                 </div>
             `;
             listDiv.appendChild(section);
+
+            // タイル画像の追加
+            const tileImg = document.createElement('img');
+            tileImg.src = m.image;
+            tileImg.alt = m.title;
+            tileImg.title = m.title; // ホバーでタイトル表示
+            tileImg.onerror = function() { this.src='https://via.placeholder.com/900x500/111/fff?text=' + encodeURIComponent(m.title); };
+            tileImg.onclick = function() { scrollToRank(m.order); };
+            allMoviesGrid.appendChild(tileImg);
         });
 
         // タイトルの更新
-        const count = movies.filter(m => m.order !== 999).length;
+        const count = movies.filter(m => m.order <= 30).length;
         document.getElementById('dynamic-title').innerHTML = `魂を揺さぶる映画${count}選：<br>暴力、静寂、そして実存`;
         document.title = `vol.24 魂を揺さぶる映画${count}選 - ストップモーションアニメ通信`;
+
+        // 全映画数の表示
+        document.getElementById('total-movies-count').textContent = `全 ${movies.length} 作品アーカイブ`;
 
     } catch (e) {
         console.error("Data Load Error:", e);
