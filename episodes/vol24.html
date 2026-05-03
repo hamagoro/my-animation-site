@@ -161,8 +161,11 @@ async function init() {
             decadeStats[decade] = (decadeStats[decade] || 0) + 1;
         });
 
+        // 国別データを多い順にソート
+        const sortedCountryStatsArray = Object.entries(countryStats).sort((a, b) => b[1] - a[1]);
+
         document.getElementById('category-list').textContent = 
-            Object.entries(countryStats).map(([k, v]) => `【${k}】${v}`).join('、');
+            sortedCountryStatsArray.map(([k, v]) => `【${k}】${v}`).join('、');
 
         // --- 2. グラフ描画 (Chart.js) ---
         Chart.defaults.color = '#ccc';
@@ -176,10 +179,10 @@ async function init() {
         new Chart(document.getElementById('countryChart'), {
             type: 'doughnut',
             data: {
-                labels: Object.keys(countryStats),
+                labels: sortedCountryStatsArray.map(item => item[0]),
                 datasets: [{
-                    data: Object.values(countryStats),
-                    backgroundColor: colors.slice(0, Object.keys(countryStats).length),
+                    data: sortedCountryStatsArray.map(item => item[1]),
+                    backgroundColor: colors.slice(0, sortedCountryStatsArray.length),
                     borderWidth: 0
                 }]
             },
@@ -213,19 +216,9 @@ async function init() {
         const listDiv = document.getElementById('movie-list');
 
         movies.forEach((m, i) => {
-            // 10位ごとにテーマカラーを設定
-            let themeColor;
-            if (m.order <= 10) {
-                themeColor = '#ff00ff'; // マゼンタ
-            } else if (m.order <= 20) {
-                themeColor = '#00f2ff'; // シアン
-            } else if (m.order <= 30) {
-                themeColor = '#00ff70'; // ネオングリーン
-            } else if (m.order <= 40) {
-                themeColor = '#ffaa00'; // オレンジ
-            } else {
-                themeColor = '#ccc';  // その他・次点
-            }
+            // 10作ごとにテーマカラーを設定（円グラフ用の colors 配列を再利用）
+            // i=0~9は色0, i=10~19は色1...のように自動で割り当て
+            const themeColor = colors[Math.floor(i / 10)] || '#ccc';
 
             const displayOrder = m.order === 999 ? "次点" : String(m.order).padStart(2, '0');
 
