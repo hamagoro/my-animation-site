@@ -45,47 +45,6 @@
             text-shadow: 2px 2px #ff00ff;
             margin-top: 50px;
         }
-        /* YouTube風サムネイルのスタイル */
-        .youtube-thumb-wrapper {
-            position: relative;
-            width: 50%;
-            margin: 0 auto;
-            display: block;
-            text-decoration: none;
-        }
-        .youtube-thumb-wrapper img {
-            width: 100% !important;
-            margin: 0 !important;
-        }
-        .youtube-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 40px;
-            background-color: rgba(255, 0, 0, 0.8);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
-        .youtube-thumb-wrapper:hover .youtube-play-btn {
-            background-color: #ff0000;
-            transform: translate(-50%, -50%) scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-        }
-        .youtube-play-btn::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 0 10px 15px;
-            border-color: transparent transparent transparent #fff;
-            margin-left: 4px;
-        }
     </style>
 </head>
 <body style="background-color: #000; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif;">
@@ -146,10 +105,7 @@
         <section class="travel-section">
             <h3 class="spot-title">02. 村上市 / Old Town</h3>
             <div class="media-container">
-                <a href="https://youtu.be/YihFAHsf13o" target="_blank" class="youtube-thumb-wrapper">
-                    <img src="../images/vol22/murakami2.webp" alt="村上市の動画サムネイル">
-                    <div class="youtube-play-btn"></div>
-                </a>
+                <iframe src="https://www.youtube.com/embed/YihFAHsf13o" title="YouTube video player" allowfullscreen></iframe>
                 <p class="caption">村上市の歴史的な情景。</p>
             </div>
             <div class="media-container">
