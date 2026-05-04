@@ -323,7 +323,7 @@
                 <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5">
                     息もできない、マッドマックスから歩いても歩いてもまで。厳選された映画ガイド。
                 </p>
-                <p class="card-date">2026.04.30 UP</p>
+                <p class="card-date">2026.04.30 UP<span id="vol24-update-date" style="color: #ff00ff; display: block; margin-top: 5px; font-size: 0.8rem;"></span></p>
             </div>
         </a>
 
@@ -654,5 +654,27 @@
       />
       <p class="footer-credit">© 2026 The Animeda! Project</p>
     </footer>
+
+    <script>
+      // Vol.24 の movies.json から最新の更新日時を取得して自動表示
+      fetch('episodes/movies.json')
+        .then(response => response.json())
+        .then(movies => {
+            let latestDate = new Date(0);
+            movies.forEach(m => {
+                if (m.updated_at && m.updated_at !== '2000-01-01T00:00:00' && m.updated_at !== '-') {
+                    const d = new Date(m.updated_at);
+                    if (d > latestDate) {
+                        latestDate = d;
+                    }
+                }
+            });
+            if (latestDate.getTime() > 0) {
+                const formattedDate = `${latestDate.getFullYear()}.${String(latestDate.getMonth() + 1).padStart(2, '0')}.${String(latestDate.getDate()).padStart(2, '0')}`;
+                document.getElementById('vol24-update-date').textContent = `★DB更新: ${formattedDate}`;
+            }
+        })
+        .catch(err => console.error('movies.json の読み込みに失敗しました:', err));
+    </script>
   </body>
 </html>
