@@ -2,153 +2,180 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Vol.22 (Moved)</title>
+    <title>Vol.22 越後紀行 - ストップモーションアニメ通信</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta property="og:title" content="Vol.22 Coming Soon - ストップモーションアニメ通信">
-    <meta property="og:description" content="現在制作中です。公開までしばらくお待ちください。">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol22.html">
-    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/logo.webp">
-    <meta property="og:site_name" content="ストップモーションアニメ通信">
-    <meta name="twitter:card" content="main">
-
-    <title>Vol.22 Coming Soon - ストップモーションアニメ通信</title>
-    <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
     <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 50vh;
-            text-align: center;
-            background: #111;
-            border: 2px solid #00f2ff;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
-            padding: 50px 20px;
-            margin-top: 40px;
-            margin-bottom: 80px;
-            position: relative;
-            overflow: hidden;
+        /* 旅行記用の追加スタイル */
+        .travel-section { margin-bottom: 80px; }
+        .media-container { 
+            position: relative; 
+            border: 1px solid #333; 
+            margin: 20px 0; 
+            background: #000;
         }
-        
-        .coming-soon-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 20px,
-                rgba(255, 0, 255, 0.05) 20px,
-                rgba(255, 0, 255, 0.05) 40px
-            );
-            z-index: 0;
-            animation: moveBackground 20s linear infinite;
+        .media-container video, .media-container img, .media-container iframe {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            filter: contrast(1.1) brightness(0.9);
         }
-
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+        .media-container iframe {
+            aspect-ratio: 16 / 9;
+            border: none;
         }
-
-        .coming-soon-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #fff;
-            margin: 0;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-            letter-spacing: 5px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
-            50% { opacity: 0.8; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; }
-        }
-
-        .coming-soon-subtitle {
-            font-size: 1.2rem;
+        .caption {
+            font-size: 0.9rem;
             color: #00f2ff;
-            margin-top: 20px;
+            padding: 10px;
+            border-left: 3px solid #ff00ff;
+            background: rgba(255, 0, 255, 0.05);
+            margin-top: 10px;
+        }
+        .map-frame {
+            width: 100%;
+            height: 300px;
+            filter: invert(90%) hue-rotate(180deg) brightness(1.2); /* マップをダークモード風に */
+            border: 1px solid #00f2ff;
+            margin-top: 30px;
+        }
+        .spot-title {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 2px 2px #ff00ff;
+            margin-top: 50px;
+        }
+        /* YouTube風サムネイルのスタイル */
+        .youtube-thumb-wrapper {
             position: relative;
-            z-index: 1;
-            font-weight: bold;
-            letter-spacing: 2px;
+            width: 50%;
+            margin: 0 auto;
+            display: block;
+            text-decoration: none;
         }
-
-        .gear-icon {
-            font-size: 4rem;
-            color: #ccc;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-            animation: spin 4s linear infinite;
+        .youtube-thumb-wrapper img {
+            width: 100% !important;
+            margin: 0 !important;
         }
-
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+        .youtube-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 40px;
+            background-color: rgba(255, 0, 0, 0.8);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
-
-        @media (max-width: 600px) {
-            .coming-soon-title { font-size: 2.2rem; }
-            .coming-soon-subtitle { font-size: 1rem; }
+        .youtube-thumb-wrapper:hover .youtube-play-btn {
+            background-color: #ff0000;
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+        .youtube-play-btn::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 4px;
         }
     </style>
 </head>
-<body style="background-color: #000; color: #fff;">
-    <p>This content has been moved to <a href="vol37.html">Vol.37</a>.</p>
-<body style="background-color: #000; color: #fff;">
+<body style="background-color: #000; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif;">
+
     <header class="main-header">
         <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
         <h1 class="header-title">ストップモーションアニメ通信</h1>
-        <p class="header-subtitle">物質と魂が交差する、1fps of Cinematic Archive</p>
+        <p class="header-subtitle">Vol.22: 越後、光と影のストップモーション</p>
     </header>
 
     <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
         <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
         <div>
-            <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
-            <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
+            <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px;">← 前のVol.21へ</a>
+            <a href="vol23.html" style="color: #ff00ff; text-decoration: none;">次のVol.23へ →</a>
         </div>
     </nav>
 
     <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
         
-        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
-            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.22 / Under Construction</p>
+        <header class="episode-header" style="margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">JOURNAL // 2026.05.04</p>
             <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
-                制作中...
+                新潟・村上：<br>記憶を繋ぐ1fpsの旅
             </h2>
-            <p class="date" style="margin-top: 15px; color: #888;">2026.XX.XX UP</p>
         </header>
 
-        <section class="coming-soon-container">
-            <div class="gear-icon">⚙️</div>
-            <h2 class="coming-soon-title">COMING SOON...</h2>
-            <p class="coming-soon-subtitle">絶賛コマ撮り中。公開までしばらくお待ちください。</p>
+        <!-- Section 1: Niigata City -->
+        <section class="travel-section">
+            <h3 class="spot-title">01. 新潟市 / Bandai Bridge</h3>
+            <div class="media-container">
+                <video autoplay muted loop playsinline>
+                    <source src="../videos/niigata_timelapse.mp4" type="video/mp4">
+                </video>
+                <p class="caption">信濃川を流れる光の粒。萬代橋のアーチが闇に浮かび上がる。</p>
+            </div>
+            <div class="media-container">
+                <img src="../images/vol22/niigata.webp" alt="新潟市の風景">
+                <p class="caption">歴史と現代が交差する、港町ならではの美しい情景。</p>
+            </div>
+            <p>都市の鼓動をコマ撮りで切り取る。新潟市の夜は、青いネオンと車のヘッドライトが混ざり合い、サイバーパンクな回路図のように見える。</p>
+            
+            <div class="media-container">
+                <img src="../images/vol22/furumachi.webp" alt="古町商店街 水島新司キャラクター銅像">
+                <p class="caption">古町商店街に立ち並ぶ、水島新司作品のキャラクター銅像。</p>
+            </div>
+            <p>歴史ある古町商店街を歩けば、新潟出身の漫画家・水島新司氏が描いた名作のキャラクターたちと出会うことができる。ストップモーションのパペットのように今にも動き出しそうな躍動感を持つ銅像たちは、街の記憶と共に生き続けている。</p>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #00f2ff; border-radius: 4px;">
+                <h4 style="color: #00f2ff; margin-top: 0; font-size: 1.2rem;">新潟市の歴史</h4>
+                <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">
+                    新潟市は、信濃川と阿賀野川という大河が日本海に注ぐ河口に位置し、古くから水上交通の要衝として栄えました。江戸時代には北前船の寄港地として繁栄し、日本海側最大級の港町として発展。幕末の1858年に結ばれた日米修好通商条約では、函館、横浜、神戸、長崎とともに開港5港の一つに選ばれ、国際貿易港としての歴史を歩み始めます。近代以降も、信濃川に架かる萬代橋に代表されるように、水と人々の営みが密接に結びついた「水の都」として発展を続け、本州日本海側で唯一の政令指定都市として、現在も国内外のヒト・モノ・文化が行き交う拠点となっています。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Murakami City -->
+        <section class="travel-section">
+            <h3 class="spot-title">02. 村上市 / Old Town</h3>
+            <div class="media-container">
+                <a href="https://youtu.be/YihFAHsf13o" target="_blank" class="youtube-thumb-wrapper">
+                    <img src="../images/vol22/murakami2.webp" alt="村上市の動画サムネイル">
+                    <div class="youtube-play-btn"></div>
+                </a>
+                <p class="caption">村上市の歴史的な情景。</p>
+            </div>
+            <div class="media-container">
+                <img src="../images/vol22/murakami_salmon.webp" alt="塩引き鮭">
+                <p class="caption">吊るされた鮭。その造形美は、自然が生んだストップモーション・オブジェクトだ。</p>
+            </div>
+            <p>城下町の静寂。村上の空気は、新潟市の喧騒とは対照的な「影」の美しさを教えてくれる。</p>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #ff00ff; border-radius: 4px;">
+                <h4 style="color: #ff00ff; margin-top: 0; font-size: 1.2rem;">村上市の歴史</h4>
+                <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">
+                    村上市は、新潟県最北端に位置する歴史と伝統が息づく城下町です。戦国時代から江戸時代にかけて、村上城を中心に城下町が整備され、譜代大名が治める村上藩の政治・経済の中心として栄えました。武家屋敷や町屋、黒塀の美しい街並みが今も残り、当時の面影を色濃く伝えています。また、三面川（みおもてがわ）に遡上する鮭は、古くから村上の人々の生活を支えてきました。江戸時代には、青砥武平治による世界初の鮭の自然孵化増殖システム「種川の制」が考案され、鮭文化が大きく発展。「塩引き鮭」に代表される独自の食文化や、木彫堆朱（むらかみきぼりついしゅ）などの伝統工芸が、現在に受け継がれています。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Map -->
+        <section class="travel-section">
+            <h3 class="spot-title">03. ARCHIVE MAP</h3>
+            <!-- Google Maps 埋め込み（例：新潟県全域を表示） -->
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d403485.4542475949!2d139.1557053!3d37.9120309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1714800000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
         </section>
 
     </article>
 
     <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
-        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
-            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
-            <div>
-                <a href="vol21.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.21へ</a>
-                <a href="vol23.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.23へ →</a>
-            </div>
-        </nav>
-
         <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
         <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
     </footer>
