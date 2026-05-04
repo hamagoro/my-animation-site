@@ -54,10 +54,34 @@
         @media (max-width: 600px) {
             .episode-container { padding: 0 20px !important; }
             h2 { font-size: 1.8rem !important; }
+            .floating-gif {
+                width: 70px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        /* --- スクロール追従する画像 --- */
+        .floating-gif {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            z-index: 1000;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .floating-gif:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
         }
     </style>
 </head>
 <body style="background-color: #000; color: #fff;">
+    <!-- スクロール追従画像 -->
+    <img src="../images/vol26/anime.webp" alt="追従アニメ" class="floating-gif">
+
     <header class="main-header">
         <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
         <h1 class="header-title">ストップモーションアニメ通信</h1>
@@ -83,6 +107,10 @@
         </header>
 
         <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <div style="display: inline-block; margin-bottom: 20px; padding: 18px; border-radius: 4px; background-color: #6d4323; background-image: repeating-radial-gradient(circle at 50% -20%, transparent 0, transparent 6px, rgba(0,0,0,0.15) 6px, rgba(0,0,0,0.15) 10px), linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.4)); box-shadow: inset 0 0 10px rgba(0,0,0,0.8), inset 0 0 2px rgba(255,255,255,0.2), 0 10px 20px rgba(0,0,0,0.6); border: 2px solid #2e180d;">
+                <img src="../images/vol26/summary2.webp" alt="ピノッキオ サマリー2" style="width: 100%; max-width: 400px; display: block; border: 2px solid #111; box-shadow: 0 0 15px rgba(0,0,0,0.8);">
+            </div>
+            <br>
             <img src="../images/vol26/summary.webp" alt="ピノッキオ メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
         </section>
 
@@ -255,5 +283,45 @@
         <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
         <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const floatImg = document.querySelector('.floating-gif');
+            if (floatImg) {
+                const moveImage = () => {
+                    const rect = floatImg.getBoundingClientRect();
+                    const currentX = rect.left;
+                    const currentY = rect.top;
+
+                    // ウィンドウサイズと画像のサイズから移動できる最大範囲を計算
+                    const maxX = window.innerWidth - rect.width - 20;
+                    const maxY = window.innerHeight - rect.height - 20;
+
+                    // 現在位置から50px〜150px離れたランダムな距離を計算
+                    const distanceX = (Math.random() * 100 + 50) * (Math.random() < 0.5 ? 1 : -1);
+                    const distanceY = (Math.random() * 100 + 50) * (Math.random() < 0.5 ? 1 : -1);
+
+                    let newX = currentX + distanceX;
+                    let newY = currentY + distanceY;
+
+                    // 画面外に逃げ出さないように調整
+                    if (newX < 20) newX = 20;
+                    if (newX > maxX) newX = maxX;
+                    if (newY < 20) newY = 20;
+                    if (newY > maxY) newY = maxY;
+
+                    // CSSの固定位置（bottom/right）を解除し、新しい座標（left/top）を適用
+                    floatImg.style.bottom = 'auto';
+                    floatImg.style.right = 'auto';
+                    floatImg.style.left = `${newX}px`;
+                    floatImg.style.top = `${newY}px`;
+                };
+
+                // マウスホバー時とスマホのタップ（タッチ）時に逃げる処理を実行
+                floatImg.addEventListener('mouseover', moveImage);
+                floatImg.addEventListener('touchstart', moveImage, { passive: true });
+            }
+        });
+    </script>
 </body>
 </html>
