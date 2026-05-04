@@ -67,9 +67,11 @@
         /* スクロールボタン等 */
         .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
         .scroll-btn:hover { background: var(--cyan); color: #000; }
-        .rank-btn-1  { bottom: 305px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-10 { bottom: 250px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-20 { bottom: 195px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-1  { bottom: 415px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-10 { bottom: 360px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-20 { bottom: 305px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-30 { bottom: 250px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-40 { bottom: 195px; font-size: 0.9rem; font-weight: bold; }
         .link-vol24 { bottom: 140px; border-color: var(--magenta); color: var(--magenta); font-size: 0.85rem; font-weight: bold; }
         .link-vol24:hover { background: var(--magenta); color: #000; }
         .top-btn { bottom: 85px; }
@@ -141,6 +143,8 @@
     <a href="javascript:void(0)" onclick="scrollToRank(1)" class="scroll-btn rank-btn-1">1位</a>
     <a href="javascript:void(0)" onclick="scrollToRank(10)" class="scroll-btn rank-btn-10">10位</a>
     <a href="javascript:void(0)" onclick="scrollToRank(20)" class="scroll-btn rank-btn-20">20位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(30)" class="scroll-btn rank-btn-30">30位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(40)" class="scroll-btn rank-btn-40">40位</a>
     <a href="#" class="scroll-btn top-btn">↑</a>
     <a href="#footer" class="scroll-btn bottom-btn">↓</a>
     <a href="vol24.html" class="scroll-btn link-vol24">v24</a>
@@ -305,12 +309,24 @@ async function init() {
 }
 init();
 
-function scrollToRank(rank) {
-    let el = document.querySelector(`[data-rank="${rank}"]`);
+function scrollToRank(targetRank) {
+    let el = document.querySelector(`[data-rank="${targetRank}"]`);
     if (!el) {
-        const allCards = document.querySelectorAll('.movie-card');
+        const allCards = Array.from(document.querySelectorAll('.movie-card'));
         if (allCards.length > 0) {
-            el = allCards[allCards.length - 1];
+            let closestEl = allCards[0];
+            let minDiff = Infinity;
+            allCards.forEach(card => {
+                const rank = parseInt(card.getAttribute('data-rank'), 10);
+                if (!isNaN(rank)) {
+                    const diff = Math.abs(rank - targetRank);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestEl = card;
+                    }
+                }
+            });
+            el = closestEl;
         }
     }
     if (el) {
