@@ -70,6 +70,7 @@
         /* 作品カード */
         .movie-card { margin-bottom: 60px; scroll-margin-top: 50px; }
         .card-header { border-bottom: 2px solid var(--cyan); margin-bottom: 20px; }
+        .update-date { text-align: right; font-size: 0.8rem; color: #888; margin: 0 0 5px; }
         .card-header h3 { font-size: 1.8rem; margin: 10px 0; }
 
         .info-panel { background: var(--panel); padding: 25px; border-radius: 12px; border-left: 5px solid #333; margin-bottom: 25px; }
@@ -82,9 +83,28 @@
         .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); 
                    border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
         .scroll-btn:hover { background: var(--cyan); color: #000; }
-        .rank-btn-10 { bottom: 250px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-20 { bottom: 195px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-30 { bottom: 140px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-1  { bottom: 440px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-10 { bottom: 385px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-20 { bottom: 330px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-30 { bottom: 275px; font-size: 0.9rem; font-weight: bold; }
+        
+        .dot-btn {
+            position: fixed;
+            right: 46.5px;
+            width: 12px;
+            height: 12px;
+            background: #555;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .dot-btn:hover { background: var(--cyan); transform: scale(1.5); }
+        .dot-btn-50 { bottom: 245px; }
+        .dot-btn-70 { bottom: 220px; }
+        .dot-btn-90 { bottom: 195px; }
+        .dot-btn-110 { bottom: 170px; }
+        .dot-btn-130 { bottom: 145px; }
         .top-btn { bottom: 85px; }
         .bottom-btn { bottom: 30px; }
 
@@ -168,9 +188,15 @@
 
     </article>
 
+    <a href="javascript:void(0)" onclick="scrollToRank(1)" class="scroll-btn rank-btn-1">1位</a>
     <a href="javascript:void(0)" onclick="scrollToRank(10)" class="scroll-btn rank-btn-10">10位</a>
     <a href="javascript:void(0)" onclick="scrollToRank(20)" class="scroll-btn rank-btn-20">20位</a>
     <a href="javascript:void(0)" onclick="scrollToRank(30)" class="scroll-btn rank-btn-30">30位</a>
+    <div onclick="scrollToRank(50)" class="dot-btn dot-btn-50" title="50位周辺へ"></div>
+    <div onclick="scrollToRank(70)" class="dot-btn dot-btn-70" title="70位周辺へ"></div>
+    <div onclick="scrollToRank(90)" class="dot-btn dot-btn-90" title="90位周辺へ"></div>
+    <div onclick="scrollToRank(110)" class="dot-btn dot-btn-110" title="110位周辺へ"></div>
+    <div onclick="scrollToRank(130)" class="dot-btn dot-btn-130" title="130位周辺へ"></div>
     <a href="#" class="scroll-btn top-btn">↑</a>
     <a href="#footer" class="scroll-btn bottom-btn">↓</a>
 
@@ -274,6 +300,14 @@ async function init() {
             idxLink.style.color = themeColor;
             indexNav.appendChild(idxLink);
 
+            // 更新日時の処理
+            let updateDateHtml = '';
+            if (m.updated_at && m.updated_at !== '2000-01-01T00:00:00' && m.updated_at !== '-') {
+                const date = new Date(m.updated_at);
+                const formattedDate = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+                updateDateHtml = `<p class="update-date">最終更新: ${formattedDate}</p>`;
+            }
+
             // カード
             const section = document.createElement('section');
             section.className = 'movie-card';
@@ -281,6 +315,7 @@ async function init() {
             section.setAttribute('data-rank', m.order);
             section.innerHTML = `
                 <div class="card-header" style="border-bottom: 2px solid ${themeColor};">
+                    ${updateDateHtml}
                     <h3 style="color: ${themeColor}">
                         ${displayOrder}. ${m.title}
                         <span class="movie-year">${m.year}</span>
@@ -327,7 +362,13 @@ async function init() {
 init();
 
 function scrollToRank(rank) {
-    const el = document.querySelector(`[data-rank="${rank}"]`);
+    let el = document.querySelector(`[data-rank="${rank}"]`);
+    if (!el) {
+        const allCards = document.querySelectorAll('.movie-card');
+        if (allCards.length > 0) {
+            el = allCards[allCards.length - 1];
+        }
+    }
     if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
     }
