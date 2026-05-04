@@ -15,6 +15,47 @@
     <title>Vol.26 ギレルモ・デル・トロのピノッキオ解析 - ストップモーションアニメ通信</title>
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- ボックス・装飾設定 --- */
+        .analysis-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
+        .highlight-magenta { color: #ff00ff; font-weight: bold; }
+        .highlight-cyan { color: #00f2ff; font-weight: bold; }
+
+        /* グラフィック・フレーム */
+        .graphic-frame { text-align: center; margin: 30px 0; border: 2px solid #ff00ff; padding: 10px; background: #000; display: inline-block; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+        .graphic-frame img { max-width: 100%; border-radius: 4px; }
+
+        /* --- スマホ対応カードレイアウト --- */
+        .work-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            position: relative;
+        }
+        .work-image iframe, .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .work-content { padding: 20px; }
+        .work-title { margin: 0 0 10px 0; font-size: 1.2rem; color: #00f2ff; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .work-desc { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- スマホ用調整 --- */
+        @media (max-width: 600px) {
+            .episode-container { padding: 0 20px !important; }
+            h2 { font-size: 1.8rem !important; }
+        }
+    </style>
 </head>
 <body style="background-color: #000; color: #fff;">
     <header class="main-header">
@@ -41,30 +82,164 @@
             <p class="date" style="margin-top: 15px; color: #888;">2026.05.14 UP</p>
         </header>
 
-        <section class="top-link-area" style="margin-bottom: 70px; padding: 30px; background: #1a1a1a; border-radius: 15px; border: 2px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);">
-            <h3 style="color: #ff00ff; margin-top: 0;">🎬 Introduction</h3>
-            <p style="line-height: 1.8; color: #ccc;">
-                ギレルモ・デル・トロ監督が長年温め続けた悲願のプロジェクト。舞台をムッソリーニ政権下のイタリアに移し、ピノッキオの「従順でないこと（不服従）」を美徳として描いた、大人向けのダークファンタジーです。
-            </p>
+        <section class="top-image" style="margin-bottom: 40px; margin-top: 40px; text-align: center;">
+            <img src="../images/vol26/summary.webp" alt="ピノッキオ メインビジュアル" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid #333;">
         </section>
 
-        <!-- 01. ギレルモ・デル・トロのピノッキオ -->
-        <section style="margin-bottom: 80px;">
-            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px;">
-                01. ギレルモ・デル・トロのピノッキオ
-                <a href="https://filmarks.com/search/movies?q=ギレルモ・デル・トロのピノッキオ" target="_blank" style="font-size: 0.8rem; color: #ff00ff; text-decoration: none; border: 1px solid #ff00ff; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 8px;">Filmarks</a>
-                <a href="https://www.netflix.com/jp/title/80218455" target="_blank" style="font-size: 0.8rem; color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 8px;">Netflix</a>
-            </h3>
-            <div style="background: #111; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                <p><strong>発表年:</strong> 2022</p>
-                <p><strong>特徴:</strong> 従来のピノッキオ像とは異なり、デル・トロ版は「削り残し」や「釘」がそのまま残る、荒々しい造形が特徴です。これは「不完全であること」こそが人間（あるいは愛される存在）の証であるという、監督の哲学を体現しています。</p>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <a href="https://www.youtube.com/watch?v=T354H28QfGY" target="_blank" style="color: #00f2ff; text-decoration: none; font-weight: bold;">▶ 制作の舞台裏（Crafting the Pinocchio）</a>
+        <section class="analysis-overview" style="line-height: 1.8;">
+            <section class="top-link-area" style="margin-bottom: 70px; padding: 30px; background: #1a1a1a; border-radius: 15px; border: 2px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);">
+                <h3 style="color: #ff00ff; margin-top: 0;">🎬 Introduction</h3>
+                <p style="line-height: 1.8; color: #ccc;">
+                    ギレルモ・デル・トロ監督が長年温め続けた悲願のプロジェクト。舞台をムッソリーニ政権下のイタリアに移し、ピノッキオの「従順でないこと（不服従）」を美徳として描いた、大人向けのダークファンタジーです。CG全盛の現代にあって、あえてストップモーションで命を吹き込むことの意義を問い直す記念碑的な作品です。
+                </p>
+            </section>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 作者経歴：異形の怪物たちを愛する巨匠</h3>
+            <p>
+                <strong>ギレルモ・デル・トロ（Guillermo del Toro）</strong>は1964年メキシコ生まれ。幼少期から怪物や幽霊、古いホラー映画に魅了され、自ら特殊メイクや特殊造形を学びました。彼の作品の根底には常に「見た目が恐ろしい怪物は純粋で、本当の怪物は人間の心に潜んでいる」という哲学があります。
+            </p>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 徹底解剖：ギレルモ・デル・トロのピノッキオ</h3>
+            
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/T354H28QfGY" title="Guillermo del Toro's Pinocchio" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ギレルモ・デル・トロのピノッキオ (2022)</h4>
+                    <p class="work-desc">
+                        <strong>「不完全であること」の美しさ</strong><br>
+                        従来のディズニー版のような滑らかで可愛いピノッキオ像とは異なり、本作のピノッキオは「削り残し」や「釘」がむき出しになった、荒々しくも生々しい造形です。<br>
+                        ファシズムという「全員が同じように振る舞うことを強要される社会」において、木の操り人形であるピノッキオだけが誰にも操られず、自由に生きようとする逆説が描かれています。
+                    </p>
+                    <a href="https://www.netflix.com/jp/title/80218455" target="_blank" style="font-size: 0.8rem; color: #ff00ff; text-decoration: none; border: 1px solid #ff00ff; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-top: 10px;">▶ Netflix 配信ページ</a>
                 </div>
             </div>
-            <div style="text-align: center;">
-                <img src="../images/vol26/pinocchio.webp" alt="ギレルモ・デル・トロのピノッキオ" style="width: 100%; border-radius: 15px; border: 1px solid #333;">
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/LWZ_K7oKu-o?si=ugMD4BiCzOHzThcK" title="Guillermo del Toro's Pinocchio Making of" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">ピノッキオ はいかにして (ギレルモ・デル・トロ)</h4>
+                    <p class="work-desc">「異形の存在への愛」という点でバートンと深く共鳴。大人のためのダークファンタジーの到達点、その緻密な舞台裏。</p>
+                </div>
             </div>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ 代表作紹介：ダークファンタジーの系譜</h3>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/EqYiSlkvRuw" title="Pan's Labyrinth" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">パンズ・ラビリンス (2006)</h4>
+                    <p class="work-desc">
+                        <strong>残酷な現実と妖しく美しい迷宮</strong><br>
+                        スペイン内戦直後のファシズム体制下を舞台に、少女オフェリアが迷い込む地下の王国を描く。ペイルマン（手のひらに目がある怪物）など、デル・トロの独創的なクリーチャーデザインが世界中で絶賛され、アカデミー賞3部門を受賞しました。
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/X24ErtI-D_A" title="The Shape of Water" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">シェイプ・オブ・ウォーター (2017)</h4>
+                    <p class="work-desc">
+                        <strong>声なき者たちの愛の形</strong><br>
+                        冷戦時代のアメリカ。発話障害のある清掃員の女性と、政府の極秘施設に囚われた「半魚人」との種族を超えた純愛。アカデミー賞作品賞・監督賞を含む4部門に輝き、名実ともに巨匠としての地位を確立しました。
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="color: #ff00ff; border-bottom: 2px solid #ff00ff; padding-bottom: 10px; margin-top: 50px;">◎ 技術と特徴：手作業への執着とマッケノン・アンド・ソーンダース</h3>
+            <div class="analysis-box">
+                <p>
+                    『ピノッキオ』の制作にあたり、デル・トロはティム・バートン作品（『コープスブライド』など）でも知られるイギリスの伝説的パペット制作会社<strong>マッケノン・アンド・ソーンダース</strong>とタッグを組みました。さらに、ストップモーション・アニメーション・スタジオの「シャドウマシン（ShadowMachine）」が撮影を担当しています。
+                </p>
+                <div style="text-align: center; margin: 25px 0;">
+                    <img src="../images/vol26/pinocchio.webp" alt="ピノッキオ 撮影風景" style="width: 100%; max-width: 600px; border-radius: 8px; border: 1px solid #333;">
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">▲ 巨大なセットの中で、1コマずつパペットに命を吹き込むアニメーター</p>
+                </div>
+                <ul style="list-style: none; padding-left: 0; margin-top: 15px;">
+                    <li style="margin-bottom: 10px;">🔹 <strong>様々なスケールのパペット：</strong> 通常の撮影用（約25cm）に加え、コオロギのセバスチャンとの共演シーン用に巨大なピノッキオの頭部などが制作され、スケール感を巧みにコントロールしています。</li>
+                    <li>🔹 <strong>メカニカルな表情制御：</strong> 3Dプリントによる顔の差し替え（リプレイスメント）ではなく、パペットの頭部に複雑なギアを仕込み、六角レンチで皮膚の下から表情を動かすアナログな手法（メカニカル・ヘッド）を多く採用しました。</li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/Rg-vw2bykfw?si=maDEmPLN_E_pzPDj" title="Mackinnon and Saunders: The Exhibition" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">Mackinnon and Saunders: The Exhibition</h4>
+                    <p class="work-desc">イギリスの伝説的パペット制作会社「マッケノン・アンド・ソーンダース」の展示会映像。デル・トロ版『ピノッキオ』を含む、数々のストップモーション作品の精巧なパペットや、皮膚の下に隠された複雑なメカニズムを垣間見ることができます。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/g7uh0VHmP6k?si=4AfNqkpAgJ0Kv0ET" title="パペットアニメーションに通じる文楽" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">パペットアニメーションに通じる文楽</h4>
+                    <p class="work-desc">日本の伝統芸能である「文楽（人形浄瑠璃）」もまた、魂を持たない人形に命を吹き込む高度な芸術です。デル・トロ監督をはじめとする世界中のアニメーターたちが、この日本独自の身体表現や人形の「呼吸」、そして人形遣いの存在を消す精神性に強い関心とリスペクトを寄せています。</p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-image">
+                    <iframe src="https://www.youtube.com/embed/S63jUIeW8Hg?si=2D0d8_IBbGZUOVp_" title="村田朋泰特集ー夢の記憶装置" allowfullscreen></iframe>
+                </div>
+                <div class="work-content">
+                    <h4 class="work-title">関連作：村田朋泰特集ー夢の記憶装置</h4>
+                    <p class="work-desc">日本のストップモーション・アニメーションを牽引する作家、村田朋泰の特集映像。郷愁を誘う精密なミニチュアとパペットが織りなす「夢」と「記憶」の物語は、ストップモーションが持つノスタルジックな魔力を美しく体現しています。</p>
+                </div>
+            </div>
+
+            <h3 style="color: #00f2ff; border-bottom: 2px solid #00f2ff; padding-bottom: 10px; margin-top: 50px;">◎ フィルモグラフィー</h3>
+            <div class="analysis-box">
+                <ul style="list-style: none; padding-left: 0; line-height: 1.8; font-size: 0.95rem;">
+                    <li>
+                        No.01 クロノス <span style="color: #00f2ff;">(1993)</span>
+                        <div style="font-size: 0.85em; color: #aaa; padding-left: 2em; line-height: 1.4;">- カンヌ国際映画祭 批評家週間賞</div>
+                    </li>
+                    <li>No.02 ミミック <span style="color: #00f2ff;">(1997)</span></li>
+                    <li>No.03 デビルズ・バックボーン <span style="color: #ff00ff;">(2001)</span></li>
+                    <li>No.04 ブレイド2 <span style="color: #ff00ff;">(2002)</span></li>
+                    <li>No.05 ヘルボーイ <span style="color: #ff00ff;">(2004)</span></li>
+                    <li>
+                        No.06 パンズ・ラビリンス <span style="color: #ff00ff;">(2006)</span>
+                        <div style="font-size: 0.85em; color: #ffbf00; padding-left: 2em; line-height: 1.4;">★アカデミー賞 撮影賞・美術賞・メイクアップ賞 受賞</div>
+                    </li>
+                    <li>No.07 ヘルボーイ/ゴールデン・アーミー <span style="color: #ffff00;">(2008)</span></li>
+                    <li>No.08 パシフィック・リム <span style="color: #ffff00;">(2013)</span></li>
+                    <li>No.09 クリムゾン・ピーク <span style="color: #ffff00;">(2015)</span></li>
+                    <li>
+                        No.10 シェイプ・オブ・ウォーター <span style="color: #00ff88;">(2017)</span>
+                        <div style="font-size: 0.85em; color: #ffbf00; padding-left: 2em; line-height: 1.4;">★アカデミー賞 作品賞・監督賞含む4部門 受賞 / ヴェネツィア国際映画祭 金獅子賞</div>
+                    </li>
+                    <li>
+                        No.11 ナイトメア・アリー <span style="color: #00ff88;">(2021)</span>
+                        <div style="font-size: 0.85em; color: #aaa; padding-left: 2em; line-height: 1.4;">- アカデミー賞 作品賞など4部門ノミネート</div>
+                    </li>
+                    <li>
+                        No.12 ギレルモ・デル・トロのピノッキオ <span style="color: #ff8800;">(2022)</span>
+                        <div style="font-size: 0.85em; color: #ffbf00; padding-left: 2em; line-height: 1.4;">★アカデミー賞 長編アニメ映画賞 受賞</div>
+                    </li>
+                    <li>No.13 フランケンシュタイン（原題） <span style="color: #ff0055;">(2025予定)</span></li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section style="margin: 60px 0; padding: 30px; background: #1a1a1a; border-radius: 20px; border: 1px dashed #00f2ff;">
+            <h4 style="margin: 0; color: #00f2ff; font-size: 1.4rem;">🔍 Animeda! 視点：アニメーションはジャンルではない</h4>
+            <p style="font-size: 1rem; margin-top: 15px; line-height: 2;">
+                デル・トロは「アニメーションは映画の一つのジャンルではなく、映画という『メディア』そのものだ」と語っています。彼の『ピノッキオ』は子供向けのおとぎ話ではなく、死と向き合い、限りある命の美しさを描いた哲学的な作品です。ストップモーションという、物質に一コマずつ命を吹き込む手法自体が、「命とは何か」を問うこの物語の最強のメタファーとして機能しているのです。
+            </p>
         </section>
 
     </article>
