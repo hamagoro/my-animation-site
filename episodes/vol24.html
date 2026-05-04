@@ -74,7 +74,7 @@
         .card-header h3 { font-size: 1.8rem; margin: 10px 0; }
 
         .info-panel { background: var(--panel); padding: 25px; border-radius: 12px; border-left: 5px solid #333; margin-bottom: 25px; }
-        .director-info span { color: #888; font-size: 0.9rem; }
+        .director-info span { color: #888; font-size: 0.9rem; white-space: pre-wrap; }
         .movie-year { display: inline-block; background: #333; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px; vertical-align: middle; }
         
         .img-container { text-align: center; }
@@ -83,10 +83,10 @@
         .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); 
                    border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
         .scroll-btn:hover { background: var(--cyan); color: #000; }
-        .rank-btn-1  { bottom: 440px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-10 { bottom: 385px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-20 { bottom: 330px; font-size: 0.9rem; font-weight: bold; }
-        .rank-btn-30 { bottom: 275px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-1  { bottom: 495px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-10 { bottom: 440px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-20 { bottom: 385px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-30 { bottom: 330px; font-size: 0.9rem; font-weight: bold; }
         
         .dot-btn {
             position: fixed;
@@ -100,11 +100,13 @@
             transition: 0.3s;
         }
         .dot-btn:hover { background: var(--cyan); transform: scale(1.5); }
-        .dot-btn-50 { bottom: 245px; }
-        .dot-btn-70 { bottom: 220px; }
-        .dot-btn-90 { bottom: 195px; }
-        .dot-btn-110 { bottom: 170px; }
-        .dot-btn-130 { bottom: 145px; }
+        .dot-btn-50 { bottom: 300px; }
+        .dot-btn-70 { bottom: 275px; }
+        .dot-btn-90 { bottom: 250px; }
+        .dot-btn-110 { bottom: 225px; }
+        .dot-btn-130 { bottom: 200px; }
+        .link-vol25 { bottom: 140px; border-color: #00ff70; color: #00ff70; font-size: 0.85rem; font-weight: bold; }
+        .link-vol25:hover { background: #00ff70; color: #000; }
         .top-btn { bottom: 85px; }
         .bottom-btn { bottom: 30px; }
 
@@ -117,11 +119,7 @@
         }
         .all-movies-grid img { 
             width: 100%; 
-<<<<<<< HEAD
             aspect-ratio: 2/3; 
-=======
-            aspect-ratio: 16/9; 
->>>>>>> 41c59db0095066d1a7181df907554986c2b32874
             object-fit: cover; 
             border-radius: 6px; 
             background: #222; 
@@ -150,7 +148,7 @@
         <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
         <div>
             <a href="vol23.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px;">← 前のVol.23へ</a>
-            <a href="#" style="color: #444; text-decoration: none;">次のVol.25へ →</a>
+            <a href="vol25.html" style="color: #444; text-decoration: none;">次のVol.25へ →</a>
         </div>
     </nav>
 
@@ -199,13 +197,14 @@
     <div onclick="scrollToRank(130)" class="dot-btn dot-btn-130" title="130位周辺へ"></div>
     <a href="#" class="scroll-btn top-btn">↑</a>
     <a href="#footer" class="scroll-btn bottom-btn">↓</a>
+    <a href="vol25.html" class="scroll-btn link-vol25">v25</a>
 
     <footer id="footer" class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 100px;">
         <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
             <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
             <div>
                 <a href="vol23.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.23へ</a>
-                <a href="#" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.25へ →</a>
+                <a href="vol25.html" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.25へ →</a>
             </div>
         </nav>
 

@@ -3,147 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vol.25 英国遠征プロジェクト・完全工程管理 - ストップモーションアニメ通信</title>
+    
+    <meta property="og:title" content="vol.25 切なさと痛みの映画セレクション">
+    <meta property="og:description" content="レボリューショナリー・ロードからブルー・バイユーまで。愛の終わりと記憶を巡る映画ガイド。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hamagoro.github.io/my-animation-site/episodes/vol25.html">
+    <meta property="og:image" content="https://hamagoro.github.io/my-animation-site/images/vol25/main.webp">
+    <meta property="og:site_name" content="ストップモーションアニメ通信">
     <link rel="icon" href="../images/logo2.webp" type="image/webp">
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        /* --- ボックス・装飾設定 --- */
-        .process-box { background: #111; border: 2px solid #00f2ff; border-radius: 15px; padding: 25px; margin-bottom: 40px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; border: 1px solid #333; }
-        .data-table th { background: #1a1a1a; color: #00f2ff; border: 1px solid #333; padding: 12px; font-size: 0.85rem; text-align: left; }
-        .data-table td { border: 1px solid #333; padding: 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
-        .data-table tr:nth-child(even) { background: #0a0a0a; }
-        .highlight-magenta { color: #ff00ff; font-weight: bold; }
-        .highlight-cyan { color: #00f2ff; font-weight: bold; }
 
-        .phase-title { font-size: 1.4rem; color: #ff00ff; border-left: 5px solid #ff00ff; padding-left: 15px; margin: 40px 0 20px 0; }
-        .check-list { list-style: none; padding-left: 0; }
-        .check-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        .check-list li::before { content: '□'; position: absolute; left: 0; color: #00f2ff; }
+    <title>vol.25 切なさと痛みの映画セレクション - ストップモーションアニメ通信</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root { --cyan: #00f2ff; --magenta: #ff00ff; --bg: #000; --panel: #111; }
+        body { background-color: var(--bg); color: #fff; line-height: 1.6; margin: 0; }
+        
+        /* 全体レイアウト */
+        .episode-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; text-align: left; }
+        
+        /* ヘッダー */
+        .episode-header { margin-bottom: 60px; }
+        .episode-header h2 { font-size: 2.8rem; border-left: 8px solid var(--cyan); padding-left: 20px; text-shadow: 0 0 15px rgba(0,242,255,0.4); margin: 10px 0; line-height: 1.2; }
+
+        /* --- グラフエリア --- */
+        .chart-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .chart-box {
+            width: 100%;
+            max-width: 450px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        canvas { max-width: 100%; }
+
+        /* 統計テキスト */
+        #stat-panel { width: 100%; margin-bottom: 20px; padding: 15px; background: #0a0a0a; border: 1px solid var(--cyan); border-radius: 10px; font-size: 0.85rem; box-sizing: border-box; }
+
+        /* 目次 */
+        #movie-index { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 20px; background: var(--panel); border: 1px dashed var(--magenta); border-radius: 15px; margin-bottom: 50px; }
+        #movie-index a { text-decoration: none; font-size: 0.85rem; transition: 0.2s; }
+        #movie-index a:hover { filter: brightness(1.5); text-decoration: underline; }
+
+        /* 作品カード */
+        .movie-card { margin-bottom: 60px; scroll-margin-top: 50px; }
+        .card-header { border-bottom: 2px solid var(--cyan); margin-bottom: 20px; }
+        .update-date { text-align: right; font-size: 0.8rem; color: #888; margin: 0 0 5px; }
+        .card-header h3 { font-size: 1.8rem; margin: 10px 0; }
+        .info-panel { background: var(--panel); padding: 25px; border-radius: 12px; border-left: 5px solid #333; margin-bottom: 25px; }
+        .director-info span { color: #888; font-size: 0.9rem; white-space: pre-wrap; }
+        .movie-year { display: inline-block; background: #333; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px; vertical-align: middle; }
+        .img-container { text-align: center; }
+        .img-container img { width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        /* スクロールボタン等 */
+        .scroll-btn { position: fixed; right: 30px; background: var(--panel); color: var(--cyan); border: 1px solid var(--cyan); width: 45px; height: 45px; border-radius: 50%; text-decoration: none; font-size: 1.2rem; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .scroll-btn:hover { background: var(--cyan); color: #000; }
+        .rank-btn-1  { bottom: 305px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-10 { bottom: 250px; font-size: 0.9rem; font-weight: bold; }
+        .rank-btn-20 { bottom: 195px; font-size: 0.9rem; font-weight: bold; }
+        .link-vol24 { bottom: 140px; border-color: var(--magenta); color: var(--magenta); font-size: 0.85rem; font-weight: bold; }
+        .link-vol24:hover { background: var(--magenta); color: #000; }
+        .top-btn { bottom: 85px; }
+        .bottom-btn { bottom: 30px; }
+
+        /* --- 全作品タイル --- */
+        .all-movies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; margin-top: 30px; }
+        .all-movies-grid img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; background: #222; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+        .all-movies-grid img:hover { transform: scale(1.1); border: 1px solid var(--cyan); box-shadow: 0 0 10px var(--cyan); z-index: 10; position: relative; }
     </style>
 </head>
 <body>
+
     <header class="main-header">
         <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
         <h1 class="header-title">ストップモーションアニメ通信</h1>
-        <p class="header-subtitle">物質と魂が交差する、1fps of Travel Management</p>
+        <p class="header-subtitle">物質と魂が交差する、1fpsのアーカイブ</p>
     </header>
 
     <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
         <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
         <div>
             <a href="vol24.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.24へ</a>
-            <a href="vol26.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.26へ →</a>
+            <a href="vol26.html" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.26へ →</a>
         </div>
     </nav>
 
-    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+    <article class="episode-container">
         
-        <header class="episode-header" style="margin-bottom: 40px; margin-top: 40px;">
-            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">Vol.25 / Extra Edition: UK Mission SOP</p>
-            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
-                プロジェクト名：英国遠征<br>～標準作業手順書（SOP）～
-            </h2>
-            <p class="date" style="margin-top: 15px; color: #888;">2026.05.07 UP</p>
+        <header class="episode-header">
+            <p style="color: var(--magenta); font-weight: bold;">Vol.25 / Emotional Cinema Special</p>
+            <h2 id="dynamic-title">切なさと痛みの映画セレクション：<br>愛の始まりと終わり、その間にあるもの</h2>
+            <p style="color: #888; margin-top: 15px;">2026.xx.xx UP / Curated by hamagoro</p>
         </header>
 
-        <section class="intro-section">
-            <p>旅行は、数週間にわたる壮大な「ストップモーション作品」の制作に似ています。事前のコンテ（計画）と、リソース（予約）の確保、そして現場でのトラブル対応。ここでは娘のイギリス旅行を一つのプロジェクトとして解体し、その構築手順を記録します。</p>
+        <section class="top-link-area" style="margin-bottom: 70px; padding: 30px; background: #1a1a1a; border-radius: 15px; border: 2px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);">
+            <h3 style="color: #ff00ff; margin-top: 0;">🤖 Gemini Analysis：関係性の「賞味期限」と「記憶」</h3>
+            <p style="line-height: 1.8; color: #ccc;">
+                今回の選出作品に共通するのは、<strong>「関係性の変化」と「記憶の痛み」</strong>への眼差しです。<br>
+                永遠の愛を誓う瞬間よりも、それが日常の中で摩耗していく過程や、終わった後に残る「思い出」の残酷な美しさに焦点を当てた作品群。甘いロマンスの裏側にある、ヒリヒリとした現実や、どうしようもない孤独を描いた傑作が揃っています。
+            </p>
         </section>
 
-        <h3 class="phase-title">PHASE 1：戦略立案とリソース確保</h3>
-        <div class="process-box">
-            <p>まずはプロジェクトの基盤を固め、クリティカルパスである「移動と宿泊」を確定させます。</p>
-            <table class="data-table">
-                <tr>
-                    <th style="width: 250px;">ステップ</th>
-                    <th>具体的な作業内容</th>
-                </tr>
-                <tr>
-                    <td><strong>1-1. 情報収集と概要策定</strong></td>
-                    <td>旅行会社サイトやインターネットで現地の最新情報を収集。期間と大まかな日程を決定。</td>
-                </tr>
-                <tr>
-                    <td><strong class="highlight-magenta">1-2. 航空券の購入（キックオフ）</strong></td>
-                    <td>思い切ってエアチケットを購入。これがプロジェクトの本始動となる。</td>
-                </tr>
-                <tr>
-                    <td><strong>1-3. 拠点と移動の予約</strong></td>
-                    <td>ホテル（ドミトリー含む）の予約。ロンドン〜ダブリン間などの現地航空券、長距離鉄道の予約・購入。</td>
-                </tr>
-                <tr>
-                    <td><strong>1-4. エンタメ体験の予約</strong></td>
-                    <td>演劇、バレエ、現地体験ツアーなどの予約。人気公演は早期確保が必須。</td>
-                </tr>
-            </table>
+        <div id="stat-panel">
+            <strong>🌍 収録作品分布：</strong> <span id="category-list" style="color: #ccc;">Loading...</span>
         </div>
 
-        <h3 class="phase-title">PHASE 2：デジタル・インフラの構築</h3>
-        <div class="process-box">
-            <p>現場での機動力を高めるため、スマートフォンを「管制塔」としてセットアップします。</p>
-            <ul class="check-list">
-                <li><strong>工程の可視化：</strong> Google マップで移動時間を確認し、すべての予定を <span class="highlight-cyan">Google カレンダー</span> にプロットする。</li>
-                <li><strong>通信環境：</strong> 現地用SIMの購入。</li>
-                <li><strong>決済・保証：</strong> クレジットカードの準備、旅行保険の加入。カードや電子チケットをスマホのウォレットに格納。</li>
-                <li><strong>冗長化：</strong> パスポートや各種チケットの「紙のコピー」を作成。予備スマホの準備。</li>
-                <li><strong>アプリ最適化：</strong> 現地で必要なアプリ（配車、交通、翻訳等）のインストールとログイン確認。</li>
-            </ul>
+        <div class="chart-section">
+            <div class="chart-box">
+                <canvas id="countryChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="yearChart"></canvas>
+            </div>
         </div>
 
-        <h3 class="phase-title">PHASE 3：プロキュアメント（物品調達と装備）</h3>
-        <div class="process-box">
-            <p>イギリスの気候と防犯に特化した装備を厳選します。</p>
-            <table class="data-table">
-                <tr>
-                    <th style="width: 200px;">カテゴリー</th>
-                    <th>アイテムリスト</th>
-                </tr>
-                <tr>
-                    <td><strong>防犯・安全</strong></td>
-                    <td>ワイヤーロック、お腹用セーフティケース。</td>
-                </tr>
-                <tr>
-                    <td><strong>衣類・装備</strong></td>
-                    <td>極暖、厚手の靴下、折りたたみ傘、レインウェア。</td>
-                </tr>
-                <tr>
-                    <td><strong>ドミトリー対策</strong></td>
-                    <td>スリッパ、枕、<span class="highlight-magenta">バイブ式目覚まし時計</span>（音を鳴らさない配慮）。</td>
-                </tr>
-                <tr>
-                    <td><strong>ガジェット</strong></td>
-                    <td>海外用変換プラグ、スマホ充電器、肩掛け用スマホケース。</td>
-                </tr>
-                <tr>
-                    <td><strong>ギフト・交流</strong></td>
-                    <td>お世話になる人へのお土産。</td>
-                </tr>
-            </table>
-        </div>
+        <nav id="movie-index"></nav>
 
-        <h3 class="phase-title">PHASE 4：最終調整と撮影準備</h3>
-        <div class="process-box">
-            <p>出発直前の点検作業。航空会社の独自ルールや、アニメーターとしての準備を行います。</p>
-            <ul class="check-list">
-                <li>航空会社の特有ルール（ラウンジ利用、空港手続き）の再調査。</li>
-                <li>必要最小限の現地通貨（ポンド）への両替。</li>
-                <li><span class="highlight-cyan">タペット（ストップモーションアニメ用人形）</span>のパッキング。現地ロケ撮影に向けたメンテナンス完了。</li>
-            </ul>
-        </div>
+        <div id="movie-list"></div>
 
+        <section class="all-movies-section" style="margin-top: 80px; padding-top: 40px; border-top: 1px dashed var(--magenta);">
+            <h3 id="total-movies-count" style="color: var(--cyan); font-size: 1.8rem; margin-bottom: 20px;">
+                全 --- 作品アーカイブ
+            </h3>
+            <div id="all-movies-grid" class="all-movies-grid"></div>
+        </section>
     </article>
 
-    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+    <a href="javascript:void(0)" onclick="scrollToRank(1)" class="scroll-btn rank-btn-1">1位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(10)" class="scroll-btn rank-btn-10">10位</a>
+    <a href="javascript:void(0)" onclick="scrollToRank(20)" class="scroll-btn rank-btn-20">20位</a>
+    <a href="#" class="scroll-btn top-btn">↑</a>
+    <a href="#footer" class="scroll-btn bottom-btn">↓</a>
+    <a href="vol24.html" class="scroll-btn link-vol24">v24</a>
+
+    <footer id="footer" class="main-footer" style="padding: 80px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 100px;">
         <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
             <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
             <div>
                 <a href="vol24.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.24へ</a>
-                <a href="vol26.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.26へ →</a>
+                <a href="vol26.html" style="color: #444; text-decoration: none; white-space: nowrap;">次のVol.26へ →</a>
             </div>
         </nav>
 
-        <img src="../images/logo.png" alt="Logo" class="footer-logo" style="max-width: 150px; margin-bottom: 20px;">
-        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+        <img src="../images/logo.webp" alt="Logo" class="footer-logo" style="max-width: 180px; margin-bottom: 20px;">
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900;">© 2026 The Animeda! Project</p>
     </footer>
+
+<script>
+async function init() {
+    try {
+        const res = await fetch('movies.json');
+        if (!res.ok) throw new Error('JSON load failed');
+        const allMovies = await res.json();
+        
+        // 恋愛ランキングが存在し、かつ999ではないものだけ抽出し、ソート
+        let movies = allMovies.filter(m => m.romance_rank && m.romance_rank !== 999).sort((a, b) => a.romance_rank - b.romance_rank);
+        
+        // --- 1. データ集計 ---
+        const countryStats = {};
+        const decadeStats = {};
+        
+        movies.forEach(m => {
+            countryStats[m.category] = (countryStats[m.category] || 0) + 1;
+            const decade = Math.floor(m.year / 10) * 10 + "s";
+            decadeStats[decade] = (decadeStats[decade] || 0) + 1;
+        });
+
+        // 国別データを多い順にソート
+        const sortedCountryStatsArray = Object.entries(countryStats).sort((a, b) => b[1] - a[1]);
+
+        document.getElementById('category-list').textContent = 
+            sortedCountryStatsArray.map(([k, v]) => `【${k}】${v}`).join('、');
+
+        // --- 2. グラフ描画 (Chart.js) ---
+        Chart.defaults.color = '#ccc';
+
+        const colors = [
+            '#ff00ff', '#00f2ff', '#00ff70', '#ffaa00', '#7000ff', 
+            '#ff0055', '#aaff00', '#00aaff', '#ff5500', '#5500ff', 
+            '#0055ff', '#ff00aa', '#ffff00', '#00ffff', '#fff', '#888'
+        ];
+        new Chart(document.getElementById('countryChart'), {
+            type: 'doughnut',
+            data: {
+                labels: sortedCountryStatsArray.map(item => item[0]),
+                datasets: [{
+                    data: sortedCountryStatsArray.map(item => item[1]),
+                    backgroundColor: colors.slice(0, sortedCountryStatsArray.length),
+                    borderWidth: 0
+                }]
+            },
+            options: { 
+                aspectRatio: 1.2,
+                plugins: { title: { display: true, text: '国別シェア', color: '#00f2ff', font: {size: 16} } }
+            }
+        });
+
+        const sortedDecades = Object.keys(decadeStats).sort();
+        new Chart(document.getElementById('yearChart'), {
+            type: 'bar',
+            data: {
+                labels: sortedDecades,
+                datasets: [{
+                    label: '作品数',
+                    data: sortedDecades.map(d => decadeStats[d]),
+                    backgroundColor: '#ff00ff'
+                }]
+            },
+            options: {
+                aspectRatio: 1.2,
+                plugins: { title: { display: true, text: '年代別分布', color: '#ff00ff', font: {size: 16} }, legend: { display: false } },
+                scales: { y: { beginAtZero: true, grid: { color: '#222' } }, x: { grid: { display: false } } }
+            }
+        });
+
+        // --- 3. リスト生成 ---
+        const indexNav = document.getElementById('movie-index');
+        const listDiv = document.getElementById('movie-list');
+        const allMoviesGrid = document.getElementById('all-movies-grid');
+
+        movies.forEach((m, i) => {
+            const themeColor = colors[Math.floor(i / 10)] || '#ccc';
+            const displayOrder = String(m.romance_rank).padStart(2, '0');
+
+            // 目次
+            const idxLink = document.createElement('a');
+            idxLink.href = `#m${m.id}`;
+            idxLink.textContent = `${displayOrder}. ${m.title}`;
+            idxLink.style.color = themeColor;
+            indexNav.appendChild(idxLink);
+
+            // 更新日時の処理
+            let updateDateHtml = '';
+            if (m.updated_at && m.updated_at !== '2000-01-01T00:00:00' && m.updated_at !== '-') {
+                const date = new Date(m.updated_at);
+                const formattedDate = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+                updateDateHtml = `<p class="update-date">最終更新: ${formattedDate}</p>`;
+            }
+
+            // 恋愛視点コメント
+            const romanceCommentHtml = m.romance_view ? `<p style="margin-top: 10px; padding: 10px; background: rgba(255,0,255,0.1); border-left: 3px solid #ff00ff; border-radius: 4px;"><strong>👁️‍🗨️ Romance View：</strong> ${m.romance_view}</p>` : '';
+
+            // カード
+            const section = document.createElement('section');
+            section.className = 'movie-card';
+            section.id = `m${m.id}`;
+            section.setAttribute('data-rank', m.romance_rank);
+            section.innerHTML = `
+                <div class="card-header" style="border-bottom: 2px solid ${themeColor};">
+                    ${updateDateHtml}
+                    <h3 style="color: ${themeColor}">
+                        ${displayOrder}. ${m.title}
+                        <span class="movie-year">${m.year}</span>
+                    </h3>
+                </div>
+                <div class="info-panel">
+                    <p class="director-info"><strong>監督:</strong> ${m.director}<br><span>${m.director_note || ''}</span></p>
+                    <p><strong>制作国:</strong> ${m.category}</p>
+                    <p><strong>特徴:</strong> ${m.features}</p>
+                    ${romanceCommentHtml}
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="https://www.amazon.co.jp/s?k=${encodeURIComponent(m.title)}" target="_blank" style="color: var(--cyan); text-decoration: none; border: 1px solid var(--cyan); padding: 5px 10px; border-radius: 5px; font-size: 0.75rem;">🔗 Prime Video</a>
+                        <a href="https://filmarks.com/search/movies?q=${encodeURIComponent(m.title)}" target="_blank" style="color: #fff; text-decoration: none; border: 1px solid #444; padding: 5px 10px; border-radius: 5px; font-size: 0.75rem; background: #222;">⭐ Filmarks</a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <img src="${m.image}" alt="${m.title}" onerror="this.src='https://via.placeholder.com/900x500/111/fff?text=' + encodeURIComponent(m.title)">
+                </div>
+            `;
+            listDiv.appendChild(section);
+
+            // タイル画像
+            const tileImg = document.createElement('img');
+            tileImg.src = m.image;
+            tileImg.alt = m.title;
+            tileImg.title = m.title;
+            tileImg.onerror = function() { this.src='https://via.placeholder.com/900x500/111/fff?text=' + encodeURIComponent(m.title); };
+            tileImg.onclick = function() { scrollToRank(m.romance_rank); };
+            allMoviesGrid.appendChild(tileImg);
+        });
+
+        // タイトル等の更新
+        const count = movies.length;
+        document.getElementById('dynamic-title').innerHTML = `切なさと痛みの映画${count}選：<br>愛の始まりと終わり、その間にあるもの`;
+        document.title = `vol.25 切なさと痛みの映画${count}選 - ストップモーションアニメ通信`;
+        document.getElementById('total-movies-count').textContent = `全 ${count} 作品アーカイブ`;
+
+    } catch (e) {
+        console.error("Data Load Error:", e);
+        document.getElementById('category-list').textContent = "データの読み込みに失敗しました。サーバーが起動しているか確認してください。";
+    }
+}
+init();
+
+function scrollToRank(rank) {
+    let el = document.querySelector(`[data-rank="${rank}"]`);
+    if (!el) {
+        const allCards = document.querySelectorAll('.movie-card');
+        if (allCards.length > 0) {
+            el = allCards[allCards.length - 1];
+        }
+    }
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+
 </body>
 </html>
