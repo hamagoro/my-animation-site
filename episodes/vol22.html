@@ -18,6 +18,8 @@
             width: 50%;
             display: block;
             margin: 0 auto;
+        }
+        .media-container video, .media-container img {
             filter: contrast(1.1) brightness(0.9);
         }
         .media-container iframe {
@@ -49,7 +51,7 @@
         /* スポット用タイルグリッド */
         .spot-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr); /* PCでは5列にして小さく表示 */
             gap: 5px;
             margin-top: 40px;
         }
@@ -115,6 +117,16 @@
             font-weight: normal;
             margin-bottom: 2px;
             opacity: 0.9;
+        }
+        
+        /* スマホ向け調整 */
+        @media (max-width: 600px) {
+            .spot-grid {
+                grid-template-columns: repeat(3, 1fr); /* スマホは3列のまま */
+            }
+            .media-container video, .media-container img, .media-container iframe {
+                width: 100%; /* スマホでは動画や画像を大きく表示して押しやすくする */
+            }
         }
     </style>
 </head>
