@@ -45,6 +45,77 @@
             text-shadow: 2px 2px #ff00ff;
             margin-top: 50px;
         }
+        
+        /* スポット用タイルグリッド */
+        .spot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 40px;
+        }
+        .spot-tile {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 5px;
+            box-sizing: border-box;
+            container-type: inline-size;
+        }
+        /* 落ち着いた和風の13色を設定（村上の歴史的な雰囲気に合わせて） */
+        .spot-tile:nth-child(13n+1) { background: #9b2c2c; color: #fff; } /* えんじ */
+        .spot-tile:nth-child(13n+2) { background: #2c3e50; color: #fff; } /* 藍色 */
+        .spot-tile:nth-child(13n+3) { background: #4a5d23; color: #fff; } /* 苔色 */
+        .spot-tile:nth-child(13n+4) { background: #b8860b; color: #fff; } /* 芥子色 */
+        .spot-tile:nth-child(13n+5) { background: #4b3d8f; color: #fff; } /* 桔梗色 */
+        .spot-tile:nth-child(13n+6) { background: #5c9291; color: #fff; } /* 錆浅葱 */
+        .spot-tile:nth-child(13n+7) { background: #9e3d3f; color: #fff; } /* 蘇芳 */
+        .spot-tile:nth-child(13n+8) { background: #b35c37; color: #fff; } /* 柿渋色 */
+        .spot-tile:nth-child(13n+9) { background: #1f2c4e; color: #fff; } /* 鉄紺 */
+        .spot-tile:nth-child(13n+10) { background: #6b7b3b; color: #fff; } /* 鶯色 */
+        .spot-tile:nth-child(13n+11) { background: #663344; color: #fff; } /* 葡萄色 */
+        .spot-tile:nth-child(13n+12) { background: #8a6b32; color: #fff; } /* 朽葉色 */
+        .spot-tile:nth-child(13n+13) { background: #35676a; color: #fff; } /* 浅葱色 */
+
+        .spot-tile:hover {
+            transform: scale(1.15);
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            z-index: 10;
+        }
+        .spot-tile img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        .spot-tile:hover img {
+            opacity: 1;
+        }
+        .spot-tile-label {
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.15;
+        }
+        .spot-no {
+            display: block;
+            font-size: 0.45em;
+            font-weight: normal;
+            margin-bottom: 2px;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body style="background-color: #000; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif;">
@@ -68,13 +139,93 @@
         <header class="episode-header" style="margin-top: 40px;">
             <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">JOURNAL // 2026.05.04</p>
             <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
-                新潟・村上：<br>記憶を繋ぐ1fpsの旅
+                村上・新潟：<br>記憶を繋ぐ1fpsの旅
             </h2>
         </header>
 
-        <!-- Section 1: Niigata City -->
+        <!-- Section 1: Murakami City -->
         <section class="travel-section">
-            <h3 class="spot-title">01. 新潟市 / Bandai Bridge</h3>
+            <h3 class="spot-title">01. 村上市 / Old Town</h3>
+            <div class="media-container">
+                <img src="../images/vol22/day01-02.webp" alt="村上市の風景">
+                <p class="caption">城下町の静寂。村上の空気は、新潟市の喧騒とは対照的な「影」の美しさを教えてくれる。</p>
+            </div>
+            <div class="media-container">
+                <img src="../images/vol22/day01-01.webp" alt="塩引き鮭">
+                <p class="caption">吊るされた鮭。その造形美は、自然が生んだストップモーション・オブジェクトだ。</p>
+            </div>
+            <div class="media-container">
+                <iframe src="https://www.youtube.com/embed/YihFAHsf13o" title="YouTube video player" allowfullscreen></iframe>
+                <p class="caption">レンタサイクル<br>三面川、宮尾酒造、大町、小町、安良町、庄内町、鍛冶町、寺町、肴町、千年鮭 きっかわ</p>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #ff00ff; border-radius: 4px;">
+                <h4 style="color: #ff00ff; margin-top: 0; font-size: 1.2rem;">村上市の歴史</h4>
+                <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">
+                    村上市は、新潟県最北端に位置する歴史と伝統が息づく城下町です。戦国時代から江戸時代にかけて、村上城を中心に城下町が整備され、譜代大名が治める村上藩の政治・経済の中心として栄えました。武家屋敷や町屋、黒塀の美しい街並みが今も残り、当時の面影を色濃く伝えています。また、三面川（みおもてがわ）に遡上する鮭は、古くから村上の人々の生活を支えてきました。江戸時代には、青砥武平治による世界初の鮭の自然孵化増殖システム「種川の制」が考案され、鮭文化が大きく発展。「塩引き鮭」に代表される独自の食文化や、木彫堆朱（むらかみきぼりついしゅ）などの伝統工芸が、現在に受け継がれています。
+                </p>
+            </div>
+
+            <!-- 村上市 スポット紹介タイル -->
+            <div class="spot-grid">
+                <a href="https://www.murakamisake.com/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-01.webp" alt="千年鮭 きっかわ">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.01</span>千年鮭<br>きっかわ</div>
+                </a>
+                <a href="https://www.miyaoshuzo.co.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-02.webp" alt="宮尾酒造">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.02</span>宮尾酒造</div>
+                </a>
+                <a href="https://www.iyoboya.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-03.webp" alt="イヨボヤ会館">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.03</span>イヨボヤ<br>会館</div>
+                </a>
+                <a href="https://www.senami.or.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-04.webp" alt="瀬波温泉足湯日本海">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.04</span>瀬波温泉<br>足湯 日本海</div>
+                </a>
+                <a href="https://www.iwafune.or.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-05.webp" alt="鮮魚センター">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.05</span>鮮魚<br>センター</div>
+                </a>
+                <a href="https://www.city.murakami.lg.jp/soshiki/132/skate-park.html" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-06.webp" alt="ブルボン村上スケートボード">
+                    <div class="spot-tile-label" style="font-size: 13cqw;"><span class="spot-no">No.06</span>ブルボン村上<br>スケートボード</div>
+                </a>
+                <a href="https://fujimotojinja.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-07.webp" alt="藤基神社">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.07</span>藤基神社</div>
+                </a>
+                <a href="http://sanpou-g.co.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-08.webp" alt="三宝">
+                    <div class="spot-tile-label" style="font-size: 35cqw;"><span class="spot-no">No.08</span>三宝</div>
+                </a>
+                <a href="https://www.uoroku.co.jp/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-09.webp" alt="ウオロク">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.09</span>ウオロク</div>
+                </a>
+                <a href="http://www.townhotel-murakami.com/" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-10.webp" alt="タウンホテル村上">
+                    <div class="spot-tile-label" style="font-size: 16cqw;"><span class="spot-no">No.10</span>タウンホテル<br>村上</div>
+                </a>
+                <a href="https://www.sake3.com/rentabicycle" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-11.webp" alt="レンタサイクル">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.11</span>レンタ<br>サイクル</div>
+                </a>
+                <a href="https://www.sake3.com/spot/1898" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-12.webp" alt="島田パンの「あん生パン」">
+                    <div class="spot-tile-label" style="font-size: 15cqw;"><span class="spot-no">No.12</span>島田パン<br>「あん生パン」</div>
+                </a>
+                <a href="https://www.sake3.com/spot/184" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/1-13.webp" alt="古い町並み">
+                    <div class="spot-tile-label" style="font-size: 25cqw;"><span class="spot-no">No.13</span>古い<br>町並み</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 2: Niigata City -->
+        <section class="travel-section">
+            <h3 class="spot-title">02. 新潟市 / Bandai Bridge</h3>
             <div class="media-container">
                 <video autoplay muted loop playsinline>
                     <source src="../videos/niigata_timelapse.mp4" type="video/mp4">
@@ -82,13 +233,13 @@
                 <p class="caption">信濃川を流れる光の粒。萬代橋のアーチが闇に浮かび上がる。</p>
             </div>
             <div class="media-container">
-                <img src="../images/vol22/niigata.webp" alt="新潟市の風景">
+                <img src="../images/vol22/day02-01.webp" alt="新潟市の風景">
                 <p class="caption">歴史と現代が交差する、港町ならではの美しい情景。</p>
             </div>
             <p>都市の鼓動をコマ撮りで切り取る。新潟市の夜は、青いネオンと車のヘッドライトが混ざり合い、サイバーパンクな回路図のように見える。</p>
             
             <div class="media-container">
-                <img src="../images/vol22/furumachi.webp" alt="古町商店街 水島新司キャラクター銅像">
+                <img src="../images/vol22/day02-02.webp" alt="古町商店街 水島新司キャラクター銅像">
                 <p class="caption">古町商店街に立ち並ぶ、水島新司作品のキャラクター銅像。</p>
             </div>
             <p>歴史ある古町商店街を歩けば、新潟出身の漫画家・水島新司氏が描いた名作のキャラクターたちと出会うことができる。ストップモーションのパペットのように今にも動き出しそうな躍動感を持つ銅像たちは、街の記憶と共に生き続けている。</p>
@@ -99,26 +250,65 @@
                     新潟市は、信濃川と阿賀野川という大河が日本海に注ぐ河口に位置し、古くから水上交通の要衝として栄えました。江戸時代には北前船の寄港地として繁栄し、日本海側最大級の港町として発展。幕末の1858年に結ばれた日米修好通商条約では、函館、横浜、神戸、長崎とともに開港5港の一つに選ばれ、国際貿易港としての歴史を歩み始めます。近代以降も、信濃川に架かる萬代橋に代表されるように、水と人々の営みが密接に結びついた「水の都」として発展を続け、本州日本海側で唯一の政令指定都市として、現在も国内外のヒト・モノ・文化が行き交う拠点となっています。
                 </p>
             </div>
-        </section>
 
-        <!-- Section 2: Murakami City -->
-        <section class="travel-section">
-            <h3 class="spot-title">02. 村上市 / Old Town</h3>
-            <div class="media-container">
-                <iframe src="https://www.youtube.com/embed/YihFAHsf13o" title="YouTube video player" allowfullscreen></iframe>
-                <p class="caption">村上市の歴史的な情景。</p>
-            </div>
-            <div class="media-container">
-                <img src="../images/vol22/murakami_salmon.webp" alt="塩引き鮭">
-                <p class="caption">吊るされた鮭。その造形美は、自然が生んだストップモーション・オブジェクトだ。</p>
-            </div>
-            <p>城下町の静寂。村上の空気は、新潟市の喧騒とは対照的な「影」の美しさを教えてくれる。</p>
-
-            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #ff00ff; border-radius: 4px;">
-                <h4 style="color: #ff00ff; margin-top: 0; font-size: 1.2rem;">村上市の歴史</h4>
-                <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">
-                    村上市は、新潟県最北端に位置する歴史と伝統が息づく城下町です。戦国時代から江戸時代にかけて、村上城を中心に城下町が整備され、譜代大名が治める村上藩の政治・経済の中心として栄えました。武家屋敷や町屋、黒塀の美しい街並みが今も残り、当時の面影を色濃く伝えています。また、三面川（みおもてがわ）に遡上する鮭は、古くから村上の人々の生活を支えてきました。江戸時代には、青砥武平治による世界初の鮭の自然孵化増殖システム「種川の制」が考案され、鮭文化が大きく発展。「塩引き鮭」に代表される独自の食文化や、木彫堆朱（むらかみきぼりついしゅ）などの伝統工芸が、現在に受け継がれています。
-                </p>
+            <!-- 新潟市 スポット紹介タイル -->
+            <div class="spot-grid">
+                <a href="https://www.google.com/search?q=新潟+プレミアムルマンド" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-01.webp" alt="プレミアムルマンド">
+                    <div class="spot-tile-label" style="font-size: 15cqw;"><span class="spot-no">No.01</span>プレミアム<br>ルマンド</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+みかづき" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-02.webp" alt="みかづき">
+                    <div class="spot-tile-label" style="font-size: 25cqw;"><span class="spot-no">No.02</span>みかづき</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+立食い寿司弁慶" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-03.webp" alt="立食い寿司弁慶">
+                    <div class="spot-tile-label" style="font-size: 16cqw;"><span class="spot-no">No.03</span>立食い寿司<br>弁慶</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+ばかうけ展望台" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-04.webp" alt="ばかうけ展望台">
+                    <div class="spot-tile-label" style="font-size: 18cqw;"><span class="spot-no">No.04</span>ばかうけ<br>展望台</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+万代橋" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-05.webp" alt="万代橋">
+                    <div class="spot-tile-label" style="font-size: 30cqw;"><span class="spot-no">No.05</span>万代橋</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+万代シティ" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-06.webp" alt="万代シティ">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.06</span>万代シティ</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+バスセンター+カレー" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-07.webp" alt="カレー">
+                    <div class="spot-tile-label" style="font-size: 35cqw;"><span class="spot-no">No.07</span>カレー</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+白山神社" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-08.webp" alt="白山神社">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.08</span>白山神社</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+古町" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-09.webp" alt="古町">
+                    <div class="spot-tile-label" style="font-size: 35cqw;"><span class="spot-no">No.09</span>古町</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+花街" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-10.webp" alt="花街">
+                    <div class="spot-tile-label" style="font-size: 35cqw;"><span class="spot-no">No.10</span>花街</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+旧齋藤家" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-11.webp" alt="旧齋藤家">
+                    <div class="spot-tile-label" style="font-size: 22cqw;"><span class="spot-no">No.11</span>旧齋藤家</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+どっぺり坂" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-12.webp" alt="どっぺり坂">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.12</span>どっぺり坂</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+砂丘館" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-13.webp" alt="砂丘館">
+                    <div class="spot-tile-label" style="font-size: 30cqw;"><span class="spot-no">No.13</span>砂丘館</div>
+                </a>
+                <a href="https://www.google.com/search?q=新潟+冨士屋+古町本店" target="_blank" class="spot-tile">
+                    <img src="../images/vol22/2-14.webp" alt="冨士屋 古町本店">
+                    <div class="spot-tile-label" style="font-size: 18cqw;"><span class="spot-no">No.14</span>冨士屋<br>古町本店</div>
+                </a>
             </div>
         </section>
 
@@ -127,6 +317,16 @@
             <h3 class="spot-title">03. ARCHIVE MAP</h3>
             <!-- Google Maps 埋め込み（例：新潟県全域を表示） -->
             <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d403485.4542475949!2d139.1557053!3d37.9120309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1714800000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <!-- Section 4: Travel Video -->
+        <section class="travel-section">
+            <h3 class="spot-title">04. 旅の動画</h3>
+            <div class="media-container">
+                <!-- ※ srcの "XXXXXXXXXXX" を実際のYouTube動画IDに変更してください -->
+                <iframe src="https://www.youtube.com/embed/XXXXXXXXXXX" title="YouTube video player" allowfullscreen></iframe>
+                <p class="caption">旅の思い出を記録した動画。</p>
+            </div>
         </section>
 
     </article>
