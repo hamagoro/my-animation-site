@@ -264,18 +264,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "active",
     "romance_rank": 999,
-    "kinejun_rank": {
-      "year": 2008,
-      "category": "外国映画",
-      "rank": 1
-    },
+    "kinejun_rank": null,
     "awards_history": {
-      "oscars": [
-        "作品賞",
-        "監督賞",
-        "助演男優賞",
-        "脚色賞"
-      ],
+      "oscars": [],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -294,15 +285,19 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "active",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2008,
+      "category": "外国映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [
-        "主演女優賞",
-        "脚本賞"
+        "作品賞",
+        "監督賞",
+        "助演男優賞",
+        "脚色賞"
       ],
-      "cannes": [
-        "監督賞"
-      ],
+      "cannes": [],
       "venice": [],
       "berlin": []
     }
@@ -322,8 +317,13 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
-      "cannes": [],
+      "oscars": [
+        "主演女優賞",
+        "脚本賞"
+      ],
+      "cannes": [
+        "監督賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -663,10 +663,7 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "venice": [
-        "銀獅子賞（監督賞）",
-        "マルチェロ・マストロヤンニ賞（新人俳優賞）"
-      ],
+      "venice": [],
       "berlin": []
     }
   },
@@ -688,7 +685,10 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "銀獅子賞（監督賞）",
+        "マルチェロ・マストロヤンニ賞（新人俳優賞）"
+      ],
       "berlin": []
     }
   },
@@ -715,7 +715,9 @@
       "oscars": [],
       "cannes": [],
       "venice": [],
-      "berlin": []
+      "berlin": [
+        "銀熊賞（監督賞）"
+      ]
     }
   },
   {
@@ -865,7 +867,6 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
     "kinejun_rank": {
       "year": 2008,
       "category": "日本映画",
@@ -895,13 +896,6 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "oscars": [
-        "外国語映画賞"
-      ],
-      "cannes": [
-        "監督賞",
-        "エキュメニカル審査員賞"
-      ],
       "venice": [],
       "berlin": []
     }
@@ -920,11 +914,6 @@
     "status": "sub",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 2005,
-      "category": "日本映画",
-      "rank": 6
-    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -946,11 +935,6 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 1953,
-      "category": "日本映画",
-      "rank": 2
-    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1015,16 +999,13 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 2004,
-      "category": "日本映画",
-      "rank": 1
-    },
     "awards_history": {
-      "oscars": [],
-      "cannes": [],
+      "oscars": [
+        "外国語映画賞"
+      ],
       "cannes": [
-        "最優秀男優賞"
+        "監督賞",
+        "エキュメニカル審査員賞"
       ],
       "venice": [],
       "berlin": []
@@ -1043,7 +1024,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2005,
+      "category": "日本映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1065,11 +1050,6 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 2017,
-      "category": "日本映画",
-      "rank": 4
-    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1090,12 +1070,18 @@
     "image": "../images/vol24/m54.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1953,
+      "category": "日本映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
       "venice": [],
-      "berlin": []
+      "berlin": [
+        "銀熊賞（女優賞）"
+      ]
     }
   },
   {
@@ -1114,7 +1100,9 @@
     "kinejun_rank": null,
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "脚本賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1132,10 +1120,16 @@
     "image": "../images/vol24/m52.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2004,
+      "category": "日本映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "最優秀男優賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1153,7 +1147,11 @@
     "image": "../images/vol24/m43.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2017,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1306,8 +1304,7 @@
     "romance_view": "本作の「愛」は、恋愛感情の裏に潜む支配欲や欺瞞を暴く装置として描かれる。キャシーは男性たちの偽りの「愛」や「好意」を逆手に取り、失われた親友への深い追悼の愛と、歪んだ社会への痛烈な問いかけを込めた復讐劇を繰り広げる。真の愛の不在が、却ってその価値と、それが容易に踏みにじられる脆弱性を浮き彫りにする、皮肉でマニアックな愛の物語。",
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
-      "oscars": [
+    "oscars": [
         "脚本賞"
       ],
       "cannes": [],
@@ -1356,22 +1353,10 @@
     "status": "sub",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 2019,
-      "category": "外国映画",
-      "rank": 1
-    },
     "awards_history": {
       "oscars": [],
-      "oscars": [
-        "主演男優賞",
-        "作曲賞"
-      ],
       "cannes": [],
       "venice": [],
-      "venice": [
-        "金獅子賞"
-      ],
       "berlin": []
     }
   },
@@ -1388,16 +1373,20 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
     "kinejun_rank": {
-      "year": 2025,
+      "year": 2019,
       "category": "外国映画",
       "rank": 1
     },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演男優賞",
+        "作曲賞"
+      ],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "金獅子賞"
+      ],
       "berlin": []
     }
   },
@@ -1415,11 +1404,6 @@
     "status": "sub",
     "romance_rank": 999,
     "kinejun_rank": null,
-    "kinejun_rank": {
-      "year": 1993,
-      "category": "日本映画",
-      "rank": 4
-    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1440,7 +1424,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2025,
+      "category": "外国映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1461,7 +1449,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1993,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1482,7 +1474,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2021,
+      "category": "日本映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1503,12 +1499,20 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "sub",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "外国映画",
+      "rank": 3
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演女優賞"
+      ],
       "cannes": [],
       "venice": [],
-      "berlin": []
+      "berlin": [
+        "銀熊賞（監督賞）"
+      ]
     }
   },
   {
@@ -1528,7 +1532,9 @@
     "kinejun_rank": null,
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "グランプリ"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1548,7 +1554,9 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "編集賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -1570,7 +1578,9 @@
     "kinejun_rank": null,
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "審査員賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1590,7 +1600,9 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "脚本賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -1613,7 +1625,9 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "金獅子賞"
+      ],
       "berlin": []
     }
   },
@@ -1634,7 +1648,9 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "銀獅子賞（監督賞）"
+      ],
       "berlin": []
     }
   },
@@ -1651,10 +1667,16 @@
     "image": "../images/vol24/m72.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2007,
+      "category": "日本映画",
+      "rank": 5
+    },
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "パルム・ドール"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1676,7 +1698,9 @@
     "awards_history": {
       "oscars": [],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "銀獅子賞（監督賞）"
+      ],
       "berlin": []
     }
   },
@@ -1715,7 +1739,11 @@
     "image": "../images/vol24/m75.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2016,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1758,7 +1786,11 @@
     "image": "../images/vol24/m77.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2016,
+      "category": "日本映画",
+      "rank": 7
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1779,10 +1811,16 @@
     "image": "../images/vol24/m78.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2012,
+      "category": "外国映画",
+      "rank": 7
+    },
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "監督賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -1822,7 +1860,11 @@
     "image": "../images/vol24/m80.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2010,
+      "category": "外国映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1865,9 +1907,16 @@
     "image": "../images/vol24/m82.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2008,
+      "category": "外国映画",
+      "rank": 3
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演男優賞",
+        "音響編集賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2245,10 +2294,17 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 27,
     "romance_view": "本作の愛は、互いの配偶者の不貞を知った二人が、道徳と欲望の狭間で寸止めを続ける「究極の秘め事」。言葉よりも視線、衣装、雨の情景が雄弁に語る、決して成就しないプラトニックな繋がりです。身体的接触を避け、精神的な距離感を保つことで、失われた郷愁と抑制された情熱を極限まで高めた、未完の愛の美学を追求しています。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2001,
+      "category": "外国映画",
+      "rank": 5
+    },
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "男優賞",
+        "フランス映画高等技術委員会賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -2268,7 +2324,9 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演女優賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2287,7 +2345,11 @@
     "image": "../images/vol24/m102.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1967,
+      "category": "外国映画",
+      "rank": 5
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2352,9 +2414,16 @@
     "image": "../images/vol24/m105.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2004,
+      "category": "外国映画",
+      "rank": 1
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演男優賞",
+        "助演男優賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2375,10 +2444,14 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演女優賞"
+      ],
       "cannes": [],
       "venice": [],
-      "berlin": []
+      "berlin": [
+        "銀熊賞（女優賞）"
+      ]
     }
   },
   {
@@ -2394,10 +2467,17 @@
     "image": "../images/vol24/m107.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2001,
+      "category": "日本映画",
+      "rank": 3
+    },
     "awards_history": {
       "oscars": [],
-      "cannes": [],
+      "cannes": [
+        "国際批評家連盟賞",
+        "エキュメニカル審査員賞"
+      ],
       "venice": [],
       "berlin": []
     }
@@ -2415,7 +2495,11 @@
     "image": "../images/vol24/m108.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2013,
+      "category": "日本映画",
+      "rank": 8
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2436,7 +2520,11 @@
     "image": "../images/vol24/m109.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "日本映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2500,7 +2588,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 37,
     "romance_view": "恋愛初期の熱狂は排され、喪失という最大の試練を経て、互いの傷と弱さを無言で受け入れ、寄り添う「負の共有」に愛が昇華する。日常の沈黙と眼差しが、言葉以上に深く相手の存在を肯定し、関係性を再構築していく、究極の「赦しと受容の愛」を丹念に描いている。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2008,
+      "category": "日本映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2528,9 +2620,15 @@
       "neurotic_level": 5,
       "trivia": "ケイト・ブランシェットは本作での演技でアカデミー主演女優賞を受賞した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演女優賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2549,7 +2647,11 @@
     "image": "../images/vol24/m114.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1993,
+      "category": "日本映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2570,7 +2672,11 @@
     "image": "../images/vol24/m115.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1996,
+      "category": "日本映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2591,7 +2697,11 @@
     "image": "../images/vol24/m116.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "日本映画",
+      "rank": 10
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2634,9 +2744,15 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 33,
     "romance_view": "『her』は、身体性を欠いたAIとの恋愛を通じて、愛が肉体ではなく精神的な共鳴と理解にこそ宿る可能性を提示する。サマンサの超越的進化は、関係性が常に流動的であり、愛が相互の成長を促す触媒であると同時に、最終的には個人の内面で完結する自己発見の旅であることを示唆する。これは、従来の「二人称の愛」から「一人称の愛」への脱構築とも言える。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "外国映画",
+      "rank": 8
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "脚本賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2678,9 +2794,16 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 34,
     "romance_view": "『マンチェスター・バイ・ザ・シー』における愛は、喪失と不可分の痛みとして描かれる。リーは、子供たちへの愛情喪失と、その結果として崩壊した夫婦愛の記憶に凍結され、愛する能力そのものを自ら封じ込める。その悲劇性は、愛がもたらす最高の幸福と、それを失った時の絶望的な苦痛の対比によって際立ち、再生を拒む彼の選択を通して、愛の呪縛をマニアックに描き出す。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2017,
+      "category": "外国映画",
+      "rank": 7
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演男優賞",
+        "脚本賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -2744,7 +2867,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 25,
     "romance_view": "『恋は光』は、愛を「見える光」という外部化された現象として描きつつ、それを分析する主人公自身の恋は盲目的に手探りであるパラドックスを提示。他者の光と自身の感情の乖離から、愛は客観視できる対象と、言語や論理で割り切れない主観的で哲学的な謎である二面性をマニアックに掘り下げ、本質を探求します。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2022,
+      "category": "日本映画",
+      "rank": 9
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2816,7 +2943,11 @@
     "image": "../images/vol24/m126.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2022,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2837,7 +2968,11 @@
     "image": "../images/vol24/m127.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2010,
+      "category": "日本映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2858,7 +2993,11 @@
     "image": "../images/vol24/m128.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2013,
+      "category": "日本映画",
+      "rank": 9
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2881,9 +3020,16 @@
     "romance_rank": 999,
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "主演女優賞",
+        "美術賞",
+        "メイクアップ＆ヘアスタイリング賞",
+        "衣装デザイン賞"
+      ],
       "cannes": [],
-      "venice": [],
+      "venice": [
+        "金獅子賞"
+      ],
       "berlin": []
     }
   },
@@ -3028,7 +3174,11 @@
       "venice": [],
       "berlin": []
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1980,
+      "category": "外国映画",
+      "rank": 4
+    },
     "woody_details": {
       "original_title": "Manhattan",
       "location": "New York",
@@ -3056,9 +3206,17 @@
       "neurotic_level": 5,
       "trivia": "ウディ・アレンはミア・ファローの実際のアパートや自身の姉のアパートも撮影に使用した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1987,
+      "category": "外国映画",
+      "rank": 2
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演男優賞",
+        "助演女優賞",
+        "脚本賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -3083,9 +3241,15 @@
       "neurotic_level": 4,
       "trivia": "ウディ・アレンは本作でアカデミー賞脚本賞を受賞した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2012,
+      "category": "外国映画",
+      "rank": 2
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "脚本賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -3110,7 +3274,11 @@
       "neurotic_level": 5,
       "trivia": "当初、映画から出てくるのはモンスターというアイデアもあった。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1986,
+      "category": "外国映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3137,7 +3305,11 @@
       "neurotic_level": 4,
       "trivia": "ウディ・アレン自身の幼少期のラジオにまつわる思い出を基にした半自伝的作品。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1988,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3164,7 +3336,11 @@
       "neurotic_level": 5,
       "trivia": "ウディ・アレンが初めて監督したシリアスドラマ作品であり、音楽は意図的にほとんど使用されていない。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1979,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3217,7 +3393,11 @@
     "features": "現実とフィクションが複雑に交錯する、ウディ・アレンらしい自己言及的な構造。\n主人公の作家が自らの人生と人間関係を題材にした小説を書き、それが現実世界に影響を与える。\nユーモアとシニカルな視点を通して、人間関係、不倫、芸術と人生のあり方について深く考察する。",
     "image": "../images/vol24/m149.webp",
     "updated_at": "2026-05-06T16:54:07.349779",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1998,
+      "category": "外国映画",
+      "rank": 9
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3237,7 +3417,11 @@
     "features": "1930年代のジャズギタリスト、エメット・レイを巡るフェイク・ドキュメンタリー形式の作品。\nショーン・ペンが伝説的ながらも破滅的な才能を持つギタリストを熱演し、アカデミー主演男優賞にノミネートされた。\nウディ・アレンらしいユーモアと、ジャズ音楽への深い愛情が感じられる音楽映画。",
     "image": "../images/vol24/m150.webp",
     "updated_at": "2026-05-06T16:53:06.242186",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2000,
+      "category": "外国映画",
+      "rank": 8
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3264,12 +3448,20 @@
       "neurotic_level": 3,
       "trivia": "エレイン・メイは本作での演技により、ゴールデングローブ賞の女優賞（コメディ・ミュージカル部門）にノミネートされた。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1995,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演女優賞"
+      ],
       "cannes": [],
       "venice": [],
-      "berlin": []
+      "berlin": [
+        "銀熊賞（芸術貢献賞）"
+      ]
     }
   },
   {
@@ -3291,7 +3483,11 @@
       "neurotic_level": 4,
       "trivia": "ダイアン・ウィーストはこの映画でアカデミー助演女優賞を受賞。彼女にとって2度目の受賞となった。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1993,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3318,7 +3514,11 @@
       "neurotic_level": 5,
       "trivia": "撮影はハンガリーで行われたが、ロシアの雪景色を再現するため特殊な視覚効果が用いられた。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1990,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3345,7 +3545,11 @@
       "neurotic_level": 5,
       "trivia": "監督と主演女優の個人的なスキャンダルが公開時に大きく報じられた。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1991,
+      "category": "外国映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3374,7 +3578,9 @@
     },
     "kinejun_rank": null,
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演女優賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []
@@ -3399,9 +3605,15 @@
       "neurotic_level": 5,
       "trivia": "当初、マーティン・ランドー演じる主人公は自殺する予定だったが、最終的に変更された。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2009,
+      "category": "外国映画",
+      "rank": 6
+    },
     "awards_history": {
-      "oscars": [],
+      "oscars": [
+        "助演女優賞"
+      ],
       "cannes": [],
       "venice": [],
       "berlin": []

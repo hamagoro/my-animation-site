@@ -35,6 +35,55 @@
             opacity: 0; transform: translateY(20px);
         }
         body { cursor: none; }
+
+        /* スクロール中央でカラーにするエフェクト用スタイル */
+        .film-card .poster-box img {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .film-card.in-center .poster-box img {
+            filter: grayscale(0%);
+        }
+
+        /* --- モーダルウィンドウのスマホ・スクロール対応 --- */
+        #movie-modal .modal-content {
+            max-height: 85vh; /* 画面の高さの85%に制限 */
+            overflow-y: auto; /* はみ出した場合は縦スクロールさせる */
+            position: relative;
+            scrollbar-width: thin;
+            scrollbar-color: #555 #000;
+        }
+        
+        /* 閉じるボタンをスクロールしても常に右上に固定 */
+        #movie-modal .close-btn {
+            position: sticky;
+            top: 0;
+            float: right;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-flex {
+                display: flex;
+                flex-direction: column; /* スマホでは縦並びに */
+            }
+            .modal-poster {
+                max-width: 160px;
+                margin: 0 auto 20px;
+            }
+            .m-spec-table {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -137,39 +186,81 @@
         }
     }
 
-    // --- 新しいオブジェクト形式と古い文字列形式の両方に対応するフォーマッター ---
+    // --- movies.json の新フォーマットに対応したフォーマッター ---
     function formatAwards(data) {
         if (!data) return '-';
-        if (typeof data === 'string') return data;
         const parts = [];
-        if (data.oscars && data.oscars.length > 0) parts.push(`アカデミー賞: ${data.oscars.join('、')} 受賞`);
-        if (data.cannes && data.cannes.length > 0) parts.push(`カンヌ: ${data.cannes.join('、')} 受賞`);
-        if (data.venice && data.venice.length > 0) parts.push(`ヴェネツィア: ${data.venice.join('、')} 受賞`);
-        if (data.berlin && data.berlin.length > 0) parts.push(`ベルリン: ${data.berlin.join('、')} 受賞`);
+        if (data.oscars && data.oscars.length > 0) parts.push(`アカデミー賞: ${data.oscars.join('、')}`);
+        if (data.cannes && data.cannes.length > 0) parts.push(`カンヌ: ${data.cannes.join('、')}`);
+        if (data.venice && data.venice.length > 0) parts.push(`ヴェネツィア: ${data.venice.join('、')}`);
+        if (data.berlin && data.berlin.length > 0) parts.push(`ベルリン: ${data.berlin.join('、')}`);
         return parts.length > 0 ? parts.join(' / ') : '-';
     }
 
     function formatKinejun(data) {
-        if (!data) return '-';
-        if (typeof data === 'string') return data;
+        if (!data || !data.rank) return '-';
         return `${data.year}年度 ${data.category}ベスト・テン 第${data.rank}位`;
     }
+
+    // --- 画面中央判定のスクロールエフェクト（1行のみカラー） ---
+    function updateCenterRow() {
+        const cards = document.querySelectorAll('.film-card');
+        if (cards.length === 0) return;
+
+        const centerY = window.innerHeight / 2;
+        let closestCard = null;
+        let minDistance = Infinity;
+
+        // 画面中央に一番近いカードを探す
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(centerY - cardCenter);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        if (closestCard) {
+            // 最も近いカードの Y座標(top) を取得（同じ行かどうかの判定基準）
+            const closestTop = closestCard.getBoundingClientRect().top;
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                // Y座標の差が10px未満なら同じ行とみなす
+                if (Math.abs(rect.top - closestTop) < 10) {
+                    card.classList.add('in-center');
+                } else {
+                    card.classList.remove('in-center');
+                }
+            });
+        }
+    }
+
+    // スクロール時のパフォーマンスを考慮したイベントリスナー
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                updateCenterRow();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    });
+    window.addEventListener('resize', updateCenterRow);
 
     function calculateStats() {
         const total = allMovies.length;
         
         const majorAwards = allMovies.filter(m => {
-            if (typeof m.awards_history === 'string') return m.awards_history.includes('受賞') || m.awards_history.includes('賞');
-            if (typeof m.awards_history === 'object' && m.awards_history !== null) {
-                return Object.values(m.awards_history).some(arr => arr && arr.length > 0);
-            }
-            return false;
+            return m.awards_history && Object.values(m.awards_history).some(arr => arr && arr.length > 0);
         }).length;
 
         const kinejunTop = allMovies.filter(m => {
-            if (typeof m.kinejun_rank === 'string') return m.kinejun_rank.includes('位');
-            if (typeof m.kinejun_rank === 'object' && m.kinejun_rank !== null) return m.kinejun_rank.rank > 0;
-            return false;
+            return m.kinejun_rank && m.kinejun_rank.rank > 0;
         }).length;
         
         document.getElementById('stats-dashboard').innerHTML = `
@@ -212,6 +303,9 @@
         if (typeof gsap !== 'undefined') {
             gsap.from(".film-card", { duration: 0.8, opacity: 0, scale: 0.9, stagger: 0.05, ease: "expo.out" });
         }
+
+        // グリッド描画後に中央判定を実行
+        updateCenterRow();
     }
 
     // モーダルを開く
@@ -316,20 +410,8 @@
         // 受賞作・キネ旬絞り込み
         if (currentAward === 'Awarded') {
             result = result.filter(m => {
-                let hasAward = false;
-                let hasKinejun = false;
-
-                if (typeof m.awards_history === 'string') {
-                    hasAward = m.awards_history !== '-' && m.awards_history.trim() !== '';
-                } else if (typeof m.awards_history === 'object' && m.awards_history !== null) {
-                    hasAward = Object.values(m.awards_history).some(arr => arr && arr.length > 0);
-                }
-
-                if (typeof m.kinejun_rank === 'string') {
-                    hasKinejun = m.kinejun_rank !== '-' && m.kinejun_rank.trim() !== '';
-                } else if (typeof m.kinejun_rank === 'object' && m.kinejun_rank !== null) {
-                    hasKinejun = m.kinejun_rank.rank > 0;
-                }
+                const hasAward = m.awards_history && Object.values(m.awards_history).some(arr => arr && arr.length > 0);
+                const hasKinejun = m.kinejun_rank && m.kinejun_rank.rank > 0;
                 return hasAward || hasKinejun;
             });
         }
