@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE WOODY ALLEN INDEX</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* フィルム粒子とカスタムカーソル用のスタイル */
+        #grain-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_grain.png');
+            opacity: 0.04; pointer-events: none; z-index: 9999;
+        }
+        #custom-cursor {
+            position: fixed; width: 20px; height: 20px;
+            border: 1px solid #fff; border-radius: 50%;
+            pointer-events: none; z-index: 10000; transform: translate(-50%, -50%);
+        }
+        #custom-cursor::after {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 4px; height: 4px; background: #fff; border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #intro-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 5000;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .intro-text {
+            font-size: 2.5rem; text-align: center; letter-spacing: 0.3em; color: #fff;
+            opacity: 0; transform: translateY(20px);
+        }
+        body { cursor: none; }
+    </style>
+</head>
+<body>
+
+<!-- フィルム粒子オーバーレイ -->
+<div id="grain-overlay"></div>
+
+<!-- ビューファインダー・カスタムカーソル -->
+<div id="custom-cursor"></div>
+
+<!-- シネマティック・イントロ -->
+<div id="intro-screen">
+    <h2 class="intro-text">A FILM BY<br>WOODY ALLEN</h2>
+</div>
+
+<header class="site-header">
+    <div class="header-inner">
+        <p class="label-mini">COMPREHENSIVE FILM REGISTRY</p>
+        <h1>THE WOODY ALLEN INDEX</h1>
+        <div id="stats-dashboard" class="registry-stats">INITIALIZING...</div>
+    </div>
+</header>
+
+<nav class="filter-ui" id="dynamic-nav">
+    <div class="filter-group" id="location-filters">
+        <span class="filter-label">LOCATIONS</span>
+        <button class="active" onclick="applyFilter('loc', 'All', this)">ALL</button>
+        <button onclick="applyFilter('loc', 'New York', this)">NEW YORK</button>
+        <button onclick="applyFilter('loc', 'London', this)">LONDON</button>
+        <button onclick="applyFilter('loc', 'Other', this)">OTHER</button>
+    </div>
+    <div class="filter-group" id="award-filters">
+        <span class="filter-label">ACCOLADES & KINEJUN</span>
+        <button class="active" onclick="applyFilter('award', 'All', this)">ALL</button>
+        <button onclick="applyFilter('award', 'Awarded', this)">AWARDED & KINEJUN</button>
+    </div>
+    <div class="filter-group">
+        <span class="filter-label">SORT</span>
+        <button onclick="applySort('year', this)">CHRONOLOGICAL</button>
+        <button onclick="applySort('neurotic', this)">NEUROTICISM</button>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="grid" id="movie-grid">
+        <!-- 映画カードがここに展開されます -->
+    </div>
+</main>
+
+<!-- モーダルウィンドウ -->
+<div id="movie-modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal(event)">&times;</span>
+        <div id="modal-body">
+            <!-- ここに詳細情報が注入されます -->
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>© 2026 THE WOODY INDEX / ARCHIVE BUILT UPON MOVIES.JSON</p>
+</footer>
+
+<script>
+    let allMovies = [];
+    let currentLoc = 'All';
+    let currentAward = 'All';
+    let currentSortType = 'none';
+    let sortDirection = 1;
+
+    // GSAP イントロアニメーション
+    function runIntro() {
+        if(typeof gsap === 'undefined') return;
+        const tl = gsap.timeline();
+        tl.to(".intro-text", { duration: 1.5, opacity: 1, y: 0, ease: "power4.out", delay: 0.5 })
+          .to("#intro-screen", { duration: 1.5, opacity: 0, display: "none", ease: "power4.inOut", delay: 1 })
+          .from(".site-header, .filter-ui, .grid", { duration: 1, opacity: 0, y: 30, stagger: 0.2, ease: "power3.out" });
+    }
+
+    // カスタムカーソル
+    const cursor = document.getElementById('custom-cursor');
+    if(cursor && typeof gsap !== 'undefined') {
+        document.addEventListener('mousemove', e => {
+            gsap.to(cursor, { duration: 0.3, x: e.clientX, y: e.clientY, ease: "power2.out" });
+        });
+    }
+
+    async function loadRegistry() {
+        try {
+            const response = await fetch('../movies.json');
+            const data = await response.json();
+            allMovies = data.filter(m => m.director === "ウディ・アレン");
+
+            calculateStats();
+            updateView();
+            runIntro();
+        } catch (err) {
+            document.getElementById('stats-dashboard').innerHTML = "CONNECTION ERROR";
+            console.error("Data Load Error");
+        }
+    }
+
+    // --- 新しいオブジェクト形式と古い文字列形式の両方に対応するフォーマッター ---
+    function formatAwards(data) {
+        if (!data) return '-';
+        if (typeof data === 'string') return data;
+        const parts = [];
+        if (data.oscars && data.oscars.length > 0) parts.push(`アカデミー賞: ${data.oscars.join('、')} 受賞`);
+        if (data.cannes && data.cannes.length > 0) parts.push(`カンヌ: ${data.cannes.join('、')} 受賞`);
+        if (data.venice && data.venice.length > 0) parts.push(`ヴェネツィア: ${data.venice.join('、')} 受賞`);
+        if (data.berlin && data.berlin.length > 0) parts.push(`ベルリン: ${data.berlin.join('、')} 受賞`);
+        return parts.length > 0 ? parts.join(' / ') : '-';
+    }
+
+    function formatKinejun(data) {
+        if (!data) return '-';
+        if (typeof data === 'string') return data;
+        return `${data.year}年度 ${data.category}ベスト・テン 第${data.rank}位`;
+    }
+
+    function calculateStats() {
+        const total = allMovies.length;
+        
+        const majorAwards = allMovies.filter(m => {
+            if (typeof m.awards_history === 'string') return m.awards_history.includes('受賞') || m.awards_history.includes('賞');
+            if (typeof m.awards_history === 'object' && m.awards_history !== null) {
+                return Object.values(m.awards_history).some(arr => arr && arr.length > 0);
+            }
+            return false;
+        }).length;
+
+        const kinejunTop = allMovies.filter(m => {
+            if (typeof m.kinejun_rank === 'string') return m.kinejun_rank.includes('位');
+            if (typeof m.kinejun_rank === 'object' && m.kinejun_rank !== null) return m.kinejun_rank.rank > 0;
+            return false;
+        }).length;
+        
+        document.getElementById('stats-dashboard').innerHTML = `
+            <div class="stats-dashboard" style="display: flex; justify-content: center; gap: 40px; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">
+                <div class="stat-item" style="display: flex; flex-direction: column; align-items: center;"><span style="font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em;">TOTAL</span><span style="font-size: 1.1rem;">${total} WORKS</span></div>
+                <div class="stat-item" style="display: flex; flex-direction: column; align-items: center;"><span style="font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em;">ACCOLADES</span><span style="font-size: 1.1rem;">${majorAwards} AWARDED</span></div>
+                <div class="stat-item" style="display: flex; flex-direction: column; align-items: center;"><span style="font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em;">KINEJUN</span><span style="font-size: 1.1rem;">${kinejunTop} TOP 10</span></div>
+            </div>
+        `;
+    }
+
+    function renderGrid(movies) {
+        const grid = document.getElementById('movie-grid');
+        grid.innerHTML = '';
+
+        movies.forEach(m => {
+            const card = document.createElement('article');
+            card.className = 'film-card';
+
+            // 画像パスの正規化: "../" を "../../" に変換
+            const posterPath = m.image ? m.image.replace('../', '../../') : '';
+            const originalIndex = allMovies.indexOf(m);
+
+            card.innerHTML = `
+                <div class="poster-box" onclick="openModal(${originalIndex})" style="cursor: pointer;">
+                    <img src="${posterPath}" alt="${m.title}" onerror="this.style.display='none'">
+                </div>
+                <div class="simple-meta" style="text-align: center; padding-top: 10px;">
+                    <span class="film-year" style="font-size: 0.85rem; color: var(--accent);">${m.year || '-'}</span>
+                    <h2 class="film-title" style="font-size: 1rem; margin: 5px 0;">${m.title}</h2>
+                    <div style="margin-top: 8px;">
+                        <a href="https://www.amazon.co.jp/s?k=${encodeURIComponent(m.title)}" target="_blank" style="display: inline-block; padding: 2px 6px; font-size: 0.65rem; color: #aaa; border: 1px solid #444; border-radius: 3px; text-decoration: none; margin-right: 4px; background: #000;" onmouseover="this.style.color='#fff'; this.style.borderColor='#888';" onmouseout="this.style.color='#aaa'; this.style.borderColor='#444';">Prime Video</a>
+                        <a href="https://filmarks.com/search/movies?q=${encodeURIComponent(m.title)}" target="_blank" style="display: inline-block; padding: 2px 6px; font-size: 0.65rem; color: #aaa; border: 1px solid #444; border-radius: 3px; text-decoration: none; background: #000;" onmouseover="this.style.color='#fff'; this.style.borderColor='#888';" onmouseout="this.style.color='#aaa'; this.style.borderColor='#444';">Filmarks</a>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        if (typeof gsap !== 'undefined') {
+            gsap.from(".film-card", { duration: 0.8, opacity: 0, scale: 0.9, stagger: 0.05, ease: "expo.out" });
+        }
+    }
+
+    // モーダルを開く
+    function openModal(index) {
+        const m = allMovies[index];
+        const d = m.woody_details || {};
+        const modal = document.getElementById('movie-modal');
+        const body = document.getElementById('modal-body');
+        const posterPath = m.image ? m.image.replace('../', '../../') : '';
+        const neuroticMarks = '■'.repeat(d.neurotic_level || 0) + '□'.repeat(5 - (d.neurotic_level || 0));
+
+        // YouTube検索クエリ：映画タイトル + 曲名
+        const trackName = d.featured_track || d['Featured Track'] || '';
+        const searchQuery = encodeURIComponent(`${m.title} ${trackName}`);
+        const ytLink = trackName ? `https://www.youtube.com/results?search_query=${searchQuery}` : '#';
+
+        body.innerHTML = `
+            <div class="modal-flex">
+                <div class="modal-poster">
+                    <img src="${posterPath}" alt="${m.title}">
+                </div>
+                <div class="modal-info">
+                    <p class="m-year">${m.year || '-'}</p>
+                    <h2 class="m-title">${d.original_title || m.title}</h2>
+                    <p class="m-jp-title" style="margin-bottom: 15px;">${m.title}</p>
+                    <div style="margin-bottom: 30px;">
+                        <a href="https://www.amazon.co.jp/s?k=${encodeURIComponent(m.title)}" target="_blank" style="display: inline-block; padding: 4px 10px; font-size: 0.75rem; color: #ccc; border: 1px solid #555; border-radius: 4px; text-decoration: none; margin-right: 8px; background: #000; transition: 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff';" onmouseout="this.style.color='#ccc'; this.style.borderColor='#555';">Prime Video 検索</a>
+                        <a href="https://filmarks.com/search/movies?q=${encodeURIComponent(m.title)}" target="_blank" style="display: inline-block; padding: 4px 10px; font-size: 0.75rem; color: #ccc; border: 1px solid #555; border-radius: 4px; text-decoration: none; background: #000; transition: 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff';" onmouseout="this.style.color='#ccc'; this.style.borderColor='#555';">Filmarks 検索</a>
+                    </div>
+                    <div class="m-spec-table">
+                        <div class="m-row"><span>LOCATION</span><span>${d.location || '-'}</span></div>
+                        <div class="m-row">
+                            <span>FEATURED TRACK</span>
+                            <span><a href="${ytLink}" target="_blank" class="yt-link">▶ ${trackName || '-'}</a></span>
+                        </div>
+                        <div class="m-row"><span>ACCOLADES</span><span>${formatAwards(m.awards_history)}</span></div>
+                        <div class="m-row"><span>KINEJUN RANK</span><span>${formatKinejun(m.kinejun_rank)}</span></div>
+                        <div class="m-row"><span>NEUROTICISM</span><span class="m-neuro">${neuroticMarks}</span></div>
+                        <!-- 作品特徴を追加 -->
+                        <div class="m-row"><span>CHARACTERISTICS</span><span>${d.characteristics || m.features || '-'}</span></div>
+                    </div>
+                    <div class="m-trivia">${d.trivia || ''}</div>
+                </div>
+            </div>
+        `;
+        if (typeof gsap !== 'undefined') {
+            gsap.to(modal, { duration: 0.4, opacity: 1, display: "block", ease: "power2.out" });
+        } else {
+            modal.style.display = "block";
+        }
+        document.body.style.overflow = "hidden"; // 背景スクロール防止
+    }
+
+    function closeModal() {
+        if (typeof gsap !== 'undefined') {
+            gsap.to("#movie-modal", { duration: 0.3, opacity: 0, display: "none" });
+        } else {
+            document.getElementById('movie-modal').style.display = "none";
+        }
+        document.body.style.overflow = "auto";
+    }
+
+    function applyFilter(type, val, btn) {
+        btn.parentNode.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (type === 'loc') {
+            currentLoc = val;
+        } else if (type === 'award') {
+            currentAward = val;
+        }
+        updateView();
+    }
+
+    function applySort(type, btn) {
+        if (currentSortType === type) {
+            sortDirection *= -1; // 同じボタンを押したら逆順に
+        } else {
+            sortDirection = 1; // 違うボタンを押したらリセット
+        }
+
+        btn.parentNode.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSortType = type;
+        updateView();
+    }
+
+    function updateView() {
+        let result = [...allMovies];
+
+        // ロケーション絞り込み
+        if (currentLoc !== 'All') {
+            if (currentLoc === 'Other') {
+                result = result.filter(m => {
+                    const loc = m.woody_details?.location || '';
+                    return !loc.includes('New York') && !loc.includes('London');
+                });
+            } else {
+                result = result.filter(m => m.woody_details?.location?.includes(currentLoc));
+            }
+        }
+
+        // 受賞作・キネ旬絞り込み
+        if (currentAward === 'Awarded') {
+            result = result.filter(m => {
+                let hasAward = false;
+                let hasKinejun = false;
+
+                if (typeof m.awards_history === 'string') {
+                    hasAward = m.awards_history !== '-' && m.awards_history.trim() !== '';
+                } else if (typeof m.awards_history === 'object' && m.awards_history !== null) {
+                    hasAward = Object.values(m.awards_history).some(arr => arr && arr.length > 0);
+                }
+
+                if (typeof m.kinejun_rank === 'string') {
+                    hasKinejun = m.kinejun_rank !== '-' && m.kinejun_rank.trim() !== '';
+                } else if (typeof m.kinejun_rank === 'object' && m.kinejun_rank !== null) {
+                    hasKinejun = m.kinejun_rank.rank > 0;
+                }
+                return hasAward || hasKinejun;
+            });
+        }
+        
+        if (currentSortType === 'year') {
+            result.sort((a, b) => ((a.year || 0) - (b.year || 0)) * sortDirection);
+        } else if (currentSortType === 'neurotic') {
+            result.sort((a, b) => ((b.woody_details?.neurotic_level || 0) - (a.woody_details?.neurotic_level || 0)) * sortDirection);
+        }
+        renderGrid(result);
+    }
+
+    window.onload = loadRegistry;
+</script>
+</body>
+</html>
