@@ -218,8 +218,11 @@ async function init() {
         // データの読み込み
         const res = await fetch('movies.json');
         if (!res.ok) throw new Error('JSON load failed');
-        const movies = await res.json();
+        const allMovies = await res.json();
         
+        // orderが存在し、かつ999未満（999や9999を除外）で、statusが"other"ではないものだけ抽出し、ソート
+        const movies = allMovies.filter(m => m.order && m.order < 999 && m.status !== "other" && m.status !== "Other").sort((a, b) => a.order - b.order);
+
         // --- 1. データ集計 ---
         const countryStats = {};
         const decadeStats = {};

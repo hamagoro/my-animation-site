@@ -169,8 +169,8 @@ async function init() {
         if (!res.ok) throw new Error('JSON load failed');
         const allMovies = await res.json();
         
-        // 恋愛ランキングが存在し、かつ999ではないものだけ抽出し、ソート
-        let movies = allMovies.filter(m => m.romance_rank && m.romance_rank !== 999).sort((a, b) => a.romance_rank - b.romance_rank);
+        // 恋愛ランキングが存在し、かつ999や"Other"ではないものだけ抽出し、ソート
+        let movies = allMovies.filter(m => m.romance_rank && m.romance_rank !== 999 && m.romance_rank !== "Other").sort((a, b) => a.romance_rank - b.romance_rank);
         
         // --- 1. データ集計 ---
         const countryStats = {};
