@@ -16,14 +16,13 @@
     "kinejun_rank": {
       "year": 2021,
       "category": "日本映画",
-      "rank": 9
+      "rank": 17
     },
     "awards_history": {
       "oscars": [],
       "cannes": [],
       "venice": [],
       "berlin": []
-      
     }
   },
   {
@@ -157,7 +156,11 @@
     "status": "active",
     "romance_rank": 17,
     "romance_view": "ジャッキーとマックスの愛は、単なる犯罪の共謀を超え、人生の黄昏期に訪れる「静かな共犯関係の愛」として描かれる。70年代の輝きを失ったパム・グリアが体現するジャッキーの疲弊と、マックスの孤独が共鳴し、言葉ではなく視線やソウルミュージックのメロウな響きの中で、互いの存在が安らぎとなる成熟した愛が育まれる。生き残りのための打算が、やがて本物の共感へと昇華する。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1998,
+      "category": "外国映画",
+      "rank": 20
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -341,7 +344,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "status": "active",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1996,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -363,7 +370,11 @@
     "status": "active",
     "romance_rank": 10,
     "romance_view": "本作の愛は、主人公メイビスの自己愛の延長。過去の栄光にしがみつく未熟な自己を再確認するための手段であり、相手への純粋な感情より、失われた『輝かしい自分』の幻影を追い求める。成熟を拒む、歪んだ“自己陶酔型”の愛が痛々しく描かれる。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2012,
+      "category": "外国映画",
+      "rank": 23
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -388,7 +399,11 @@
       "venice": [],
       "berlin": []
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2016,
+      "category": "日本映画",
+      "rank": 22
+    },
     "status": "active",
     "romance_rank": 999
   },
@@ -589,7 +604,7 @@
     "kinejun_rank": {
       "year": 2022,
       "category": "日本映画",
-      "rank": 5
+      "rank": 23
     },
     "awards_history": {
       "oscars": [],
@@ -637,7 +652,7 @@
     "kinejun_rank": {
       "year": 2012,
       "category": "外国映画",
-      "rank": 3
+      "rank": 10
     },
     "awards_history": {
       "oscars": [],
@@ -681,7 +696,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 19,
     "romance_view": "社会が「正常」と見なす愛の範疇を超越。彼らは互いの障害や前科ではなく、剥き出しの魂を抱きしめ合う。世間の排他的な視線を物ともせず、不器用ながらも本能的に惹かれ合う姿は、タブーを打ち破る、生命力溢れる純粋な愛の根源を暴き出す。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2004,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -709,7 +728,7 @@
     "kinejun_rank": {
       "year": 2013,
       "category": "日本映画",
-      "rank": 3
+      "rank": 14
     },
     "awards_history": {
       "oscars": [],
@@ -940,7 +959,6 @@
       "cannes": [],
       "venice": [],
       "berlin": []
-     
     }
   },
   {
@@ -998,7 +1016,11 @@
     "image": "../images/vol24/m57.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2000,
+      "category": "外国映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [
         "外国語映画賞"
@@ -1071,9 +1093,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 1953,
-      "category": "日本映画",
-      "rank": 2
+      "year": 2017,
+      "category": "外国映画",
+      "rank": 17
     },
     "awards_history": {
       "oscars": [],
@@ -1097,7 +1119,11 @@
     "image": "../images/vol24/m53.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1953,
+      "category": "日本映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [
@@ -1148,9 +1174,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2017,
-      "category": "日本映画",
-      "rank": 4
+      "year": 2025,
+      "category": "外国映画",
+      "rank": 5
     },
     "awards_history": {
       "oscars": [],
@@ -1172,7 +1198,11 @@
     "image": "../images/vol24/m50.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2004,
+      "category": "日本映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1193,7 +1223,11 @@
     "image": "../images/vol24/m49.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2018,
+      "category": "日本映画",
+      "rank": 17
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1259,7 +1293,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 21,
     "romance_view": "過眠症と躁鬱病による自己内葛藤を抱える主人公の愛は、健常者が語る「相手への献身」に留まらない。「完璧ではない自己」を曝け出し、それでも相手が傍にいることを許容する「究極の自己受容」が、愛の出発点。鮮烈な色彩と音楽は、この不安定な精神世界で互いの存在そのものを肯定し合う、痛々しくも本質的な共依存の輝きを鮮やかに刻みつける。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2018,
+      "category": "日本映画",
+      "rank": 30
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1280,7 +1318,11 @@
     "image": "../images/vol24/m44.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2017,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1302,9 +1344,13 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 22,
     "romance_view": "本作の「愛」は、恋愛感情の裏に潜む支配欲や欺瞞を暴く装置として描かれる。キャシーは男性たちの偽りの「愛」や「好意」を逆手に取り、失われた親友への深い追悼の愛と、歪んだ社会への痛烈な問いかけを込めた復讐劇を繰り広げる。真の愛の不在が、却ってその価値と、それが容易に踏みにじられる脆弱性を浮き彫りにする、皮肉でマニアックな愛の物語。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2021,
+      "category": "外国映画",
+      "rank": 3
+    },
     "awards_history": {
-    "oscars": [
+      "oscars": [
         "脚本賞"
       ],
       "cannes": [],
@@ -1475,9 +1521,9 @@
     "status": "sub",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2021,
+      "year": 2019,
       "category": "日本映画",
-      "rank": 6
+      "rank": 4
     },
     "awards_history": {
       "oscars": [],
@@ -1500,9 +1546,9 @@
     "status": "sub",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2014,
-      "category": "外国映画",
-      "rank": 3
+      "year": 2021,
+      "category": "日本映画",
+      "rank": 7
     },
     "awards_history": {
       "oscars": [
@@ -1529,7 +1575,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 20,
     "romance_view": "『鵞鳥湖の夜』における愛は、極限状況下での「共犯の絆」として描かれる。それはロマンチックな感情ではなく、死を望む男が自己の存在価値を他者に託し、その命がもたらすものを引き受ける女との間に芽生える、歪んだ救済と宿命的な相互依存。言葉なき行動や眼差しが、ノワール世界で最も純粋かつ悲劇的な愛を紡ぎ出す。最終的に、生き残りを賭けた取引が、究極の信頼と自己犠牲へと昇華される。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2020,
+      "category": "外国映画",
+      "rank": 15
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [
@@ -1668,9 +1718,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2007,
+      "year": 2020,
       "category": "日本映画",
-      "rank": 5
+      "rank": 22
     },
     "awards_history": {
       "oscars": [],
@@ -1740,9 +1790,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2016,
-      "category": "日本映画",
-      "rank": 4
+      "year": 1996,
+      "category": "外国映画",
+      "rank": 18
     },
     "awards_history": {
       "oscars": [],
@@ -1765,7 +1815,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 8,
     "romance_view": "少年ウィリアムのペニーへの愛は、純粋な憧憬と、彼女が求める「居場所」としての愛が交錯。ペニーはラッセルやバンドへの献身を通じ、ミューズとしての自己存在と愛を希求するが、それはプラトニックと依存の危うい境界線を揺れ動く。特定の個人を超え、ロックンロールという共同体への帰属意識が、不完全な人々を繋ぐ広義の家族愛として描かれる。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2001,
+      "category": "外国映画",
+      "rank": 10
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1787,9 +1841,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2016,
-      "category": "日本映画",
-      "rank": 7
+      "year": 2013,
+      "category": "外国映画",
+      "rank": 11
     },
     "awards_history": {
       "oscars": [],
@@ -1812,9 +1866,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2012,
+      "year": 2009,
       "category": "外国映画",
-      "rank": 7
+      "rank": 4
     },
     "awards_history": {
       "oscars": [],
@@ -1839,7 +1893,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 24,
     "romance_view": "家父長制下での個の自由への切望を、爆竹の火花のような刹那の情熱として描く。抑圧された環境と対照的な映像美が、愛の禁断性と同時に、その抗いがたい輝きと儚さを際立たせる。愛は単なる感情でなく、社会への反逆と自己解放の象徴だ。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1992,
+      "category": "外国映画",
+      "rank": 27
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1861,9 +1919,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2010,
-      "category": "外国映画",
-      "rank": 6
+      "year": 2007,
+      "category": "日本映画",
+      "rank": 5
     },
     "awards_history": {
       "oscars": [],
@@ -1886,7 +1944,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 35,
     "romance_view": "蝶衣の愛は、京劇「覇王別姫」の虞姫と項羽を現実世界にまで引きずり込み、自己の存在意義と一体化させた狂おしいまでの執着。性別や時代に抗い、小楼との「永遠」を舞台上で求め続ける、まさに「虞姫そのもの」の悲劇的純愛を描く。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1994,
+      "category": "外国映画",
+      "rank": 2
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1936,7 +1998,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 23,
     "romance_view": "社会性や未来を剥奪されたポンヌフ橋上で、ミシェルの視覚喪失とアレックスの暴力性が、互いの「欠損」を補い合う、共依存的で原初的な愛を生成。社会規範や理性を超越し、閉ざされた二人の世界で狂おしいまでに燃焼するその愛は、刹那的な生の爆発であり、存在そのものへの執着をマニアックに描出している。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1992,
+      "category": "外国映画",
+      "rank": 13
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1957,7 +2023,11 @@
     "image": "../images/vol24/m84.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2003,
+      "category": "外国映画",
+      "rank": 19
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -1978,7 +2048,11 @@
     "image": "../images/vol24/m85.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2021,
+      "category": "日本映画",
+      "rank": 6
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2020,7 +2094,11 @@
     "image": "../images/vol24/m87.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1999,
+      "category": "外国映画",
+      "rank": 7
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2062,7 +2140,11 @@
     "image": "../images/vol24/m89.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2016,
+      "category": "日本映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2083,7 +2165,11 @@
     "image": "../images/vol24/m90.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2016,
+      "category": "日本映画",
+      "rank": 7
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2146,7 +2232,11 @@
     "image": "../images/vol24/m93.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2017,
+      "category": "外国映画",
+      "rank": 23
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2188,7 +2278,11 @@
     "image": "../images/vol24/m95.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2012,
+      "category": "外国映画",
+      "rank": 8
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2230,7 +2324,11 @@
     "image": "../images/vol24/m97.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2010,
+      "category": "外国映画",
+      "rank": 3
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2251,7 +2349,11 @@
     "image": "../images/vol24/m98.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2015,
+      "category": "外国映画",
+      "rank": 18
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2272,7 +2374,11 @@
     "image": "../images/vol24/m99.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2008,
+      "category": "外国映画",
+      "rank": 3
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2297,7 +2403,7 @@
     "kinejun_rank": {
       "year": 2001,
       "category": "外国映画",
-      "rank": 5
+      "rank": 2
     },
     "awards_history": {
       "oscars": [],
@@ -2346,9 +2452,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 1967,
+      "year": 2015,
       "category": "外国映画",
-      "rank": 5
+      "rank": 24
     },
     "awards_history": {
       "oscars": [],
@@ -2371,7 +2477,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 11,
     "romance_view": "本作は、愛が「関係性の状態」だけでなく、「個としての感情」として変容し持続する可能性をマニアックに探る。離婚という関係の死を迎える中で剥き出しになるのは、単なる憎悪ではない。互いの最も醜い部分すら深く知り尽くした上でも消えない、根源的な愛着や理解、そして相手の幸福を願う切実な感情の残滓。それは愛の「終焉」ではなく、形を変え、新たな「持続可能性」へと至る苦痛なプロセスを描く。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2019,
+      "category": "外国映画",
+      "rank": 17
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2415,9 +2525,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2004,
+      "year": 2015,
       "category": "外国映画",
-      "rank": 1
+      "rank": 29
     },
     "awards_history": {
       "oscars": [
@@ -2442,7 +2552,11 @@
     "image": "../images/vol24/m106.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1967,
+      "category": "外国映画",
+      "rank": 5
+    },
     "awards_history": {
       "oscars": [
         "主演女優賞"
@@ -2468,9 +2582,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2001,
-      "category": "日本映画",
-      "rank": 3
+      "year": 2004,
+      "category": "外国映画",
+      "rank": 1
     },
     "awards_history": {
       "oscars": [],
@@ -2496,9 +2610,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2013,
-      "category": "日本映画",
-      "rank": 8
+      "year": 2004,
+      "category": "外国映画",
+      "rank": 12
     },
     "awards_history": {
       "oscars": [],
@@ -2566,7 +2680,11 @@
     "image": "../images/vol24/m111.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2014,
+      "category": "日本映画",
+      "rank": 3
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2623,7 +2741,7 @@
     "kinejun_rank": {
       "year": 2014,
       "category": "外国映画",
-      "rank": 4
+      "rank": 5
     },
     "awards_history": {
       "oscars": [
@@ -2893,7 +3011,11 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 26,
     "romance_view": "小寺さんの真っ直ぐなクライミングは、関係性の「壁」を乗り越える愛のメタファー。明確な恋愛感情として言語化されずとも、彼女の登攀に周囲が共鳴し、目標を共に目指す「憧憬」や「信頼」が深く静かに育まれる。言葉より、彼女の背中とそれを追う視線、そしてルート開拓の達成感が、青春の甘酸っぱさと融合した純粋な「愛」を多層的に紡ぎ出す。",
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2020,
+      "category": "日本映画",
+      "rank": 25
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2922,7 +3044,11 @@
       "neurotic_level": 4,
       "trivia": "監督ウディ・アレンが、長年のキャリアで初めて全編をニューヨーク以外で撮影した作品。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2006,
+      "category": "外国映画",
+      "rank": 10
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -2969,9 +3095,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2010,
+      "year": 2022,
       "category": "日本映画",
-      "rank": 1
+      "rank": 4
     },
     "awards_history": {
       "oscars": [],
@@ -2994,9 +3120,9 @@
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
     "kinejun_rank": {
-      "year": 2013,
+      "year": 2016,
       "category": "日本映画",
-      "rank": 9
+      "rank": 18
     },
     "awards_history": {
       "oscars": [],
@@ -3018,7 +3144,11 @@
     "image": "../images/vol24/m129.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2010,
+      "category": "日本映画",
+      "rank": 1
+    },
     "awards_history": {
       "oscars": [
         "主演女優賞",
@@ -3046,7 +3176,11 @@
     "image": "../images/vol24/m130.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2013,
+      "category": "日本映画",
+      "rank": 9
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3067,7 +3201,11 @@
     "image": "../images/vol24/m131.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2010,
+      "category": "日本映画",
+      "rank": 8
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3110,7 +3248,11 @@
     "image": "../images/vol24/m133.webp",
     "updated_at": "2026-05-06T16:54:05.719152",
     "romance_rank": 999,
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2024,
+      "category": "外国映画",
+      "rank": 4
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -3177,7 +3319,7 @@
     "kinejun_rank": {
       "year": 1980,
       "category": "外国映画",
-      "rank": 4
+      "rank": 5
     },
     "woody_details": {
       "original_title": "Manhattan",
@@ -3209,7 +3351,7 @@
     "kinejun_rank": {
       "year": 1987,
       "category": "外国映画",
-      "rank": 2
+      "rank": 3
     },
     "awards_history": {
       "oscars": [
@@ -3244,7 +3386,7 @@
     "kinejun_rank": {
       "year": 2012,
       "category": "外国映画",
-      "rank": 2
+      "rank": 5
     },
     "awards_history": {
       "oscars": [
@@ -3277,7 +3419,7 @@
     "kinejun_rank": {
       "year": 1986,
       "category": "外国映画",
-      "rank": 1
+      "rank": 2
     },
     "awards_history": {
       "oscars": [],
@@ -3306,9 +3448,9 @@
       "trivia": "ウディ・アレン自身の幼少期のラジオにまつわる思い出を基にした半自伝的作品。"
     },
     "kinejun_rank": {
-      "year": 1988,
+      "year": 1987,
       "category": "外国映画",
-      "rank": 4
+      "rank": 7
     },
     "awards_history": {
       "oscars": [],
@@ -3339,7 +3481,7 @@
     "kinejun_rank": {
       "year": 1979,
       "category": "外国映画",
-      "rank": 4
+      "rank": 5
     },
     "awards_history": {
       "oscars": [],
@@ -3418,9 +3560,9 @@
     "image": "../images/vol24/m150.webp",
     "updated_at": "2026-05-06T16:53:06.242186",
     "kinejun_rank": {
-      "year": 2000,
+      "year": 2001,
       "category": "外国映画",
-      "rank": 8
+      "rank": 18
     },
     "awards_history": {
       "oscars": [],
@@ -3484,9 +3626,9 @@
       "trivia": "ダイアン・ウィーストはこの映画でアカデミー助演女優賞を受賞。彼女にとって2度目の受賞となった。"
     },
     "kinejun_rank": {
-      "year": 1993,
+      "year": 1995,
       "category": "外国映画",
-      "rank": 4
+      "rank": 7
     },
     "awards_history": {
       "oscars": [],
@@ -3606,9 +3748,9 @@
       "trivia": "当初、マーティン・ランドー演じる主人公は自殺する予定だったが、最終的に変更された。"
     },
     "kinejun_rank": {
-      "year": 2009,
+      "year": 1990,
       "category": "外国映画",
-      "rank": 6
+      "rank": 19
     },
     "awards_history": {
       "oscars": [
@@ -3793,7 +3935,11 @@
       "neurotic_level": 5,
       "trivia": "撮影監督はヴィットリオ・ストラーロで、独特の色彩と光の表現が特徴。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2018,
+      "category": "外国映画",
+      "rank": 21
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4063,7 +4209,11 @@
       "neurotic_level": 5,
       "trivia": "ウディ・アレンは本作を2度撮影し、最初のバージョンは破棄した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1988,
+      "category": "外国映画",
+      "rank": 21
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4117,7 +4267,11 @@
       "neurotic_level": 5,
       "trivia": "当初ミア・ファローがキャロル役だったが、ダイアン・キートンが代役を務めた。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1994,
+      "category": "外国映画",
+      "rank": 29
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4144,7 +4298,11 @@
       "neurotic_level": 4,
       "trivia": "ウディ・アレン監督は、イングマール・ベルイマンの作品、特に『野いちご』から多大な影響を受けたと語っている。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1989,
+      "category": "外国映画",
+      "rank": 25
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4171,7 +4329,11 @@
       "neurotic_level": 5,
       "trivia": "ミア・ファローは役作りのため金髪のウィッグを着用し、独特な話し方を披露した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 1985,
+      "category": "外国映画",
+      "rank": 19
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4387,7 +4549,11 @@
       "neurotic_level": 4,
       "trivia": "第69回カンヌ国際映画祭のオープニング作品として上映された。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2017,
+      "category": "外国映画",
+      "rank": 27
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
@@ -4467,7 +4633,11 @@
       "venice": [],
       "berlin": []
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2007,
+      "category": "外国映画",
+      "rank": 27
+    },
     "woody_details": {
       "original_title": "Scoop",
       "location": "London",
@@ -4495,7 +4665,11 @@
       "neurotic_level": 4,
       "trivia": "ペネロペ・クルスが本作でアカデミー助演女優賞を受賞した。"
     },
-    "kinejun_rank": null,
+    "kinejun_rank": {
+      "year": 2009,
+      "category": "外国映画",
+      "rank": 20
+    },
     "awards_history": {
       "oscars": [],
       "cannes": [],
