@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vol.34 宗像大島 - ストップモーションアニメ通信</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* 共通スタイル継承 */
+        .travel-section { margin-bottom: 80px; }
+        .media-container { 
+            position: relative; 
+            border: 1px solid #333; 
+            margin: 20px 0; 
+            background: #000;
+        }
+        .media-container video, .media-container img, .media-container iframe {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .media-container video, .media-container img {
+            filter: contrast(1.1) brightness(0.9);
+        }
+        .media-container iframe {
+            aspect-ratio: 16 / 9;
+            border: none;
+        }
+        .caption {
+            font-size: 0.9rem;
+            color: #00f2ff;
+            padding: 10px;
+            border-left: 3px solid #ff00ff;
+            background: rgba(255, 0, 255, 0.05);
+            margin-top: 10px;
+        }
+        .map-frame {
+            width: 100%;
+            height: 300px;
+            filter: invert(90%) hue-rotate(180deg) brightness(1.2);
+            border: 1px solid #00f2ff;
+            margin-top: 30px;
+        }
+        .spot-title {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 2px 2px #ff00ff;
+            margin-top: 50px;
+        }
+        
+        .spot-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin-top: 40px;
+        }
+        .spot-tile {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 5px;
+            box-sizing: border-box;
+            container-type: inline-size;
+        }
+
+        /* 和風カラー設定 */
+        .spot-tile:nth-child(13n+1) { background: #9b2c2c; color: #fff; }
+        .spot-tile:nth-child(13n+2) { background: #2c3e50; color: #fff; }
+        .spot-tile:nth-child(13n+3) { background: #4a5d23; color: #fff; }
+        .spot-tile:nth-child(13n+4) { background: #b8860b; color: #fff; }
+        .spot-tile:nth-child(13n+5) { background: #4b3d8f; color: #fff; }
+        .spot-tile:nth-child(13n+6) { background: #5c9291; color: #fff; }
+        .spot-tile:nth-child(13n+7) { background: #9e3d3f; color: #fff; }
+
+        .spot-tile:hover, .spot-tile.active {
+            transform: scale(1.15);
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            z-index: 10;
+        }
+        .spot-tile img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        .spot-tile:hover img, .spot-tile.active img {
+            opacity: 1;
+        }
+        .spot-tile-label {
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.15;
+        }
+        .spot-no {
+            display: block;
+            font-size: 0.45em;
+            font-weight: normal;
+            margin-bottom: 2px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 600px) {
+            .spot-grid { grid-template-columns: repeat(3, 1fr); }
+            .media-container video, .media-container img, .media-container iframe { width: 100%; }
+        }
+    </style>
+</head>
+<body style="background-color: #000; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif;">
+
+    <header class="main-header">
+        <img src="../images/logo.webp" alt="The Animeda! Project" class="header-logo">
+        <h1 class="header-title">ストップモーションアニメ通信</h1>
+        <p class="header-subtitle">Vol.34: 宗像大島、神宿る海の境界線</p>
+    </header>
+
+    <nav style="padding: 10px; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #333; font-size: 0.8rem;">
+        <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+        <div>
+            <a href="vol33.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px;">← 前のVol.33へ</a>
+            <a href="vol35.html" style="color: #ff00ff; text-decoration: none;">次のVol.35へ →</a>
+        </div>
+    </nav>
+
+    <article class="episode-container" style="max-width: 900px; margin: 0 auto; padding: 0 40px; text-align: left;">
+        
+        <header class="episode-header" style="margin-top: 40px;">
+            <p style="color: #ff00ff; margin-bottom: 5px; font-weight: bold;">JOURNAL // 2026.05.10</p>
+            <h2 style="font-size: 2.5rem; border-left: 8px solid #00f2ff; padding-left: 20px; line-height: 1.2;">
+                宗像大島：<br>玄界灘に刻まれた神話のフレーム
+            </h2>
+        </header>
+
+        <!-- Section 1: History and Shrine -->
+        <section class="travel-section">
+            <h3 class="spot-title">01. 宗像大社 中津宮 / The Center</h3>
+            <div class="media-container">
+                <img src="../images/vol34/nakatsumiya.webp" alt="宗像大社 中津宮">
+                <p class="caption">「神宿る島」宗像・沖ノ島と関連遺産群。その中核を成す大島の静寂。</p>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #ff00ff; border-radius: 4px;">
+                <h4 style="color: #ff00ff; margin-top: 0; font-size: 1.2rem;">宗像大社の歴史</h4>
+                <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">
+                    宗像大社は、日本神話に登場する天照大神の三柱の御子神「宗像三女神」を祀る神社の総称です。沖ノ島の「辺津宮」、大島の「中津宮」、九州本土の「辺津宮」の三宮から成り、古代より大陸との海上交通の安全を司ってきました。2017年には世界文化遺産に登録。特に大島の中津宮に祀られる湍津姫神（たぎつひめのかみ）は、荒ぶる玄界灘を鎮める象徴として、島民や航海者たちから深い信仰を集めています。
+                </p>
+            </div>
+
+            <!-- スポット紹介タイル -->
+            <div class="spot-grid">
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-konominato.webp" alt="神湊港">
+                    <div class="spot-tile-label" style="font-size: 25cqw;"><span class="spot-no">No.01</span>神湊港</div>
+                </a>
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-nakatsumiya.webp" alt="中津宮">
+                    <div class="spot-tile-label" style="font-size: 25cqw;"><span class="spot-no">No.02</span>中津宮</div>
+                </a>
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-car.webp" alt="島内レンタカー">
+                    <div class="spot-tile-label" style="font-size: 18cqw;"><span class="spot-no">No.03</span>島内<br>レンタカー</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 2: Northern Coast and Education -->
+        <section class="travel-section">
+            <h3 class="spot-title">02. 遙拝所と学び舎 / Beyond the Horizon</h3>
+            <div class="media-container">
+                <img src="../images/vol34/yohaisho.webp" alt="沖津宮 遙拝所">
+                <p class="caption">水平線の彼方、女人禁制の「沖ノ島」を望む。そこは今も1500年前の祈りが生きている。</p>
+            </div>
+            
+            <p>島内をレンタカーで北上すると、風景は険しさを増す。第二次世界大戦の影を残す「砲台跡」は、現在は玄界灘を見下ろす絶好の展望地となり、かつての緊張感を海風が拭い去っている。</p>
+
+            <div class="media-container">
+                <img src="../images/vol34/oshimagakuen.webp" alt="宗像市立大島学園">
+                <p class="caption">島の未来を育む、宗像市立大島学園。</p>
+            </div>
+            <p>小中一貫校である大島学園。校舎から聞こえる子どもたちの声は、古の神話が息づくこの島において、最も鮮やかな「現在のコマ」だ。</p>
+
+            <!-- スポット紹介タイル -->
+            <div class="spot-grid">
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-yohaisho.webp" alt="沖津宮遙拝所">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.04</span>沖津宮<br>遙拝所</div>
+                </a>
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-gakuen.webp" alt="大島学園">
+                    <div class="spot-tile-label" style="font-size: 20cqw;"><span class="spot-no">No.05</span>大島学園</div>
+                </a>
+                <a href="#" class="spot-tile">
+                    <img src="../images/vol34/spot-battery.webp" alt="砲台跡">
+                    <div class="spot-tile-label" style="font-size: 25cqw;"><span class="spot-no">No.06</span>砲台跡</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 3: Archive Map -->
+        <section class="travel-section">
+            <h3 class="spot-title">03. ARCHIVE MAP</h3>
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.8716358172914!2d130.42861217571343!3d33.91248437320956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543d463b2075ec5%3A0xc3cf97e296c561b5!2z5a6X5YOP5aSn56S-IOaylua0peWurumBruaLneaJgA!5e0!3m2!1sja!2sjp!4v1716300000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+    </article>
+
+    <footer class="main-footer" style="padding: 60px 20px; text-align: center; border-top: 4px solid #ff00ff; background: #000; margin-top: 80px;">
+        <nav style="padding: 0 0 40px 0; display: flex; justify-content: space-between; font-weight: bold; max-width: 900px; margin: 0 auto; font-size: 0.8rem;">
+            <a href="../index.html" style="color: #00f2ff; text-decoration: none;">← BACK TO INDEX</a>
+            <div>
+                <a href="vol33.html" style="color: #ff00ff; text-decoration: none; margin-right: 10px; white-space: nowrap;">← 前のVol.33へ</a>
+                <a href="vol35.html" style="color: #ff00ff; text-decoration: none; white-space: nowrap;">次のVol.35へ →</a>
+            </div>
+        </nav>
+        <p class="footer-credit" style="color: #00f2ff; font-weight: 900; margin: 0;">© 2026 The Animeda! Project</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const spotGrids = document.querySelectorAll('.spot-grid');
+            spotGrids.forEach(grid => {
+                const tiles = grid.querySelectorAll('.spot-tile');
+                if (tiles.length === 0) return;
+                let currentIndex = 0;
+                setInterval(() => {
+                    tiles.forEach(tile => tile.classList.remove('active'));
+                    tiles[currentIndex].classList.add('active');
+                    currentIndex = (currentIndex + 1) % tiles.length;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

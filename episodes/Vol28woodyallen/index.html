@@ -207,15 +207,16 @@
         const cards = document.querySelectorAll('.film-card');
         if (cards.length === 0) return;
 
-        const centerY = window.innerHeight / 2;
+        // 中央よりさらに下（画面上部から約70%の位置）を判定ラインとする
+        const targetY = window.innerHeight * 0.7;
         let closestCard = null;
         let minDistance = Infinity;
 
-        // 画面中央に一番近いカードを探す
+        // 判定ラインに一番近いカードを探す
         cards.forEach(card => {
             const rect = card.getBoundingClientRect();
             const cardCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(centerY - cardCenter);
+            const distance = Math.abs(targetY - cardCenter);
 
             if (distance < minDistance) {
                 minDistance = distance;
